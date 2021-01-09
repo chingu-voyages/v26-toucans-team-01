@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: lightblue;
+  background-color: #fff;
 }
 
 /* ---------- Start of HOME PRICE ---------- */
@@ -26,7 +33,7 @@ body {
 
 #home-price-input[type='number'] {
   /* adds the dollar sign to the input box */
-  background-image: url('dollar_sign.png');
+  background-image: url('../img/dollar_sign.png');
   background-position: left center;
   background-repeat: no-repeat;
   padding-left: 20px;
@@ -74,3 +81,21 @@ body {
   background: #000099;
   cursor: pointer;
 }
+
+/* ---------- Start of Down Payment, Length of Loan, Interest Rate ---------- */
+
+#loan-parameter-inputs {
+  border: 1px solid red;
+  width: 300px;
+  margin: 2em 0;
+}
+
+#loan-parameter-inputs input,
+select {
+  border: 1px solid #cfcfd4;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.38889rem 0.77778rem 0.38889rem 0.5rem;
+}
+
+/* ---------- End of Down Payment, Length of Loan, Interest Rate ---------- */

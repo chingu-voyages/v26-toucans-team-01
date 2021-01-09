@@ -1,114 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <title>House Hero</title>
-</head>
-<body>
-  <header>
-    <!-- Logo, Navigation -->
-  </header>
-  <main>
-    <!-- Load Content -->
-    <section>
-      <h1>Welcome the House Hero!</h1>
-    </section>
-    
-    <section>
-      <div id="animated-house">
-        <!-- Animated House -->
-      </div>
-      
-      <!-- Home Price -->
-      <div id="home-price">
-        <span>Home Price</span><br>
-          <input type="number" name="home-price" id="home-price-input" value = "0">
-        <div id="slidecontainer">
-        <input type="range" name="home-price-slider" id="home-price-slider" min="8000" max="1000000">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>House Hero</title>
+  </head>
+  <body>
+    <header>
+      <!-- Logo, Navigation -->
+    </header>
+    <main>
+      <!-- Load Content -->
+      <section>
+        <h1>Welcome the House Hero!</h1>
+      </section>
+
+      <section>
+        <div id="animated-house">
+          <!-- Animated House -->
         </div>
-      </div>
-      
-      <!-- Down Payment Form -->
-      <div id="loan-parameter-inputs">
 
-        <!-- Down Payment -->
-        <label for="down-payment-amt">
-          Down Payment
-          <input type="text" name="down-payment-amt" id="down-payment-amt">
-          <input type="text" name="down-payment-pct" id="down-payment-pct">
-        </label>
+        <!-- Home Price -->
+        <div id="home-price">
+          <span>Home Price</span><br />
+          <input
+            type="number"
+            name="home-price"
+            id="home-price-input"
+            value="0"
+          />
+          <div id="slidecontainer">
+            <input
+              type="range"
+              name="home-price-slider"
+              id="home-price-slider"
+              min="8000"
+              max="1000000"
+            />
+          </div>
+        </div>
 
-        <!-- Length of Loan -->
-        <label for="length-of-loan">
-          Length of Loan
-          <input type="text" name="length-of-loan" id="length-of-loan">
-        </label>
+        <!-- Down Payment Form -->
+        <div id="loan-parameter-inputs">
+          <!-- Down Payment -->
+          <div>
+            <label for="down-payment-amt">
+              Down Payment
+              <input
+                type="text"
+                name="down-payment-amt"
+                id="down-payment-amt"
+                placeholder="$0"
+              />
+              <input
+                type="text"
+                name="down-payment-pct"
+                id="down-payment-pct"
+                placeholder="0%"
+              />
+            </label>
+          </div>
 
-        <!-- Interest Rate -->
-        <label for="interest-rate">
-          Interest Rate
-          <input type="text" name="interest-rate" id="interest-rate">
-        </label>
+          <!-- Length of Loan -->
+          <div>
+            <label for="length-of-loan">
+              Length of Loan
+              <select name="length-of-loan" id="length-of-loan" />
+                <option value="">--Please choose an option--</option>
+                <option value="30">30 years</option>
+                <option value="20">20 years</option>
+                <option value="15">15 years</option>
+                <option value="10">10 years</option>
+              </select>
+            </label>
+          </div>
 
-      </div>
+          <!-- Interest Rate -->
+          <div>
+            <label for="interest-rate">
+              Interest Rate
+              <input type="text" name="interest-rate" id="interest-rate" placeholder="0%" />
+            </label>
+          </div>
+        </div>
 
-      <!-- Estimated Monthly Payment (Full) -->
-      <div id="monthly-payment">
-        <input type="text" name="monthly-payment" id="monthly-payment" placeholder="$0">
-        <span>Your Estimated Monthly Payment</span>
-        <input type="range" name="monthly-payment-slider" id="monthly-payment-slider" min="8000" max="1000000">
-      </div>
+        <!-- Estimated Monthly Payment (Full) -->
+        <div id="monthly-payment">
+          <input
+            type="text"
+            name="monthly-payment"
+            id="monthly-payment"
+            placeholder="$0"
+          />
+          <span>Your Estimated Monthly Payment</span>
+          <input
+            type="range"
+            name="monthly-payment-slider"
+            id="monthly-payment-slider"
+            min="8000"
+            max="1000000"
+          />
+        </div>
 
-      <!-- Estimated Monthly Payment (Sticky) -->
-      <div id="monthly-payment-sticky">
-        <input type="text" name="monthly-payment-sticky" id="monthly-payment-sticky" placeholder="$0">
-        <span>Your Estimated Monthly Payment</span>
-      </div>
+        <!-- Estimated Monthly Payment (Sticky) -->
+        <div id="monthly-payment-sticky">
+          <input
+            type="text"
+            name="monthly-payment-sticky"
+            id="monthly-payment-sticky"
+            placeholder="$0"
+          />
+          <span>Your Estimated Monthly Payment</span>
+        </div>
 
-      <!-- Monthly Payment Graph -->
-      <div id="payment-graph">
-        <!-- INSERT GRAPH -->
-      </div>
+        <!-- Monthly Payment Graph -->
+        <div id="payment-graph">
+          <!-- INSERT GRAPH -->
+        </div>
 
-      <!-- Down Payment Form -->
-      <div id="payment-components-form">
+        <!-- Down Payment Form -->
+        <div id="payment-components-form">
+          <!-- Principal and Interest -->
+          <label for="principal-and-interest">
+            Principal and Interest
+            <input
+              type="text"
+              name="principal-and-interest"
+              id="principal-and-interest"
+            />
+          </label>
 
-        <!-- Principal and Interest -->
-        <label for="principal-and-interest">
-          Principal and Interest
-          <input type="text" name="principal-and-interest" id="principal-and-interest">
-        </label>
+          <!-- Homeowner's Insurance -->
+          <label for="homeowners-insurance">
+            Homeowner's Insurance
+            <input
+              type="text"
+              name="homeowners-insurance"
+              id="homeowners-insurance"
+            />
+          </label>
 
-        <!-- Homeowner's Insurance -->
-        <label for="homeowners-insurance">
-          Homeowner's Insurance
-          <input type="text" name="homeowners-insurance" id="homeowners-insurance">
-        </label>
+          <!-- Property Tax -->
+          <label for="property-tax">
+            Property Tax
+            <input type="text" name="property-tax" id="property-tax" />
+          </label>
 
-        <!-- Property Tax -->
-        <label for="property-tax">
-          Property Tax
-          <input type="text" name="property-tax" id="property-tax">
-        </label>
+          <!-- HOA fees -->
+          <label for="hoa-fees">
+            HOA Fees
+            <input type="text" name="hoa-fees" id="hoa-fees" />
+          </label>
 
-        <!-- HOA fees -->
-        <label for="hoa-fees">
-          HOA Fees
-          <input type="text" name="hoa-fees" id="hoa-fees">
-        </label>
+          <div>Total monthlypayment = <span>$0</span></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- Links, Social Media -->
+    </footer>
 
-        <div>Total monthlypayment = <span>$0</span></div>
-
-      </div>
-
-    </section>
-  </main>
-  <footer>
-    <!-- Links, Social Media -->
-  </footer>
-  
-  <script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
