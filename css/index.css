@@ -11,7 +11,7 @@ body {
   background-color: #fff;
 }
 
-/* ---------- Start of HOME PRICE ---------- */
+/* ---------- Start of HOME PRICE [Dev: Ashley] ---------- */
 
 /* home input box style */
 
@@ -94,12 +94,23 @@ body {
   cursor: pointer;
 }
 
-/* ---------- Start of Down Payment, Length of Loan, Interest Rate ---------- */
+/* ---------- Start of Down Payment, Length of Loan, Interest Rate [Dev: Josue] ---------- */
 
 #loan-parameter-inputs {
   border: 1px solid red;
-  width: 300px;
+  width: 440px;
   margin: 2em 0;
+  padding: 1.25em;
+}
+
+#loan-parameter-inputs .wrapper {
+  padding: 0.5em;
+}
+
+#loan-parameter-inputs label {
+  display: block;
+  margin-bottom: 0.25em;
+  color: red;
 }
 
 #loan-parameter-inputs input,
@@ -107,11 +118,12 @@ select {
   border: 1px solid #cfcfd4;
   line-height: 1.75;
   font-size: 1rem;
-  padding: 0.38889rem 0.77778rem 0.38889rem 0.5rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
 }
 
 /* ---------- End of Down Payment, Length of Loan, Interest Rate ---------- */
-/* ---------- Start of Estimated Monthly Payment (Full) ------------------- */
+
+/* ---------- Start of Estimated Monthly Payment (Full) [Dev: Ashley] ------------------- */
 #monthly-payment {
   border: 1px solid red;
   width: 450px;
@@ -192,7 +204,8 @@ select {
   cursor: pointer;
 }
 /* --------------End of Estimated Payment (Full)----------------------------*/
-/* --------------Start of Estimated Payment (Sticky)------------------------*/
+
+/* --------------Start of Estimated Payment (Sticky) [Dev: Ashley] ------------------------*/
 #monthly-payment-sticky {
   border: 1px solid red;
   width: 350px;
@@ -229,3 +242,32 @@ select {
   font-size: 12px;
 }
 /* ---------------End of Estimated Monthly Payment (Sticky)-------------------- */
+
+/* ---------- START of Estimated Monthly Payment (Full) [Dev: Josue] ------------------- */
+
+#mthly-payment-inputs {
+  border: 1px solid red;
+  width: 440px;
+  margin: 2em 0;
+  padding: 1.25em;
+}
+
+#mthly-payment-inputs .wrapper {
+  padding: 0.5em;
+}
+
+#mthly-payment-inputs label {
+  display: block;
+  margin-bottom: 0.25em;
+  color: red;
+}
+
+#mthly-payment-inputs input,
+select {
+  border: 1px solid #cfcfd4;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+}
+
+/* ---------- END of Estimated Monthly Payment (Full) ------------------- */
