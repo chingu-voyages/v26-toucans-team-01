@@ -23,13 +23,14 @@
 
         <!-- Home Price -->
         <div id="home-price">
-          <span>Home Price</span><br />
+          
           <input
             type="number"
             name="home-price"
             id="home-price-input"
             value="0"
           />
+          <span>Home Price</span>
           <div id="slidecontainer">
             <input
               type="range"
@@ -88,12 +89,14 @@
         <!-- Estimated Monthly Payment (Full) -->
         <div id="monthly-payment">
           <input
-            type="text"
+            type="number"
             name="monthly-payment"
-            id="monthly-payment"
-            placeholder="$0"
+            id="monthly-payment-input"
+            value="0"
+            readonly
           />
           <span>Your Estimated Monthly Payment</span>
+          <div id="monthly-slider-container"></div>
           <input
             type="range"
             name="monthly-payment-slider"
@@ -101,17 +104,19 @@
             min="8000"
             max="1000000"
           />
+          </div>
         </div>
 
         <!-- Estimated Monthly Payment (Sticky) -->
         <div id="monthly-payment-sticky">
+          <span>Your Estimated Monthly Payment:</span>
           <input
-            type="text"
+            type="number"
             name="monthly-payment-sticky"
-            id="monthly-payment-sticky"
-            placeholder="$0"
+            id="monthly-payment-sticky-input"
+            value="0"
+            readonly
           />
-          <span>Your Estimated Monthly Payment</span>
         </div>
 
         <!-- Monthly Payment Graph -->
