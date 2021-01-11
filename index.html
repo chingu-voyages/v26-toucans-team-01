@@ -22,26 +22,31 @@
         </div>
 
         <!-- Home Price -->
+      <div id="home-price-container">
         <div id="home-price">
-          
-          <input
-            type="number"
-            name="home-price"
-            id="home-price-input"
-            value="0"
-          />
-          <span>Home Price</span>
-          <div id="slidecontainer">
+          <div class="wrapper">
             <input
-              type="range"
-              name="home-price-slider"
-              id="home-price-slider"
-              min="8000"
-              max="1000000"
+              type="number"
+              name="home-price"
+              id="home-price-input"
+              placeholder="$0"
             />
+            <label>Home Price</label>
+          
+        </div>
+        <div id="slidecontainer">  
+          <div class="wrapper">                  
+          <input
+            type="range"
+            name="home-price-slider"
+            id="home-price-slider"
+            min="8000"
+            max="1000000"
+          />
           </div>
         </div>
-
+        </div>
+      </div>
         <!-- Down Payment Form -->
         <div id="loan-parameter-inputs">
           <!-- Down Payment -->
@@ -87,38 +92,48 @@
         </div>
 
         <!-- Estimated Monthly Payment (Full) -->
+      <div id="monthly-payment-container">
         <div id="monthly-payment">
-          <input
-            type="number"
-            name="monthly-payment"
-            id="monthly-payment-input"
-            value="0"
-            readonly
-          />
-          <span>Your Estimated Monthly Payment</span>
-          <div id="monthly-slider-container"></div>
-          <input
-            type="range"
-            name="monthly-payment-slider"
-            id="monthly-payment-slider"
-            min="8000"
-            max="1000000"
-          />
+          <div class="wrapper">
+            <input
+              type="number"
+              name="monthly-payment"
+              id="monthly-payment-input"
+              placeholder="$0"
+              readonly
+            />
+            <label>Your Estimated Monthly Payment</label>
+        </div>
+        <div id="monthly-slider-container">
+          <div class="wrapper">
+            <input
+              type="range"
+              name="monthly-payment-slider"
+              id="monthly-payment-slider"
+              min="8000"
+              max="1000000"
+            />
+          </div>
           </div>
         </div>
+          
+      </div>
 
         <!-- Estimated Monthly Payment (Sticky) -->
+      <div id="monthly-payment-sticky-container">
         <div id="monthly-payment-sticky">
-          <span>Your Estimated Monthly Payment:</span>
-          <input
-            type="number"
-            name="monthly-payment-sticky"
-            id="monthly-payment-sticky-input"
-            value="0"
-            readonly
-          />
+          <div class="wrapper">
+            <label>Your Estimated Monthly Payment:</label>
+            <input
+              type="number"
+              name="monthly-payment-sticky"
+              id="monthly-payment-sticky-input"
+              placeholder="$0"
+              readonly
+            />
+          </div>
         </div>
-
+      </div>
         <!-- Monthly Payment Graph -->
         <div id="payment-graph">
           <!-- INSERT GRAPH -->
@@ -133,9 +148,9 @@
               Principal and Interest  
             </label>
             <input
-            type="text"
-            name="principal-and-interest"
-            id="principal-and-interest"
+              type="text"
+              name="principal-and-interest"
+              id="principal-and-interest"
             />
           </div>
 

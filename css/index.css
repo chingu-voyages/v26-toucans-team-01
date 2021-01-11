@@ -14,17 +14,18 @@ body {
 /* ---------- Start of HOME PRICE [Dev: Ashley] ---------- */
 
 /* home input box style */
-
+#home-price-container .wrapper{
+  padding: 0.5em;
+}
 #home-price-input {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 18px;
+  font-size: 1.5vw;
   font-weight: bold;
   font-family: Copperplate;
   line-height: 1.75;
   border: 0;
-  padding-top: 10px;
 }
 
 #home-price-input::-webkit-outer-spin-button,
@@ -33,28 +34,25 @@ body {
   -webkit-appearance: none;
 }
 
-#home-price-input[type='number'] {
-  /* adds the dollar sign to the input box */
-  background-image: url('../img/dollar_sign.png');
-  background-position: left center;
-  background-repeat: no-repeat;
-  padding-left: 20px;
-  -moz-appearance: textfield;
-}
-
-#home-price span {
+#home-price label {
   border-left: 1px solid #cfcfd4;
   margin-left: 10px;
 }
 
 /* home price slider */
 
-#home-price {
-  border: 1px red solid;
-  width: 325px;
+#home-price-container {
+  border: 1px solid red;
+  width: 440px;
+  margin: 2em 0;
+  padding: 1.25em;
 }
 #slidecontainer {
   width: 100%;
+}
+
+#slidecontainer .wrapper {
+  padding: 0.5em;
 }
 
 #home-price-slider {
@@ -123,17 +121,23 @@ select {
 
 /* ---------- End of Down Payment, Length of Loan, Interest Rate ---------- */
 
-/* ---------- Start of Estimated Monthly Payment (Full) [Dev: Ashley] ------------------- */
+/* ---------- Start of Estimated Payment (Full) [Dev: Ashley] ------------------- */
 #monthly-payment {
   border: 1px solid red;
-  width: 450px;
+  width: 470px;
+  margin: 2em 0;
+  padding: 1.25em;  
+}
+
+#monthly-payment .wrapper {
+  padding: 0.5em;
 }
 
 #monthly-payment-input {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 18px;
+  font-size: 1.5vw;
   font-weight: bold;
   font-family: Copperplate;
   line-height: 1.75;
@@ -146,19 +150,10 @@ select {
   -webkit-appearance: none;
 }
 
-#monthly-payment-input[type='number'] {
-  /* adds the dollar sign to the input box */
-  background-image: url('../img/dollar_sign.png');
-  background-position: left center;
-  background-repeat: no-repeat;
-  padding-left: 20px;
-  -moz-appearance: textfield;
-}
-
-#monthly-payment span {
+#monthly-payment label {
   border-left: 1px solid #cfcfd4;
   margin-left: 10px;
-  font-size: 12px;
+  font-size: 1vw;
 }
 
 /* monthly payment slider */
@@ -206,17 +201,22 @@ select {
 /* --------------End of Estimated Payment (Full)----------------------------*/
 
 /* --------------Start of Estimated Payment (Sticky) [Dev: Ashley] ------------------------*/
-#monthly-payment-sticky {
+#monthly-payment-sticky-container {
   border: 1px solid red;
-  width: 350px;
-  margin: 20px 0 20px 0;
+  width: 440px;
+  margin: 2em 0;
+  padding: 1.25em;
+}
+
+#monthly-payment-sticky .wrapper {
+  padding: 0.5em;
 }
 
 #monthly-payment-sticky-input {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 18px;
+  font-size: 1.5vw;
   font-weight: bold;
   font-family: Copperplate;
   line-height: 1.75;
@@ -229,17 +229,8 @@ select {
   -webkit-appearance: none;
 }
 
-#monthly-payment-sticky-input[type='number'] {
-  /* adds the dollar sign to the input box */
-  background-image: url('../img/dollar_sign.png');
-  background-position: left center;
-  background-repeat: no-repeat;
-  padding-left: 20px;
-  -moz-appearance: textfield;
-}
-
-#monthly-payment-sticky span {
-  font-size: 12px;
+#monthly-payment-sticky label {
+  font-size: 1vw;
 }
 /* ---------------End of Estimated Monthly Payment (Sticky)-------------------- */
 
@@ -269,5 +260,6 @@ select {
   font-size: 1rem;
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
 }
-
 /* ---------- END of Estimated Monthly Payment (Full) ------------------- */
+
+
