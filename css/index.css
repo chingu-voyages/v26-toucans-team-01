@@ -11,18 +11,21 @@ body {
   background-color: #fff;
 }
 
-/* ---------- Start of HOME PRICE ---------- */
+/* ---------- Start of HOME PRICE [Dev: Ashley] ---------- */
 
 /* home input box style */
-
+#home-price-container .wrapper{
+  padding: 0.5em;
+}
 #home-price-input {
-  width: 100%;
-  height: 25px;
+  height: 40px;
   position: relative;
-  width: 150px;
-  font-size: 18px;
+  width: 210px;
+  font-size: 1.5vw;
   font-weight: bold;
   font-family: Copperplate;
+  line-height: 1.75;
+  border: 0;
 }
 
 #home-price-input::-webkit-outer-spin-button,
@@ -31,18 +34,25 @@ body {
   -webkit-appearance: none;
 }
 
-#home-price-input[type='number'] {
-  /* adds the dollar sign to the input box */
-  background-image: url('../img/dollar_sign.png');
-  background-position: left center;
-  background-repeat: no-repeat;
-  padding-left: 20px;
-  -moz-appearance: textfield;
+#home-price label {
+  border-left: 1px solid #cfcfd4;
+  margin-left: 10px;
 }
 
 /* home price slider */
+
+#home-price-container {
+  border: 1px solid red;
+  width: 440px;
+  margin: 2em 0;
+  padding: 1.25em;
+}
 #slidecontainer {
   width: 100%;
+}
+
+#slidecontainer .wrapper {
+  padding: 0.5em;
 }
 
 #home-price-slider {
@@ -50,7 +60,7 @@ body {
   margin: 15px 0 15px 0;
   -webkit-appearance: none;
   appearance: none;
-  width: 170px;
+  width: 210px;
   height: 5px;
   background: grey;
   outline: none;
@@ -82,12 +92,23 @@ body {
   cursor: pointer;
 }
 
-/* ---------- Start of Down Payment, Length of Loan, Interest Rate ---------- */
+/* ---------- Start of Down Payment, Length of Loan, Interest Rate [Dev: Josue] ---------- */
 
 #loan-parameter-inputs {
   border: 1px solid red;
-  width: 300px;
+  width: 440px;
   margin: 2em 0;
+  padding: 1.25em;
+}
+
+#loan-parameter-inputs .wrapper {
+  padding: 0.5em;
+}
+
+#loan-parameter-inputs label {
+  display: block;
+  margin-bottom: 0.25em;
+  color: red;
 }
 
 #loan-parameter-inputs input,
@@ -95,7 +116,150 @@ select {
   border: 1px solid #cfcfd4;
   line-height: 1.75;
   font-size: 1rem;
-  padding: 0.38889rem 0.77778rem 0.38889rem 0.5rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
 }
 
 /* ---------- End of Down Payment, Length of Loan, Interest Rate ---------- */
+
+/* ---------- Start of Estimated Payment (Full) [Dev: Ashley] ------------------- */
+#monthly-payment {
+  border: 1px solid red;
+  width: 470px;
+  margin: 2em 0;
+  padding: 1.25em;  
+}
+
+#monthly-payment .wrapper {
+  padding: 0.5em;
+}
+
+#monthly-payment-input {
+  height: 40px;
+  position: relative;
+  width: 210px;
+  font-size: 1.5vw;
+  font-weight: bold;
+  font-family: Copperplate;
+  line-height: 1.75;
+  border: 0;
+}
+
+#monthly-payment-input::-webkit-outer-spin-button,
+#monthly-payment-input::-webkit-inner-spin-button {
+  /*removes the up down cursor in the input box */
+  -webkit-appearance: none;
+}
+
+#monthly-payment label {
+  border-left: 1px solid #cfcfd4;
+  margin-left: 10px;
+  font-size: 1vw;
+}
+
+/* monthly payment slider */
+
+#monthly-slider-container {
+  width: 100%;
+}
+
+#monthly-payment-slider {
+  /* the style for the slider */
+  margin: 15px 0 15px 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 210px;
+  height: 5px;
+  background: grey;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+#monthly-payment-slider:hover {
+  /* indicates that a cursor is over the slider */
+  opacity: 1;
+}
+/*style for the circle that moves up and down the slier */
+#monthly-payment-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: #000099;
+  cursor: pointer;
+}
+
+#monthly-payment-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #000099;
+  cursor: pointer;
+}
+/* --------------End of Estimated Payment (Full)----------------------------*/
+
+/* --------------Start of Estimated Payment (Sticky) [Dev: Ashley] ------------------------*/
+#monthly-payment-sticky-container {
+  border: 1px solid red;
+  width: 440px;
+  margin: 2em 0;
+  padding: 1.25em;
+}
+
+#monthly-payment-sticky .wrapper {
+  padding: 0.5em;
+}
+
+#monthly-payment-sticky-input {
+  height: 40px;
+  position: relative;
+  width: 210px;
+  font-size: 1.5vw;
+  font-weight: bold;
+  font-family: Copperplate;
+  line-height: 1.75;
+  border: 0;
+}
+
+#monthly-payment-sticky-input::-webkit-outer-spin-button,
+#monthly-payment-sticky-input::-webkit-inner-spin-button {
+  /*removes the up down cursor in the input box */
+  -webkit-appearance: none;
+}
+
+#monthly-payment-sticky label {
+  font-size: 1vw;
+}
+/* ---------------End of Estimated Monthly Payment (Sticky)-------------------- */
+
+/* ---------- START of Estimated Monthly Payment (Full) [Dev: Josue] ------------------- */
+
+#mthly-payment-inputs {
+  border: 1px solid red;
+  width: 440px;
+  margin: 2em 0;
+  padding: 1.25em;
+}
+
+#mthly-payment-inputs .wrapper {
+  padding: 0.5em;
+}
+
+#mthly-payment-inputs label {
+  display: block;
+  margin-bottom: 0.25em;
+  color: red;
+}
+
+#mthly-payment-inputs input,
+select {
+  border: 1px solid #cfcfd4;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+}
+/* ---------- END of Estimated Monthly Payment (Full) ------------------- */
+
+

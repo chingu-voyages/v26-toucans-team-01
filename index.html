@@ -23,32 +23,39 @@
         </div>
 
         <!-- Home Price -->
+      <div id="home-price-container">
         <div id="home-price">
-          <span>Home Price</span><br />
-          <input
-            type="number"
-            name="home-price"
-            id="home-price-input"
-            value="0"
-          />
-          <div id="slidecontainer">
+          <div class="wrapper">
             <input
-              type="range"
-              name="home-price-slider"
-              id="home-price-slider"
-              min="8000"
-              max="1000000"
+              type="number"
+              name="home-price"
+              id="home-price-input"
+              placeholder="$0"
             />
+            <label>Home Price</label>
+          
+        </div>
+        <div id="slidecontainer">  
+          <div class="wrapper">                  
+          <input
+            type="range"
+            name="home-price-slider"
+            id="home-price-slider"
+            min="8000"
+            max="1000000"
+          />
           </div>
         </div>
-
+        </div>
+      </div>
         <!-- Down Payment Form -->
         <div id="loan-parameter-inputs">
           <!-- Down Payment -->
-          <div>
+          <div class="wrapper">
             <label for="down-payment-amt">
               Down Payment
-              <input
+            </label>
+            <input
                 type="text"
                 name="down-payment-amt"
                 id="down-payment-amt"
@@ -60,98 +67,123 @@
                 id="down-payment-pct"
                 placeholder="0%"
               />
-            </label>
           </div>
 
           <!-- Length of Loan -->
-          <div>
+          <div class="wrapper">
             <label for="length-of-loan">
               Length of Loan
-              <select name="length-of-loan" id="length-of-loan" />
+            </label>
+            <select name="length-of-loan" id="length-of-loan" />
                 <option value="">--Please choose an option--</option>
                 <option value="30">30 years</option>
                 <option value="20">20 years</option>
                 <option value="15">15 years</option>
                 <option value="10">10 years</option>
               </select>
-            </label>
           </div>
 
           <!-- Interest Rate -->
-          <div>
+          <div class="wrapper">
             <label for="interest-rate">
               Interest Rate
-              <input type="text" name="interest-rate" id="interest-rate" placeholder="0%" />
             </label>
+            <input type="text" name="interest-rate" id="interest-rate" placeholder="0%" />
           </div>
         </div>
 
         <!-- Estimated Monthly Payment (Full) -->
+      <div id="monthly-payment-container">
         <div id="monthly-payment">
-          <p id="monthly-payment-amt">$ 2083 </p>
-          
-          <!-- Slider -->
-          <span>Your Estimated Monthly Payment</span>
-          <input
-            type="range"
-            name="monthly-payment-slider"
-            id="monthly-payment-slider"
-            min="8000"
-            max="1000000"
-          />
+          <div class="wrapper">
+            <input
+              type="number"
+              name="monthly-payment"
+              id="monthly-payment-input"
+              placeholder="$0"
+              readonly
+            />
+            <label>Your Estimated Monthly Payment</label>
         </div>
+        <div id="monthly-slider-container">
+          <div class="wrapper">
+            <input
+              type="range"
+              name="monthly-payment-slider"
+              id="monthly-payment-slider"
+              min="8000"
+              max="1000000"
+            />
+          </div>
+          </div>
+        </div>
+      </div>
 
         <!-- Estimated Monthly Payment (Sticky) -->
+      <div id="monthly-payment-sticky-container">
         <div id="monthly-payment-sticky">
-          <input
-            type="text"
-            name="monthly-payment-sticky"
-            id="monthly-payment-sticky"
-            placeholder="$0"
-          />
-          <span>Your Estimated Monthly Payment</span>
+          <div class="wrapper">
+            <label>Your Estimated Monthly Payment:</label>
+            <input
+              type="number"
+              name="monthly-payment-sticky"
+              id="monthly-payment-sticky-input"
+              placeholder="$0"
+              readonly
+            />
+          </div>
         </div>
-
+      </div>
         <!-- Monthly Payment Graph -->
         <div id="payment-graph">
           <!-- INSERT GRAPH -->
         </div>
 
-        <!-- Down Payment Form -->
-        <div id="payment-components-form">
+        <!-- Monthly Payment Form -->
+        <div id="mthly-payment-inputs">
+          
           <!-- Principal and Interest -->
-          <label for="principal-and-interest">
-            Principal and Interest
+          <div class="wrapper">
+            <label for="principal-and-interest">
+              Principal and Interest  
+            </label>
             <input
               type="text"
               name="principal-and-interest"
               id="principal-and-interest"
             />
-          </label>
+          </div>
 
           <!-- Homeowner's Insurance -->
-          <label for="homeowners-insurance">
-            Homeowner's Insurance
+          <div class="wrapper">
+            <label for="homeowners-insurance">
+              Homeowner's Insurance
+            </label>
             <input
-              type="text"
-              name="homeowners-insurance"
-              id="homeowners-insurance"
+                type="text"
+                name="homeowners-insurance"
+                id="homeowners-insurance"
             />
-          </label>
-
+          </div>
+          
           <!-- Property Tax -->
-          <label for="property-tax">
-            Property Tax
-            <input type="text" name="property-tax" id="property-tax" />
-          </label>
-
+          <div class="wrapper">
+            <label for="property-tax">
+              Property Tax
+            </label>
+            <input type="text" name="property-tax" id="property-tax" />  
+          </div>
+          
           <!-- HOA fees -->
-          <label for="hoa-fees">
-            HOA Fees
+          <div class="wrapper">
+            <label for="hoa-fees">
+              HOA Fees
+            </label>
             <input type="text" name="hoa-fees" id="hoa-fees" />
-          </label>
+          </div>
 
-          <div>Total monthlypayment = <span>$0</span></div>
+          <!-- Total Monthly Payment -->
+          <div class='wrapper'>Total monthly payment = <span>$0</span></div>
         </div>
       </section>
     </main>
