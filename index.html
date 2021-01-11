@@ -45,10 +45,11 @@
         <!-- Down Payment Form -->
         <div id="loan-parameter-inputs">
           <!-- Down Payment -->
-          <div>
+          <div class="wrapper">
             <label for="down-payment-amt">
               Down Payment
-              <input
+            </label>
+            <input
                 type="text"
                 name="down-payment-amt"
                 id="down-payment-amt"
@@ -60,29 +61,28 @@
                 id="down-payment-pct"
                 placeholder="0%"
               />
-            </label>
           </div>
 
           <!-- Length of Loan -->
-          <div>
+          <div class="wrapper">
             <label for="length-of-loan">
               Length of Loan
-              <select name="length-of-loan" id="length-of-loan" />
+            </label>
+            <select name="length-of-loan" id="length-of-loan" />
                 <option value="">--Please choose an option--</option>
                 <option value="30">30 years</option>
                 <option value="20">20 years</option>
                 <option value="15">15 years</option>
                 <option value="10">10 years</option>
               </select>
-            </label>
           </div>
 
           <!-- Interest Rate -->
-          <div>
+          <div class="wrapper">
             <label for="interest-rate">
               Interest Rate
-              <input type="text" name="interest-rate" id="interest-rate" placeholder="0%" />
             </label>
+            <input type="text" name="interest-rate" id="interest-rate" placeholder="0%" />
           </div>
         </div>
 
@@ -124,41 +124,51 @@
           <!-- INSERT GRAPH -->
         </div>
 
-        <!-- Down Payment Form -->
-        <div id="payment-components-form">
+        <!-- Monthly Payment Form -->
+        <div id="mthly-payment-inputs">
+          
           <!-- Principal and Interest -->
-          <label for="principal-and-interest">
-            Principal and Interest
+          <div class="wrapper">
+            <label for="principal-and-interest">
+              Principal and Interest  
+            </label>
             <input
-              type="text"
-              name="principal-and-interest"
-              id="principal-and-interest"
+            type="text"
+            name="principal-and-interest"
+            id="principal-and-interest"
             />
-          </label>
+          </div>
 
           <!-- Homeowner's Insurance -->
-          <label for="homeowners-insurance">
-            Homeowner's Insurance
+          <div class="wrapper">
+            <label for="homeowners-insurance">
+              Homeowner's Insurance
+            </label>
             <input
-              type="text"
-              name="homeowners-insurance"
-              id="homeowners-insurance"
+                type="text"
+                name="homeowners-insurance"
+                id="homeowners-insurance"
             />
-          </label>
-
+          </div>
+          
           <!-- Property Tax -->
-          <label for="property-tax">
-            Property Tax
-            <input type="text" name="property-tax" id="property-tax" />
-          </label>
-
+          <div class="wrapper">
+            <label for="property-tax">
+              Property Tax
+            </label>
+            <input type="text" name="property-tax" id="property-tax" />  
+          </div>
+          
           <!-- HOA fees -->
-          <label for="hoa-fees">
-            HOA Fees
+          <div class="wrapper">
+            <label for="hoa-fees">
+              HOA Fees
+            </label>
             <input type="text" name="hoa-fees" id="hoa-fees" />
-          </label>
+          </div>
 
-          <div>Total monthlypayment = <span>$0</span></div>
+          <!-- Total Monthly Payment -->
+          <div class='wrapper'>Total monthly payment = <span>$0</span></div>
         </div>
       </section>
     </main>
