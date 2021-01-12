@@ -10,6 +10,7 @@
     <header>
       <!-- Logo, Navigation -->
     </header>
+
     <main>
       <!-- Load Content -->
       <section>
@@ -50,8 +51,8 @@
         <!-- Down Payment Form -->
         <div id="loan-parameter-inputs">
           <!-- Down Payment -->
-          <div class="wrapper">
-            <label for="down-payment-amt">
+          <div class="wrapper grid-1">
+            <label for="down-payment-amt" id="down-payment-label">
               Down Payment
             </label>
             <input
@@ -116,7 +117,6 @@
           </div>
           </div>
         </div>
-          
       </div>
 
         <!-- Estimated Monthly Payment (Sticky) -->
@@ -141,9 +141,13 @@
 
         <!-- Monthly Payment Form -->
         <div id="mthly-payment-inputs">
-          
+          <div class="wrapper">
+            <h3>How is my monthly payment calculated?</h3>
+          </div>
+
           <!-- Principal and Interest -->
           <div class="wrapper">
+            
             <label for="principal-and-interest">
               Principal and Interest  
             </label>
@@ -156,10 +160,11 @@
 
           <!-- Homeowner's Insurance -->
           <div class="wrapper">
+            
             <label for="homeowners-insurance">
               Homeowner's Insurance
             </label>
-            <input
+            +<input
                 type="text"
                 name="homeowners-insurance"
                 id="homeowners-insurance"
@@ -168,23 +173,26 @@
           
           <!-- Property Tax -->
           <div class="wrapper">
+            
             <label for="property-tax">
               Property Tax
             </label>
-            <input type="text" name="property-tax" id="property-tax" />  
+            +<input type="text" name="property-tax" id="property-tax" />  
           </div>
           
           <!-- HOA fees -->
           <div class="wrapper">
+            
             <label for="hoa-fees">
               HOA Fees
             </label>
-            <input type="text" name="hoa-fees" id="hoa-fees" />
+            +<input type="text" name="hoa-fees" id="hoa-fees" />
           </div>
 
           <!-- Total Monthly Payment -->
           <div class='wrapper'>Total monthly payment = <span>$0</span></div>
         </div>
+
       </section>
     </main>
     <footer>

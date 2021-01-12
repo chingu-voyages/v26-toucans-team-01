@@ -14,7 +14,7 @@ body {
 /* ---------- Start of HOME PRICE [Dev: Ashley] ---------- */
 
 /* home input box style */
-#home-price-container .wrapper{
+#home-price-container .wrapper {
   padding: 0.5em;
 }
 #home-price-input {
@@ -96,7 +96,7 @@ body {
 
 #loan-parameter-inputs {
   border: 1px solid red;
-  width: 440px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -105,10 +105,32 @@ body {
   padding: 0.5em;
 }
 
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    'label  label'
+    'amt    pct';
+}
+
+#down-payment-label {
+  grid-area: label;
+}
+
+#down-payment-amt {
+  grid-area: amt;
+  width: 100%;
+}
+
+#down-payment-pct {
+  grid-area: pct;
+  width: 50%;
+}
+
 #loan-parameter-inputs label {
   display: block;
   margin-bottom: 0.25em;
-  color: red;
 }
 
 #loan-parameter-inputs input,
@@ -126,7 +148,7 @@ select {
   border: 1px solid red;
   width: 470px;
   margin: 2em 0;
-  padding: 1.25em;  
+  padding: 1.25em;
 }
 
 #monthly-payment .wrapper {
@@ -238,7 +260,7 @@ select {
 
 #mthly-payment-inputs {
   border: 1px solid red;
-  width: 440px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -250,7 +272,6 @@ select {
 #mthly-payment-inputs label {
   display: block;
   margin-bottom: 0.25em;
-  color: red;
 }
 
 #mthly-payment-inputs input,
@@ -260,6 +281,13 @@ select {
   font-size: 1rem;
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
 }
+
+#mthly-payment-inputs .legend {
+  border: 1px solid grey;
+}
+
+#mthly-payment-inputs .legend:nth-child(2) {
+  color: red;
+}
+
 /* ---------- END of Estimated Monthly Payment (Full) ------------------- */
-
-
