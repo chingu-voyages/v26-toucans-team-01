@@ -14,18 +14,16 @@ body {
 /* ---------- Start of HOME PRICE [Dev: Ashley] ---------- */
 
 /* home input box style */
-#home-price-container .wrapper{
+#home-price-container .wrapper {
   padding: 0.5em;
 }
 #home-price-input {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 1.5vw;
-  font-weight: bold;
-  font-family: Copperplate;
+  font-size: 1rem;
   line-height: 1.75;
-  border: 0;
+  border: 1px solid #cfcfd4
 }
 
 #home-price-input::-webkit-outer-spin-button,
@@ -35,15 +33,14 @@ body {
 }
 
 #home-price label {
-  border-left: 1px solid #cfcfd4;
-  margin-left: 10px;
+  display: block; 
 }
 
 /* home price slider */
 
 #home-price-container {
   border: 1px solid red;
-  width: 440px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -96,7 +93,7 @@ body {
 
 #loan-parameter-inputs {
   border: 1px solid red;
-  width: 440px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -105,10 +102,32 @@ body {
   padding: 0.5em;
 }
 
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    'label  label'
+    'amt    pct';
+}
+
+#down-payment-label {
+  grid-area: label;
+}
+
+#down-payment-amt {
+  grid-area: amt;
+  width: 100%;
+}
+
+#down-payment-pct {
+  grid-area: pct;
+  width: 50%;
+}
+
 #loan-parameter-inputs label {
   display: block;
   margin-bottom: 0.25em;
-  color: red;
 }
 
 #loan-parameter-inputs input,
@@ -124,9 +143,9 @@ select {
 /* ---------- Start of Estimated Payment (Full) [Dev: Ashley] ------------------- */
 #monthly-payment {
   border: 1px solid red;
-  width: 470px;
+  width: 100%;
   margin: 2em 0;
-  padding: 1.25em;  
+  padding: 1.25em;
 }
 
 #monthly-payment .wrapper {
@@ -137,11 +156,9 @@ select {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 1.5vw;
-  font-weight: bold;
-  font-family: Copperplate;
+  font-size: 1rem;
   line-height: 1.75;
-  border: 0;
+  border: 1px solid #cfcfd4
 }
 
 #monthly-payment-input::-webkit-outer-spin-button,
@@ -151,9 +168,7 @@ select {
 }
 
 #monthly-payment label {
-  border-left: 1px solid #cfcfd4;
-  margin-left: 10px;
-  font-size: 1vw;
+  display: block;
 }
 
 /* monthly payment slider */
@@ -203,7 +218,7 @@ select {
 /* --------------Start of Estimated Payment (Sticky) [Dev: Ashley] ------------------------*/
 #monthly-payment-sticky-container {
   border: 1px solid red;
-  width: 440px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -216,11 +231,9 @@ select {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 1.5vw;
-  font-weight: bold;
-  font-family: Copperplate;
+  font-size: 1rem;
   line-height: 1.75;
-  border: 0;
+  border: 1px solid #cfcfd4
 }
 
 #monthly-payment-sticky-input::-webkit-outer-spin-button,
@@ -230,7 +243,7 @@ select {
 }
 
 #monthly-payment-sticky label {
-  font-size: 1vw;
+  display: block;
 }
 /* ---------------End of Estimated Monthly Payment (Sticky)-------------------- */
 
@@ -238,7 +251,7 @@ select {
 
 #mthly-payment-inputs {
   border: 1px solid red;
-  width: 440px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -250,7 +263,6 @@ select {
 #mthly-payment-inputs label {
   display: block;
   margin-bottom: 0.25em;
-  color: red;
 }
 
 #mthly-payment-inputs input,
@@ -260,6 +272,13 @@ select {
   font-size: 1rem;
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
 }
+
+#mthly-payment-inputs .legend {
+  border: 1px solid grey;
+}
+
+#mthly-payment-inputs .legend:nth-child(2) {
+  color: red;
+}
+
 /* ---------- END of Estimated Monthly Payment (Full) ------------------- */
-
-

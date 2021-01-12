@@ -26,14 +26,13 @@
       <div id="home-price-container">
         <div id="home-price">
           <div class="wrapper">
+            <label>Home Price</label>
             <input
               type="number"
               name="home-price"
               id="home-price-input"
               placeholder="$0"
             />
-            <label>Home Price</label>
-          
         </div>
         <div id="slidecontainer">  
           <div class="wrapper">                  
@@ -51,8 +50,8 @@
         <!-- Down Payment Form -->
         <div id="loan-parameter-inputs">
           <!-- Down Payment -->
-          <div class="wrapper">
-            <label for="down-payment-amt">
+          <div class="wrapper grid-1">
+            <label for="down-payment-amt" id="down-payment-label">
               Down Payment
             </label>
             <input
@@ -96,14 +95,14 @@
       <div id="monthly-payment-container">
         <div id="monthly-payment">
           <div class="wrapper">
+            <label>Your Estimated Monthly Payment</label>
             <input
               type="number"
               name="monthly-payment"
               id="monthly-payment-input"
               placeholder="$0"
               readonly
-            />
-            <label>Your Estimated Monthly Payment</label>
+            /> 
         </div>
         <div id="monthly-slider-container">
           <div class="wrapper">
@@ -141,9 +140,13 @@
 
         <!-- Monthly Payment Form -->
         <div id="mthly-payment-inputs">
-          
+          <div class="wrapper">
+            <h3>How is my monthly payment calculated?</h3>
+          </div>
+
           <!-- Principal and Interest -->
           <div class="wrapper">
+            
             <label for="principal-and-interest">
               Principal and Interest  
             </label>
@@ -156,10 +159,11 @@
 
           <!-- Homeowner's Insurance -->
           <div class="wrapper">
+            
             <label for="homeowners-insurance">
               Homeowner's Insurance
             </label>
-            <input
+            +<input
                 type="text"
                 name="homeowners-insurance"
                 id="homeowners-insurance"
@@ -168,23 +172,26 @@
           
           <!-- Property Tax -->
           <div class="wrapper">
+            
             <label for="property-tax">
               Property Tax
             </label>
-            <input type="text" name="property-tax" id="property-tax" />  
+            +<input type="text" name="property-tax" id="property-tax" />  
           </div>
           
           <!-- HOA fees -->
           <div class="wrapper">
+            
             <label for="hoa-fees">
               HOA Fees
             </label>
-            <input type="text" name="hoa-fees" id="hoa-fees" />
+            +<input type="text" name="hoa-fees" id="hoa-fees" />
           </div>
 
           <!-- Total Monthly Payment -->
           <div class='wrapper'>Total monthly payment = <span>$0</span></div>
         </div>
+
       </section>
     </main>
     <footer>
