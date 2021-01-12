@@ -21,11 +21,9 @@ body {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 1.5vw;
-  font-weight: bold;
-  font-family: Copperplate;
+  font-size: 1rem;
   line-height: 1.75;
-  border: 0;
+  border: 1px solid #cfcfd4
 }
 
 #home-price-input::-webkit-outer-spin-button,
@@ -35,15 +33,14 @@ body {
 }
 
 #home-price label {
-  border-left: 1px solid #cfcfd4;
-  margin-left: 10px;
+  display: block; 
 }
 
 /* home price slider */
 
 #home-price-container {
   border: 1px solid red;
-  width: 440px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -146,7 +143,7 @@ select {
 /* ---------- Start of Estimated Payment (Full) [Dev: Ashley] ------------------- */
 #monthly-payment {
   border: 1px solid red;
-  width: 470px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -159,11 +156,9 @@ select {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 1.5vw;
-  font-weight: bold;
-  font-family: Copperplate;
+  font-size: 1rem;
   line-height: 1.75;
-  border: 0;
+  border: 1px solid #cfcfd4
 }
 
 #monthly-payment-input::-webkit-outer-spin-button,
@@ -173,9 +168,7 @@ select {
 }
 
 #monthly-payment label {
-  border-left: 1px solid #cfcfd4;
-  margin-left: 10px;
-  font-size: 1vw;
+  display: block;
 }
 
 /* monthly payment slider */
@@ -225,7 +218,7 @@ select {
 /* --------------Start of Estimated Payment (Sticky) [Dev: Ashley] ------------------------*/
 #monthly-payment-sticky-container {
   border: 1px solid red;
-  width: 440px;
+  width: 100%;
   margin: 2em 0;
   padding: 1.25em;
 }
@@ -238,11 +231,9 @@ select {
   height: 40px;
   position: relative;
   width: 210px;
-  font-size: 1.5vw;
-  font-weight: bold;
-  font-family: Copperplate;
+  font-size: 1rem;
   line-height: 1.75;
-  border: 0;
+  border: 1px solid #cfcfd4
 }
 
 #monthly-payment-sticky-input::-webkit-outer-spin-button,
@@ -252,7 +243,7 @@ select {
 }
 
 #monthly-payment-sticky label {
-  font-size: 1vw;
+  display: block;
 }
 /* ---------------End of Estimated Monthly Payment (Sticky)-------------------- */
 
