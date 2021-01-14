@@ -11,7 +11,7 @@ var N; //number of payments months
 //these calculations need to run when the following elements change:
 // home price, down payment amount, interest rate, length of loan
 function updateInputs() {
-  H = parseFloat(document.getElementById("home-price").value);
+  H = parseFloat(document.getElementById("home-price-input").value);
   DA = parseFloat(document.getElementById("down-payment-amt").value);
   P = H-DA;
   I = parseFloat(document.getElementById("interest-rate").value) / 100 / 12;
@@ -27,7 +27,7 @@ function updateInputs() {
 //these calculations need to run when the following elements change:
 // monthly payment
 function updateMP() {
-    M = parseFloat(document.getElementById("monthly-payment").value);
+    M = parseFloat(document.getElementById("monthly-payment-input").value);
     if (M >0) {
       calcHouseValue(M, N, I, DA);
       DP = calcDownPayPercent(H, DA);
@@ -44,12 +44,12 @@ function updateDP() {
 
 function calcMonthlyPayment(p, n, i) {
   M = p * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
-  document.getElementById("monthly-payment").value = M.toFixed(2);
+  document.getElementById("monthly-payment-input").value = M.toFixed(2);
 }
 
 function calcHouseValue(m, n, i, da) {
   H = (m / i / (Math.pow(1 + i, n))) *  (Math.pow(1 + i, n) - 1) + da;
-  document.getElementById("home-price").value = H.toFixed(2);
+  document.getElementById("home-price-input").value = H.toFixed(2);
 }
 
 function calcDownPayAmount(h, dp) {
