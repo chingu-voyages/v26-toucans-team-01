@@ -11,24 +11,26 @@ var N; //number of payments months
 //these calculations need to run when the following elements change:
 // home price, down payment amount, interest rate, length of loan
 function updateInputs() {
-  H = parseFloat(document.getElementById("home-price-input").value);
-  DA = parseFloat(document.getElementById("down-payment-amt").value);
+  H = parseFloat(homePriceInput.value);
+  DA = parseFloat(downPaymentAmountInput.value);
   P = H-DA;
-  I = parseFloat(document.getElementById("interest-rate").value) / 100 / 12;
-  N = parseInt(document.getElementById("length-of-loan").value) * 12;
+  I = parseFloat(interestRateInput.value) / 100 / 12;
+  N = parseInt(loanLengthInput.value) * 12;
 
   //need to check H so that we do not attempt to divide by zero
   if (H > 0) {
     calcMonthlyPayment(P, N, I);
     calcDownPayPercent(H, DA);
+  } else {
+    monthlyPaymentInput.value = 0.00;
   }
 }
 
 //these calculations need to run when the following elements change:
 // monthly payment
 function updateMP() {
-    M = parseFloat(document.getElementById("monthly-payment-input").value);
-    if (M >0) {
+    M = parseFloat(monthlyPaymentInput.value);
+    if (M > 0) {
       calcHouseValue(M, N, I, DA);
       DP = calcDownPayPercent(H, DA);
     }
@@ -37,29 +39,30 @@ function updateMP() {
 //these calculations need to run when the following elements change:
 // down payment percentage
 function updateDP() {
-  DP = parseFloat(document.getElementById("down-payment-pct").value);
+  DP = parseFloat(downPaymentPercentInput.value);
   calcDownPayAmount(H, DP);
   updateInputs();
 }
 
 function calcMonthlyPayment(p, n, i) {
   M = p * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
-  document.getElementById("monthly-payment-input").value = M.toFixed(2);
+  monthlyPaymentInput.value  = M ?  M.toFixed(2) : 0.00;
+
 }
 
 function calcHouseValue(m, n, i, da) {
   H = (m / i / (Math.pow(1 + i, n))) *  (Math.pow(1 + i, n) - 1) + da;
-  document.getElementById("home-price-input").value = H.toFixed(2);
+  homePriceInput.value = H ? H.toFixed(2) : 0.00;
 }
 
 function calcDownPayAmount(h, dp) {
   DA = h*(dp/100);
-  document.getElementById("down-payment-amt").value = DA.toFixed(2);
+  downPaymentAmountInput.value = DA ? DA.toFixed(2) : 0.00;
 }
 
 function calcDownPayPercent(h, da) {
   DP = (da/h)*100;
-  document.getElementById("down-payment-pct").value = DP.toFixed(3);
+  downPaymentPercentInput.value = DP ? DP.toFixed(3) : 0.00;
 }
 
 function chartResults() {
