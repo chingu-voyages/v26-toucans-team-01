@@ -79,6 +79,7 @@ const homePriceSliderInput = document.getElementById('home-price-slider');
 homePriceInput.addEventListener('change',updateInputs);
 homePriceSliderInput.addEventListener('change',function() {
   homePriceInput.value = homePriceSliderInput.value;
+  updateInputs();
 });
 
 //down payment
@@ -105,6 +106,7 @@ const monthlyPaymentStickyInput = document.getElementById('monthly-payment-stick
 monthlyPaymentInput.addEventListener('change',updateMP);
 monthlyPaymentSliderInput.addEventListener('change',function() {
   monthlyPaymentInput.value = monthlyPaymentSliderInput.value;
+  updateMP();
 });
 monthlyPaymentStickyInput.addEventListener('change',updateMP);
 
