@@ -11,6 +11,17 @@ body {
   background-color: #fff;
 }
 
+/* ----------Animated House -------------- */
+
+#animated-house {
+  border: 1px solid red;
+  width: 100%;
+  margin: 2em 0;
+  padding: 1.25em; 
+}
+
+/* ----------End of Animated House --------------- */
+
 /* ---------- Start of HOME PRICE [Dev: Ashley] ---------- */
 
 /* home input box style */
@@ -246,6 +257,14 @@ select {
   display: block;
 }
 /* ---------------End of Estimated Monthly Payment (Sticky)-------------------- */
+/* ---------------START of Payment Graph---------------------- */
+
+#payment-graph {
+  border: 1px solid red;
+  width: 100%;
+  margin: 2em 0;
+  padding: 1.25em;
+}
 
 /* ---------- START of Estimated Monthly Payment (Full) [Dev: Josue] ------------------- */
 
