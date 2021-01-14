@@ -68,12 +68,12 @@ function chartResults() {
 
 // Event Listeners for user input
 
-//variables to hold input elements followed by event listener 
+//variables to hold input elements followed by event listener
 //home price
 const homePriceInput = document.getElementById('home-price-input');
 const homePriceSliderInput = document.getElementById('home-price-slider');
 
-homePriceInput.addEventListener('change',eventHandler);
+homePriceInput.addEventListener('change',updateInputs);
 homePriceSliderInput.addEventListener('change',function() {
   homePriceInput.value = homePriceSliderInput.value;
 });
@@ -82,14 +82,16 @@ homePriceSliderInput.addEventListener('change',function() {
 const downPaymentAmountInput = document.getElementById('down-payment-amt');
 const downPaymentPercentInput = document.getElementById('down-payment-pct');
 
-downPaymentAmountInput.addEventListener('change',eventHandler);
-downPaymentPercentInput.addEventListener('change',eventHandler);
+downPaymentAmountInput.addEventListener('change',updateInputs);
+downPaymentPercentInput.addEventListener('change',updateDP);
+
 //loan length and interest
 const loanLengthInput = document.getElementById('length-of-loan');
 const interestRateInput = document.getElementById('interest-rate');
 
-loanLengthInput.addEventListener('change',eventHandler);
-interestRateInput.addEventListener('change',eventHandler);
+loanLengthInput.addEventListener('change',updateInputs);
+interestRateInput.addEventListener('change',updateInputs);
+
 // payment
 const monthlyPaymentContainer = document.getElementById('monthly-payment-container');
 const monthlyPaymentInputContainer = document.getElementById('monthly-payment');
@@ -97,11 +99,12 @@ const monthlyPaymentInput = document.getElementById('monthly-payment-input');
 const monthlyPaymentSliderInput = document.getElementById('monthly-payment-slider');
 const monthlyPaymentStickyInput = document.getElementById('monthly-payment-sticky');
 
-monthlyPaymentInput.addEventListener('change',eventHandler);
+monthlyPaymentInput.addEventListener('change',updateMP);
 monthlyPaymentSliderInput.addEventListener('change',function() {
   monthlyPaymentInput.value = monthlyPaymentSliderInput.value;
 });
-monthlyPaymentStickyInput.addEventListener('change',eventHandler);
+monthlyPaymentStickyInput.addEventListener('change',updateMP);
+
 //
 const principleInterestInput = document.getElementById('principal-and-interest');
 const homeownerInsuranceInput = document.getElementById('homeowners-insurance');
@@ -115,14 +118,7 @@ propertyTaxInput.addEventListener('change',eventHandler);
 hoaFeeInput.addEventListener('change',eventHandler);
 
 
-// event hander to test input return value
+// event handler to test input return value
 function eventHandler(event) {
       console.log(event.target.value);
 }
-
-
-
-
-
-
-
