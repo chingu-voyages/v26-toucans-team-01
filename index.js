@@ -2,10 +2,10 @@ console.log('Connected');
 
 var H; //home price
 var DA; //down payment amount
-var DP; //down payment percentage
+var DP = document.getElementById('down-payment-amt').value; //down payment percentage
 var M; //monthly mortgage payment
 var P; //principle / initial amount borrowed
-var I; //monthly interest rate
+var I = document.getElementById('interest-rate').value; //monthly interest rate
 var N; //number of payments months
 
 //these calculations need to run when the following elements change:
@@ -18,6 +18,7 @@ function updateInputs() {
   N = parseInt(loanLengthInput.value) * 12;
 
   //need to check H so that we do not attempt to divide by zero
+  console.log(P);
   if (H > 0) {
     calcMonthlyPayment(P, N, I);
     calcDownPayPercent(H, DA);
@@ -45,9 +46,14 @@ function updateDP() {
 }
 
 function calcMonthlyPayment(p, n, i) {
-  M = p * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
-  monthlyPaymentInput.value  = M ?  M.toFixed(2) : 0.00;
+  // need to check interest rate to not get 0/0
+  if (i > 0) {
+    M = p * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+  } else {
+    M = p / n;
+  }
 
+  monthlyPaymentInput.value  = M ?  M.toFixed(0) : 0.00;
 }
 
 function calcHouseValue(m, n, i, da) {
