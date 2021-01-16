@@ -8,6 +8,9 @@ var P; //principle / initial amount borrowed
 var I = document.getElementById('interest-rate').value; //monthly interest rate
 var N; //number of payments months
 
+const monthlyPaymentStickyInput = document.getElementById('monthly-payment-sticky-input');
+const principleInterestInput = document.getElementById('principal-and-interest');
+
 //these calculations need to run when the following elements change:
 // home price, down payment amount, interest rate, length of loan
 function updateInputs() {
@@ -27,7 +30,7 @@ function updateInputs() {
   }
 }
 
-//these calculations need to run when the following elements change:
+// these calculations need to run when the following elements change:
 // monthly payment
 function updateMP() {
     M = parseFloat(monthlyPaymentInput.value);
@@ -54,6 +57,8 @@ function calcMonthlyPayment(p, n, i) {
   }
 
   monthlyPaymentInput.value  = M ?  M.toFixed(0) : 0.00;
+  monthlyPaymentStickyInput.value = monthlyPaymentInput.value;
+  principleInterestInput.value = M; 
 }
 
 function calcHouseValue(m, n, i, da) {
@@ -107,7 +112,9 @@ const monthlyPaymentContainer = document.getElementById('monthly-payment-contain
 const monthlyPaymentInputContainer = document.getElementById('monthly-payment');
 const monthlyPaymentInput = document.getElementById('monthly-payment-input');
 const monthlyPaymentSliderInput = document.getElementById('monthly-payment-slider');
-const monthlyPaymentStickyInput = document.getElementById('monthly-payment-sticky');
+const monthlyPaymentStickyContainer = document.getElementById('monthly-payment-sticky-container');
+const monthlyPaymentSticky = document.getElementById('monthly-payment-sticky');
+// const monthlyPaymentStickyInput = document.getElementById('monthly-payment-sticky-input');
 
 monthlyPaymentInput.addEventListener('change',updateMP);
 monthlyPaymentSliderInput.addEventListener('change',function() {
@@ -117,13 +124,15 @@ monthlyPaymentSliderInput.addEventListener('change',function() {
 monthlyPaymentStickyInput.addEventListener('change',updateMP);
 
 //
-const principleInterestInput = document.getElementById('principal-and-interest');
+// const principleInterestInput = document.getElementById('principal-and-interest');
 const homeownerInsuranceInput = document.getElementById('homeowners-insurance');
 const propertyTaxInput = document.getElementById('property-tax');
 const hoaFeeInput = document.getElementById('hoa-fees');
 
-principleInterestInput.addEventListener('change',eventHandler);
-homeownerInsuranceInput.addEventListener('change',eventHandler);
+principleInterestInput.addEventListener('change', eventHandler);
+homeownerInsuranceInput.addEventListener('change', function() {
+  updateMP();
+});
 propertyTaxInput.addEventListener('change',eventHandler);
 propertyTaxInput.addEventListener('change',eventHandler);
 hoaFeeInput.addEventListener('change',eventHandler);
