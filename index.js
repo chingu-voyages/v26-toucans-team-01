@@ -14,6 +14,7 @@ const principleInterestInput = document.getElementById('principal-and-interest')
 const homeownerInsuranceInput = document.getElementById('homeowners-insurance');
 const propertyTaxInput = document.getElementById('property-tax');
 const hoaFeeInput = document.getElementById('hoa-fees');
+const totalMonthlyPayment = document.getElementById('total-monthly-payment');
 
 //Initialize derived elements
 var calculatedPrinciple = 0;// = homePriceInput.value - downPaymentAmountInput.value;
@@ -76,6 +77,7 @@ function calculateMonthlyPayment(principleAndInterest, addCosts){
   monthlyPaymentInput.value = parseFloat(parseFloat(principleAndInterest) + parseFloat(addCosts)).toFixed(2);
   monthlyPaymentSliderInput.value = monthlyPaymentInput.value
   monthlyPaymentStickyInput.value = monthlyPaymentInput.value;
+  totalMonthlyPayment.innerHTML = monthlyPaymentInput.value;
   return monthlyPaymentInput.value;
 }
 
@@ -209,6 +211,7 @@ monthlyPaymentInput.addEventListener('input',function() {
   let updatedMonthlyPayment = parseFloat(monthlyPaymentInput.value).toFixed(2);
   monthlyPaymentSliderInput.value = updatedMonthlyPayment;
   monthlyPaymentStickyInput.value = updatedMonthlyPayment;
+  totalMonthlyPayment.innerHTML = updatedMonthlyPayment;
   calculateHomePrice(updatedMonthlyPayment, calculatedLoanLength, calculatedInterest, downPaymentAmountInput.value);
   deriveLoanVariablesAfterUpdate(homePriceInput.value, downPaymentAmountInput.value, interestRateInput.value, loanLengthInput.value);
   calculateDownPayPercent(homePriceInput.value, downPaymentAmountInput.value);

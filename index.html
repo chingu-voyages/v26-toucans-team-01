@@ -19,7 +19,7 @@
 
     <div class="grid-container">
 
-  
+
       <div id="animated-house" class="item-1">
           <!-- Animated House -->
       </div>
@@ -36,13 +36,13 @@
               placeholder="$0"
             />
         </div>
-        <div id="slidecontainer">  
-          <div class="wrapper">                  
+        <div id="slidecontainer">
+          <div class="wrapper">
           <input
             type="range"
             name="home-price-slider"
             id="home-price-slider"
-            min="8000"
+            min="50000"
             max="1000000"
           />
           </div>
@@ -105,7 +105,7 @@
               id="monthly-payment-input"
               placeholder="$0"
               readonly
-            /> 
+            />
         </div>
         <div id="monthly-slider-container">
           <div class="wrapper">
@@ -113,8 +113,8 @@
               type="range"
               name="monthly-payment-slider"
               id="monthly-payment-slider"
-              min="8000"
-              max="1000000"
+              min="0"
+              max="10000"
             />
           </div>
           </div>
@@ -149,9 +149,9 @@
 
           <!-- Principal and Interest -->
           <div class="wrapper">
-            
+
             <label for="principal-and-interest">
-              Principal and Interest  
+              Principal and Interest
             </label>
             <input
               type="text"
@@ -162,7 +162,7 @@
 
           <!-- Homeowner's Insurance -->
           <div class="wrapper">
-            
+
             <label for="homeowners-insurance">
               Homeowner's Insurance
             </label>
@@ -172,19 +172,19 @@
                 id="homeowners-insurance"
             />
           </div>
-          
+
           <!-- Property Tax -->
           <div class="wrapper">
-            
+
             <label for="property-tax">
               Property Tax
             </label>
-            +<input type="text" name="property-tax" id="property-tax" />  
+            +<input type="text" name="property-tax" id="property-tax" />
           </div>
-          
+
           <!-- HOA fees -->
           <div class="wrapper">
-            
+
             <label for="hoa-fees">
               HOA Fees
             </label>
@@ -192,12 +192,12 @@
           </div>
 
           <!-- Total Monthly Payment -->
-          <div class='wrapper'>Total monthly payment = <span>$0</span></div>
+          <div class='wrapper'>Total monthly payment = <span id="total-monthly-payment">$0</span></div>
       </div>
 
     </div>
 
-    
+
     </main>
     <footer>
       <!-- Links, Social Media -->
