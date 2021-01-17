@@ -11,42 +11,6 @@ body {
   background-color: #fff;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-areas:
-    "an an mnly mnly mnly mnly sty sty"
-    "hm hm . . . . . ."
-    "ln ln gph gph gph inp inp inp"
-}
-
-.item-1 {
-  grid-area: an;
-}
-
-.item-2 {
-  grid-area: hm;
-}
-
-.item-3 {
-  grid-area: ln;
-}
-
-.item-4 {
-  grid-area: mnly;
-}
-
-.item-5 {
-  grid-area: sty;
-}
-
-.item-6 {
-  grid-area: gph;
-}
-
-.item-7 {
-  grid-area: inp;
-}
 /* ---------- Start of Animated House [Dev: Ashley]------- */
 
 #animated-house {
@@ -68,7 +32,7 @@ body {
   width: 210px;
   font-size: 1rem;
   line-height: 1.75;
-  border: 1px solid #cfcfd4
+  border: 1px solid #cfcfd4;
 }
 
 #home-price-input::-webkit-outer-spin-button,
@@ -78,7 +42,7 @@ body {
 }
 
 #home-price label {
-  display: block; 
+  display: block;
 }
 
 /* home price slider */
@@ -200,7 +164,7 @@ select {
   width: 210px;
   font-size: 1rem;
   line-height: 1.75;
-  border: 1px solid #cfcfd4
+  border: 1px solid #cfcfd4;
 }
 
 #monthly-payment-input::-webkit-outer-spin-button,
@@ -274,7 +238,7 @@ select {
   width: 210px;
   font-size: 1rem;
   line-height: 1.75;
-  border: 1px solid #cfcfd4
+  border: 1px solid #cfcfd4;
 }
 
 #monthly-payment-sticky-input::-webkit-outer-spin-button,
@@ -329,3 +293,42 @@ select {
 }
 
 /* ---------- END of Estimated Monthly Payment (Full) ------------------- */
+
+@media screen and (min-width: 1135px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      'an an mnly mnly mnly mnly sty sty'
+      'hm hm . . . . . .'
+      'ln ln gph gph gph inp inp inp';
+  }
+
+  .item-1 {
+    grid-area: an;
+  }
+
+  .item-2 {
+    grid-area: hm;
+  }
+
+  .item-3 {
+    grid-area: ln;
+  }
+
+  .item-4 {
+    grid-area: mnly;
+  }
+
+  .item-5 {
+    grid-area: sty;
+  }
+
+  .item-6 {
+    grid-area: gph;
+  }
+
+  .item-7 {
+    grid-area: inp;
+  }
+}
