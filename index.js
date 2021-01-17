@@ -1,5 +1,6 @@
 console.log('Connected');
 
+<<<<<<< HEAD
 //Get input elements
 const homePriceInput = document.getElementById('home-price-input');
 const homePriceSliderInput = document.getElementById('home-price-slider');
@@ -31,12 +32,40 @@ function calculateDownPayPercent(homePrice, downPaymentAmount) {
   //check homePrice to avoid divide by zero error
   if (homePrice > 0) {
     downPaymentPercentInput.value = parseFloat((downPaymentAmount/homePrice)*100).toFixed(3);
+=======
+var H; //home price
+var DA; //down payment amount
+var DP = document.getElementById('down-payment-amt').value; //down payment percentage
+var M; //monthly mortgage payment
+var P; //principle / initial amount borrowed
+var I = document.getElementById('interest-rate').value; //monthly interest rate
+var N; //number of payments months
+
+const monthlyPaymentStickyInput = document.getElementById('monthly-payment-sticky-input');
+const principleInterestInput = document.getElementById('principal-and-interest');
+
+//these calculations need to run when the following elements change:
+// home price, down payment amount, interest rate, length of loan
+function updateInputs() {
+  H = parseFloat(homePriceInput.value);
+  DA = parseFloat(downPaymentAmountInput.value);
+  P = H-DA;
+  I = parseFloat(interestRateInput.value) / 100 / 12;
+  N = parseInt(loanLengthInput.value) * 12;
+
+  //need to check H so that we do not attempt to divide by zero
+  console.log(P);
+  if (H > 0) {
+    calcMonthlyPayment(P, N, I);
+    calcDownPayPercent(H, DA);
+>>>>>>> d5b603a6f02c9eb04a5303db762abe8ecb3caece
   } else {
     downPaymentPercentInput.value = 0.000;
   }
   return downPaymentPercentInput.value;
 }
 
+<<<<<<< HEAD
 /**
  * Calculate and update value of principal-and-interest
  *
@@ -46,6 +75,16 @@ function calculateDownPayPercent(homePrice, downPaymentAmount) {
 function calculateDownPayAmount(homePrice, downPaymentPercent) {
   downPaymentAmountInput.value = parseFloat(homePrice*(downPaymentPercent/100)).toFixed(2);
   return downPaymentAmountInput.value;
+=======
+// these calculations need to run when the following elements change:
+// monthly payment
+function updateMP() {
+    M = parseFloat(monthlyPaymentInput.value);
+    if (M > 0) {
+      calcHouseValue(M, N, I, DA);
+      DP = calcDownPayPercent(H, DA);
+    }
+>>>>>>> d5b603a6f02c9eb04a5303db762abe8ecb3caece
 }
 
 /**
@@ -66,6 +105,7 @@ function calculatePrincipleAndInterest(calcPrinciple, calcLoanLength, calcIntere
   return principleInterestInput.value;
 }
 
+<<<<<<< HEAD
 /**
  * Calculate and update value of monthly-payment-input (including slider and sticky)
  *
@@ -77,6 +117,11 @@ function calculateMonthlyPayment(principleAndInterest, addCosts){
   monthlyPaymentSliderInput.value = monthlyPaymentInput.value
   monthlyPaymentStickyInput.value = monthlyPaymentInput.value;
   return monthlyPaymentInput.value;
+=======
+  monthlyPaymentInput.value  = M ?  M.toFixed(0) : 0.00;
+  monthlyPaymentStickyInput.value = monthlyPaymentInput.value;
+  principleInterestInput.value = M; 
+>>>>>>> d5b603a6f02c9eb04a5303db762abe8ecb3caece
 }
 
 /**
@@ -185,6 +230,7 @@ downPaymentPercentInput.addEventListener('input',function() {
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
 
+<<<<<<< HEAD
 // Length of Loan --> Principal+Interest; Monthly Payment
 loanLengthInput.addEventListener('input',function() {
   checkForUndefined();
@@ -193,6 +239,16 @@ loanLengthInput.addEventListener('input',function() {
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
+=======
+// payment
+const monthlyPaymentContainer = document.getElementById('monthly-payment-container');
+const monthlyPaymentInputContainer = document.getElementById('monthly-payment');
+const monthlyPaymentInput = document.getElementById('monthly-payment-input');
+const monthlyPaymentSliderInput = document.getElementById('monthly-payment-slider');
+const monthlyPaymentStickyContainer = document.getElementById('monthly-payment-sticky-container');
+const monthlyPaymentSticky = document.getElementById('monthly-payment-sticky');
+// const monthlyPaymentStickyInput = document.getElementById('monthly-payment-sticky-input');
+>>>>>>> d5b603a6f02c9eb04a5303db762abe8ecb3caece
 
 // Interest Rate -->  Principal+Interest; Monthly Payment
 interestRateInput.addEventListener('input',function() {
@@ -203,6 +259,7 @@ interestRateInput.addEventListener('input',function() {
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
 
+<<<<<<< HEAD
 // Monthly Payment --> Home Price; Down Payment Percent; Principal+Interest; Property Tax
 monthlyPaymentInput.addEventListener('input',function() {
   checkForUndefined();
@@ -245,6 +302,21 @@ hoaFeeInput.addEventListener('input',function() {
   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput.value, propertyTaxInput.value, updatedHoaFee)
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
+=======
+//
+// const principleInterestInput = document.getElementById('principal-and-interest');
+const homeownerInsuranceInput = document.getElementById('homeowners-insurance');
+const propertyTaxInput = document.getElementById('property-tax');
+const hoaFeeInput = document.getElementById('hoa-fees');
+
+principleInterestInput.addEventListener('change', eventHandler);
+homeownerInsuranceInput.addEventListener('change', function() {
+  updateMP();
+});
+propertyTaxInput.addEventListener('change',eventHandler);
+propertyTaxInput.addEventListener('change',eventHandler);
+hoaFeeInput.addEventListener('change',eventHandler);
+>>>>>>> d5b603a6f02c9eb04a5303db762abe8ecb3caece
 
 //The following elements should not allow user edits:
 //monthlyPaymentStickyInput.addEventListener('input',updateMP);
