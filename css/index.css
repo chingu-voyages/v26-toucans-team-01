@@ -33,6 +33,7 @@ body {
   font-size: 1rem;
   line-height: 1.75;
   border: 1px solid #cfcfd4;
+  font-weight: bold;
 }
 
 #home-price-input::-webkit-outer-spin-button,
@@ -103,6 +104,7 @@ body {
   border: 1px solid red;
   width: 100%;
   padding: 1.25em;
+  
 }
 
 #loan-parameter-inputs .wrapper {
@@ -143,6 +145,7 @@ select {
   line-height: 1.75;
   font-size: 1rem;
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
 }
 
 /* ---------- End of Down Payment, Length of Loan, Interest Rate ---------- */
@@ -165,6 +168,7 @@ select {
   font-size: 1rem;
   line-height: 1.75;
   border: 1px solid #cfcfd4;
+  font-weight: bold;
 }
 
 #monthly-payment-input::-webkit-outer-spin-button,
@@ -238,7 +242,8 @@ select {
   width: 210px;
   font-size: 1rem;
   line-height: 1.75;
-  border: 1px solid #cfcfd4;
+  border: none;
+  font-weight: bold;
 }
 
 #monthly-payment-sticky-input::-webkit-outer-spin-button,
@@ -265,6 +270,7 @@ select {
   border: 1px solid red;
   width: 100%;
   padding: 1.25em;
+
 }
 
 #mthly-payment-inputs .wrapper {
@@ -282,6 +288,7 @@ select {
   line-height: 1.75;
   font-size: 1rem;
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
 }
 
 #mthly-payment-inputs .legend {
