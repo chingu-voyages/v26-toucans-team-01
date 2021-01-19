@@ -90,7 +90,7 @@ function calculateMonthlyPayment(principleAndInterest, addCosts){
  * @param {number} downPaymentAmount input value of down-payment-amt
  */
 function calculateHomePrice(monthlyPayment, calcLoanLength, calcInterest, downPaymentAmount) {
-  homePriceInput.value = parseFloat((monthlyPayment / calcInterest / (Math.pow(1 + parseFloat(calcInterest), calcLoanLength))) * (Math.pow(1 + parseFloat(calcInterest), calcLoanLength) - 1) + downPaymentAmount).toFixed(2);
+  homePriceInput.value = parseFloat((monthlyPayment / calcInterest / (Math.pow(1 + parseFloat(calcInterest), calcLoanLength))) * (Math.pow(1 + parseFloat(calcInterest), calcLoanLength) - 1) + parseFloat(downPaymentAmount)).toFixed(2);
   homePriceSliderInput.value = homePriceInput.value;
   return homePriceInput.value;
 }
@@ -151,7 +151,7 @@ function chartResults() {
 
 // Home Price --> Down Payment Percent; Principal+Interest; Monthly Payment
 homePriceInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedHomePrice = parseFloat(homePriceInput.value).toFixed(2);
   homePriceSliderInput.value = updatedHomePrice;
   deriveLoanVariablesAfterUpdate(updatedHomePrice, downPaymentAmountInput.value, interestRateInput.value, loanLengthInput.value);
@@ -170,7 +170,7 @@ homePriceSliderInput.addEventListener('input',function() {
 
 // Down Payment Amount --> Down Payment Percent; Principal+Interest; Monthly Payment
 downPaymentAmountInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedDownPaymentAmount = parseFloat(downPaymentAmountInput.value).toFixed(2);
   deriveLoanVariablesAfterUpdate(homePriceInput.value, updatedDownPaymentAmount, interestRateInput.value, loanLengthInput.value);
   calculateDownPayPercent(homePriceInput.value, updatedDownPaymentAmount);
@@ -180,7 +180,7 @@ downPaymentAmountInput.addEventListener('input',function() {
 
 // Down Payment Percent --> Down Payment Amount; Principal+Interest; Monthly Payment
 downPaymentPercentInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedDownPayPercent = parseFloat(downPaymentPercentInput.value).toFixed(2);
   calculateDownPayAmount(homePriceInput.value, updatedDownPayPercent);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
@@ -189,7 +189,7 @@ downPaymentPercentInput.addEventListener('input',function() {
 
 // Length of Loan --> Principal+Interest; Monthly Payment
 loanLengthInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedLoanLength = parseFloat(loanLengthInput.value).toFixed(2);
   deriveLoanVariablesAfterUpdate(homePriceInput.value, downPaymentAmountInput.value, interestRateInput.value, updatedLoanLength);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
@@ -198,7 +198,7 @@ loanLengthInput.addEventListener('input',function() {
 
 // Interest Rate -->  Principal+Interest; Monthly Payment
 interestRateInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedInterestRate = parseFloat(interestRateInput.value).toFixed(6);
   deriveLoanVariablesAfterUpdate(homePriceInput.value, downPaymentAmountInput.value, updatedInterestRate, loanLengthInput.value);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
@@ -207,7 +207,7 @@ interestRateInput.addEventListener('input',function() {
 
 // Monthly Payment --> Home Price; Down Payment Percent; Principal+Interest; Property Tax
 monthlyPaymentInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedMonthlyPayment = parseFloat(monthlyPaymentInput.value).toFixed(2);
   monthlyPaymentSliderInput.value = updatedMonthlyPayment;
   monthlyPaymentStickyInput.value = updatedMonthlyPayment;
@@ -231,23 +231,28 @@ monthlyPaymentSliderInput.addEventListener('input',function() {
 
 // Insurance, Taxes, or HOA --> Monthly Payment
 homeownerInsuranceInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedHomeInsurance = parseFloat(homeownerInsuranceInput.value).toFixed(2);
   deriveAdditionalCostsAfterUpdate(updatedHomeInsurance, propertyTaxInput.value, hoaFeeInput.value)
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
 propertyTaxInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedPropertyTax = parseFloat(propertyTaxInput.value).toFixed(2);
   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput.value, updatedPropertyTax, hoaFeeInput.value)
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
 hoaFeeInput.addEventListener('input',function() {
-  checkForUndefined();
+  //checkForUndefined();
   let updatedHoaFee = parseFloat(hoaFeeInput.value).toFixed(2);
   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput.value, propertyTaxInput.value, updatedHoaFee)
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
+
+// const inputElements = document.getElementsByTagName("input");
+// for (i=0; i<inputElements.length; i++) {
+//   inputElements[i].addEventListener('focusout', checkForUndefined);
+// }
 
 //The following elements should not allow user edits:
 //monthlyPaymentStickyInput.addEventListener('input',updateMP);
