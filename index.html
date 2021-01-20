@@ -133,6 +133,7 @@
         <!-- Monthly Payment Graph -->
       <div id="payment-graph" class="item-6">
           <!-- INSERT GRAPH -->
+          <canvas id="myChart"></canvas>
       </div>
 
         <!-- Monthly Payment Form -->
@@ -151,6 +152,7 @@
               type="text"
               name="principal-and-interest"
               id="principal-and-interest"
+              class="principal-and-interest"
             />
           </div>
 
@@ -164,6 +166,7 @@
                 type="text"
                 name="homeowners-insurance"
                 id="homeowners-insurance"
+                class="homeowners-insurance"
             />
           </div>
 
@@ -173,7 +176,7 @@
             <label for="property-tax">
               Property Tax
             </label>
-            +<input type="text" name="property-tax" id="property-tax"/>
+            +<input type="text" name="property-tax" id="property-tax" class="property-tax"/>
           </div>
 
           <!-- HOA fees -->
@@ -182,7 +185,7 @@
             <label for="hoa-fees">
               HOA Fees
             </label>
-            +<input type="text" name="hoa-fees" id="hoa-fees"/>
+            +<input type="text" name="hoa-fees" id="hoa-fees" class="hoa-fees"/>
           </div>
 
           <!-- Total Monthly Payment -->
@@ -197,6 +200,10 @@
       <!-- Links, Social Media -->
     </footer>
 
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="./chart.js"></script>
+    
     <script src="index.js"></script>
   </body>
 </html>
