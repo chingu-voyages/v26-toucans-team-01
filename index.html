@@ -99,51 +99,57 @@
 
             <!------------- Invisible -------------->
             <!-- Zip Code -->
-            <div class="wrapper">
-              <label for="zip-code">
-                Zip code
-              </label>
-              <input type="text" name="zip-code" id="zip-code">
+            <div id="advanced-section-wrapper">
+              <div class="wrapper">
+                <label for="zip-code">
+                  Zip code
+                </label>
+                <input type="text" name="zip-code" id="zip-code">
+              </div>
+
+              <!-- Credit Score -->
+              <div class="wrapper">
+                <label for="credit-score">
+                  Credit score
+                </label>
+                <input type="text" name="credit-score" id="credit-score">
+              </div>
+
+              <!-- Property Tax -->
+              <div class="wrapper">
+
+                <label for="property-tax">
+                  Property Tax
+                </label>
+                <input type="text" name="property-tax" id="adv-property-tax" class="property-tax"/>
+              </div>
+
+              <!-- Homeowner's Insurance -->
+              <div class="wrapper">
+
+                <label for="homeowners-insurance">
+                  Homeowner's Insurance
+                </label>
+                <input type="text" name="homeowners-insurance" id="adv-homeowners-insurance"
+                    class="homeowners-insurance" />
+              </div>
+
+              <!-- HOA fees -->
+              <div class="wrapper">
+
+                <label for="hoa-fees">
+                  HOA Fees
+                </label>
+                <input type="text" name="hoa-fees" id="adv-hoa-fees" class="hoa-fees"/>
+              </div>
+
+              <button id="hide-advanced-options"></button>
+              
             </div>
-
-            <!-- Credit Score -->
-            <div class="wrapper">
-              <label for="credit-score">
-                Credit score
-              </label>
-              <input type="text" name="credit-score" id="credit-score">
-            </div>
-
-            <!-- Property Tax -->
-            <div class="wrapper">
-
-              <label for="property-tax">
-                Property Tax
-              </label>
-              <input type="text" name="property-tax" id="property-tax" class="property-tax"/>
-            </div>
-
-            <!-- Homeowner's Insurance -->
-            <div class="wrapper">
-
-              <label for="homeowners-insurance">
-                Homeowner's Insurance
-              </label>
-              <input type="text" name="homeowners-insurance" id="homeowners-insurance"
-                  class="homeowners-insurance" />
-            </div>
-
-            <!-- HOA fees -->
-            <div class="wrapper">
-
-              <label for="hoa-fees">
-                HOA Fees
-              </label>
-              <input type="text" name="hoa-fees" id="hoa-fees" class="hoa-fees"/>
-            </div>
+            <!---------- End Of Invisible Section -------->
           </div>
+          <!------ End of Advanced Options ------>
 
-          <!---------- End Of Invisible Section -------->
       </div>
 
         <!-- Estimated Monthly Payment (Full) -->

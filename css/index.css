@@ -301,12 +301,11 @@ select {
 
 /* ----- START of Showing Advanced Options w/ Button [Dev: Hugo] ---------- */
 #advanced-options-button::before {
-  content: "Show advanced options"
+  content: "Show advanced options";
 }
 
 #advanced-options-button {
   margin: 16px 0px 0px 2px;
-  /* display: none; */
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -316,6 +315,27 @@ select {
 #advanced-options-button:hover {
   text-decoration: underline;
 }
+
+#advanced-section-wrapper {
+  display: none;
+}
+
+#hide-advanced-options::before {
+  content: "Hide advanced options";
+}
+
+#hide-advanced-options {
+  margin: 16px 0px 0px 2px;
+  background-color: transparent;
+  border: none;
+  color: #3139f2;
+}
+
+#hide-advanced-options:hover {
+  text-decoration: underline;
+}
+
+/* ----- End of Showing Advanced Options w/ Button ---------- */
 
 
 /* ---------- END of Estimated Monthly Payment (Full) ------------------- */
