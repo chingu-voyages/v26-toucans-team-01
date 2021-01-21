@@ -28,7 +28,7 @@ var additionalCosts = 0;// = homeownerInsuranceInput.value + propertyTaxInput.va
  * @param {number} homePrice input value of home-price-input
  * @param {number} downPaymentAmount input value of down-payment-amt
  */
-function calculateDownPayPercent(homePrice, downPaymentAmount) {
+function calculateDownPayPercent(homePrice, downPaymentAmount = 139200) {
   //check homePrice to avoid divide by zero error
   if (homePrice > 0) {
     downPaymentPercentInput.value = parseFloat((downPaymentAmount/homePrice)*100).toFixed(3);
@@ -39,7 +39,7 @@ function calculateDownPayPercent(homePrice, downPaymentAmount) {
 }
 
 /**
- * Calculate and update value of principal-and-interest
+ * Calculate and update value of down-payment-amount
  *
  * @param {number} homePrice input value of home-price-input
  * @param {number} downPaymentPercent input value of down-payment-pct
@@ -147,8 +147,21 @@ function chartResults() {
 }
 
 // Event Listeners for user input
-// [key: if value changes --> return updated value(s)]
 
+window.onload = function() {
+  homePriceInput.value = 696000;
+  downPaymentAmountInput.value = 139200;
+  downPaymentPercentInput.value = 20;
+  interestRateInput.value = 2.830;
+  
+  deriveLoanVariablesAfterUpdate(homePriceInput.value, downPaymentAmountInput.value, interestRateInput.value, loanLengthInput.value);
+  calculateDownPayPercent(homePriceInput.value, downPaymentAmountInput.value);
+  calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
+  calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
+}
+
+
+// [key: if value changes --> return updated value(s)]
 // Home Price --> Down Payment Percent; Principal+Interest; Monthly Payment
 homePriceInput.addEventListener('input',function() {
   //checkForUndefined();
@@ -159,6 +172,7 @@ homePriceInput.addEventListener('input',function() {
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
+
 homePriceSliderInput.addEventListener('input',function() {
   let updatedHomePrice = parseFloat(homePriceSliderInput.value).toFixed(2);
   homePriceInput.value = updatedHomePrice;
@@ -248,6 +262,7 @@ hoaFeeInput.addEventListener('input',function() {
   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput.value, propertyTaxInput.value, updatedHoaFee)
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 });
+
 
 // const inputElements = document.getElementsByTagName("input");
 // for (i=0; i<inputElements.length; i++) {
