@@ -365,6 +365,26 @@ select {
   text-decoration: underline;
 }
 
+#advanced-section-wrapper {
+  display: none;
+}
+
+#hide-advanced-options::before {
+  content: 'Hide advanced options';
+}
+
+#hide-advanced-options {
+  margin: 16px 0px 0px 2px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3139f2;
+}
+
+#hide-options-button:hover {
+  text-decoration: underline;
+}
+
 /* ---------- END of Estimated Monthly Payment (Full) ------------------- */
 
 @media screen and (min-width: 1135px) {
