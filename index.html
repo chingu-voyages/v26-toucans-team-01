@@ -91,6 +91,59 @@
             </label>
             <input type="text" name="interest-rate" id="interest-rate"/>
           </div>
+
+          <!-- Advanced Options ----------- (Dev: Hugo)-->
+          <div>
+            <button id="advanced-options-button"></button>
+
+
+            <!------------- Invisible -------------->
+            <!-- Zip Code -->
+            <div class="wrapper">
+              <label for="zip-code">
+                Zip code
+              </label>
+              <input type="text" name="zip-code" id="zip-code">
+            </div>
+
+            <!-- Credit Score -->
+            <div class="wrapper">
+              <label for="credit-score">
+                Credit score
+              </label>
+              <input type="text" name="credit-score" id="credit-score">
+            </div>
+
+            <!-- Property Tax -->
+            <div class="wrapper">
+
+              <label for="property-tax">
+                Property Tax
+              </label>
+              <input type="text" name="property-tax" id="property-tax" class="property-tax"/>
+            </div>
+
+            <!-- Homeowner's Insurance -->
+            <div class="wrapper">
+
+              <label for="homeowners-insurance">
+                Homeowner's Insurance
+              </label>
+              <input type="text" name="homeowners-insurance" id="homeowners-insurance"
+                  class="homeowners-insurance" />
+            </div>
+
+            <!-- HOA fees -->
+            <div class="wrapper">
+
+              <label for="hoa-fees">
+                HOA Fees
+              </label>
+              <input type="text" name="hoa-fees" id="hoa-fees" class="hoa-fees"/>
+            </div>
+          </div>
+
+          <!---------- End Of Invisible Section -------->
       </div>
 
         <!-- Estimated Monthly Payment (Full) -->
@@ -192,6 +245,7 @@
 
           <!-- Total Monthly Payment -->
           <div class='wrapper'>Total monthly payment = <span id="total-monthly-payment">$0</span></div>
+
       </div>
 
     </div>
@@ -205,6 +259,7 @@
     <!-- Chart JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="./chart.js"></script>
+    <script src="./advancedOptions.js"></script>
     
     <script src="index.js"></script>
   </body>

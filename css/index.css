@@ -299,6 +299,25 @@ select {
   color: red;
 }
 
+/* ----- START of Showing Advanced Options w/ Button [Dev: Hugo] ---------- */
+#advanced-options-button::before {
+  content: "Show advanced options"
+}
+
+#advanced-options-button {
+  margin: 16px 0px 0px 2px;
+  /* display: none; */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3139f2;
+}
+
+#advanced-options-button:hover {
+  text-decoration: underline;
+}
+
+
 /* ---------- END of Estimated Monthly Payment (Full) ------------------- */
 
 @media screen and (min-width: 1135px) {
