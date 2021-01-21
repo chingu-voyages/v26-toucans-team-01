@@ -355,7 +355,6 @@ select {
 
 #advanced-options-button {
   margin: 16px 0px 0px 2px;
-  /* display: none; */
   background-color: transparent;
   border: none;
   cursor: pointer;
