@@ -339,3 +339,42 @@ select {
     grid-area: inp;
   }
 }
+
+/* contact page css */
+
+.card {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  max-width: 80%; 
+  margin: 1.8em;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.text-container {
+  padding: 2px 16px;
+}
+
+button {
+  margin-bottom: 5px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.personal-links img{
+  margin: 1.25em;
+  width: 2.8em;
+  height: 2.8em;
+}
+
+.card-developer {
+  padding: 1.5em 3.3em 1.5em 3.3em;
+}
