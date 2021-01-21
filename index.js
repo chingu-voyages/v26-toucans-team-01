@@ -153,11 +153,16 @@ window.onload = function() {
   downPaymentAmountInput.value = 139200;
   downPaymentPercentInput.value = 20;
   interestRateInput.value = 2.830;
-  
+  homeownerInsuranceInput.value = 66;
+  propertyTaxInput.value = 458;
+  hoaFeeInput.value = 0;
+
   deriveLoanVariablesAfterUpdate(homePriceInput.value, downPaymentAmountInput.value, interestRateInput.value, loanLengthInput.value);
   calculateDownPayPercent(homePriceInput.value, downPaymentAmountInput.value);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
+  deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput.value, propertyTaxInput.value, hoaFeeInput.value)
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
+
 }
 
 
