@@ -11,6 +11,7 @@ body {
   background-color: #fff;
 }
 
+<<<<<<< HEAD
 .grid-container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -48,14 +49,26 @@ body {
   grid-area: inp;
 }
 /* ---------- Start of Animated House [Dev: Ashley]------- */
+=======
+/* ----------Animated House -------------- */
+>>>>>>> 148f5fef53fa558f2e18195e2703c0f17d803121
 
 #animated-house {
   border: 1px solid red;
   width: 100%;
+<<<<<<< HEAD
   padding: 1.25em;
 }
 
 /* ---------- End of Animated House [Dev: Ashley]--------- */
+=======
+  margin: 2em 0;
+  padding: 1.25em; 
+}
+
+/* ----------End of Animated House --------------- */
+
+>>>>>>> 148f5fef53fa558f2e18195e2703c0f17d803121
 /* ---------- Start of HOME PRICE [Dev: Ashley] ---------- */
 
 /* home input box style */
@@ -287,7 +300,18 @@ select {
   display: block;
 }
 /* ---------------End of Estimated Monthly Payment (Sticky)-------------------- */
+<<<<<<< HEAD
 /* -------------- Start of Payment Graph----------------------------------- */
+=======
+/* ---------------START of Payment Graph---------------------- */
+
+#payment-graph {
+  border: 1px solid red;
+  width: 100%;
+  margin: 2em 0;
+  padding: 1.25em;
+}
+>>>>>>> 148f5fef53fa558f2e18195e2703c0f17d803121
 
 #payment-graph {
   border: 1px solid red;
