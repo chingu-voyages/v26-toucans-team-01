@@ -441,7 +441,7 @@ select {
 }
 
 .text-container {
-  padding: 2px 16px;
+  padding: 1.25em;
 }
 
 button {
