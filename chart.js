@@ -1,6 +1,6 @@
-const principalandinterest = document.querySelector('.principal-and-interest');
-const homeownersinsurance = document.querySelector('.homeowners-insurance');
-const propertytax = document.querySelector('.property-tax');
+const pni = document.querySelector('.principal-and-interest');
+const hi = document.querySelector('.homeowners-insurance');
+const pt = document.querySelector('.property-tax');
 const hoa = document.querySelector('.hoa-fees');
 
 const ctx = document.getElementById('myChart').getContext('2d');
@@ -16,7 +16,7 @@ let myChart = new Chart(ctx, {
     datasets: [
       {
         label: 'Mortgage Payment',
-        data: [0, 0, 0, 0],
+        data: [2296.75, 66, 458, 0],
         backgroundColor: ['#90ee90', '#2adece', '#dd3b79', '#ff766b'],
         borderWidth: 1,
       },
@@ -24,6 +24,7 @@ let myChart = new Chart(ctx, {
   },
 });
 
+// Update on change
 const updateChartValue = (input, dataOrder) => {
   input.addEventListener('change', (e) => {
     myChart.data.datasets[0].data[dataOrder] = e.target.value;
@@ -31,7 +32,7 @@ const updateChartValue = (input, dataOrder) => {
   });
 };
 
-updateChartValue(principalandinterest, 0);
-updateChartValue(homeownersinsurance, 1);
-updateChartValue(propertytax, 2);
+updateChartValue(pni, 0);
+updateChartValue(hi, 1);
+updateChartValue(pt, 2);
 updateChartValue(hoa, 3);
