@@ -13,13 +13,48 @@ body {
   background-color: #fff;
 }
 
-
-/* Main - temporary */
-
-
 /* CSS Variables for colors */
 :root {
   --test-border-color: white;
+}
+
+/* ---------- Landing Page Formatting [Dev: Josue]------- */
+
+.split {
+  border: 1px solid var(--test-border-color);
+}
+
+.split.left {
+  height: 100%;
+  width: 50%;
+}
+
+.split.left img {
+  position: absolute;
+  height: 100vh;
+  top: 2.25em;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+.split.left h1,
+h2 {
+  position: absolute;
+  z-index: 1;
+  color: white;
+}
+
+.split.left h1 {
+  font-size: 3.5em;
+  top: 20%;
+  left: 7%;
+}
+
+.split.left h2 {
+  font-size: 2.5em;
+  top: 25%;
+  left: 16%;
 }
 
 /* ---------- Navigation [Dev: Josue]------- */
@@ -30,6 +65,8 @@ nav {
   margin-bottom: 1.5em;
   padding: 0.5em;
   height: 2.25em;
+  background-color: rgb(62, 124, 199);
+  color: white;
 
   box-shadow: 0px 1px 1px grey;
 }
@@ -51,7 +88,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: black;
+  color: inherit;
   cursor: pointer;
 }
 
@@ -395,11 +432,11 @@ select {
     overflow-x: hidden;
     padding-top: 20px;
   }
-  
+
   .left {
     left: 0;
   }
-  
+
   .right {
     right: 0;
   }
@@ -454,8 +491,8 @@ button {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
