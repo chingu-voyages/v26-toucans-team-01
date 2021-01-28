@@ -1,49 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #fff;
+}
+
+/* CSS Variables for colors */
+:root {
+  --test-border-color: white;
+}
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75em;
+  height: 3.25em;
+  background-color: #4285f4;
+  color: white;
+
+  box-shadow: 0px 1px 1px grey;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.15em;
+  font-weight: 300;
+}
+
+/* TAGLINE */
+
+#tag-line {
+  background: #126bda;
+  padding: 3em 1.5em;
+
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+
+#tag-line h1 {
+  font-size: 2.75em;
+  font-weight: 700;
+}
+
+#tag-line p {
+  font-size: 2em;
+}
+
+/* MORTGAGE CALCULATOR */
+#simple-form {
+  padding: 1.5em;
+}
+
+#simple-form .container {
+  background: white;
+  padding: 1em;
+  height: 100%;
+}
+
+#simple-form .container h1 {
+  margin-bottom: 1em;
+  color: grey;
+  font-weight: unset;
+}
+
+#simple-form .container label {
+  /* TBD */
+}
+
+#simple-form .container input {
+  /* TBD */
+}
+
+#simple-form .container #disclaimer {
+  margin-top: 3em;
+  color: grey;
+}
+
+#simple-form .container #disclaimer span {
+  font-size: 1.15em;
+}
 
 @media screen and (min-width: 1135px) {
-.grid-cell-one {
-        grid-area: nav-bar;
-    }
-    
-.grid-cell-two {
-        grid-area: tag-line;
-    }
-    
-.grid-cell-three {
-        grid-area: simple-form;
-    }
-    
-    
-.grid {
+  .grid-cell-one {
+    grid-area: nav-bar;
+  }
+
+  .grid-cell-two {
+    grid-area: tag-line;
+  }
+
+  .grid-cell-three {
+    grid-area: simple-form;
+  }
+
+  .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-        'nav-bar nav-bar'
-        'tag-line simple-form';
-    grid-template-rows: 1fr 22fr
-    
-      
-    }
-}
+      'nav-bar nav-bar'
+      'tag-line simple-form';
+    grid-template-rows: 1fr 22fr;
+  }
 
-#nav-bar{
-    border: 1px solid lightGray;
-    width: 100%;
-   
-    }
-    
-#tag-line {
-    border: 1px solid lightGray;
-    width: 100%;  
-    height: 100%; 
+  /* Add image for larger screens */
+  #tag-line {
+    background-image: url('./img/house.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    padding-top: 25%;
+    align-items: unset;
+  }
+
+  #tag-line h1 {
+    font-size: 3em;
+  }
+
+  #tag-line p {
+    font-size: 1.75em;
+  }
+
+  /* MORTGAGE CALCULATOR */
+  #simple-form {
+    padding: 1.5em;
+    background: #cee2f3;
+  }
 }
-    
-#simple-form {
-    border: 1px solid lightGray;
-    width: 100%; 
-    height:100%
-    }
