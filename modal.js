@@ -1,26 +1,55 @@
+//Developers modal
 // Get the modal
-var modal = document.getElementById("developers-modal");
+var modalDevs = document.getElementById("developers-modal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("developers-modal-link");
+var btnDevs = document.getElementById("developers-modal-link");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var spanDev = document.getElementsByClassName("close-dev")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
+btnDevs.onclick = function() {
+  modalDevs.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function(event) {
+spanDev.onclick = function(event) {
 event.preventDefault();
-  modal.style.display = "none";
+  modalDevs.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modalDevs) {
+    modalDevs.style.display = "none";
+  }
+}
+
+//Contact modal
+// Get the modal
+var modalContact = document.getElementById("contact-modal");
+
+// Get the button that opens the modal
+var btnContact = document.getElementById("contact-modal-link");
+
+// Get the <span> element that closes the modal
+var spanContact = document.getElementsByClassName("close-contact")[0];
+
+// When the user clicks the button, open the modal 
+btnContact.onclick = function() {
+  modalContact.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanContact.onclick = function(event) {
+event.preventDefault();
+  modalContact.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalContact) {
+    modalContact.style.display = "none";
   }
 }

@@ -505,15 +505,26 @@ button {
 }
 
 /* The Close Button */
-.close {
+.close-dev {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-
-.close:hover,
-.close:focus {
+.close-dev:hover,
+.close-dev:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-contact {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close-contact:hover,
+.close-contact:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;

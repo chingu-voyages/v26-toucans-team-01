@@ -12,7 +12,7 @@
       <nav>
         <div class="logo">House Hero</div>
         <ul>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a id="contact-modal-link">Contact</a></li>
           <li><a id="developers-modal-link" >Developers</a></li>
       </ul>
       </nav>
@@ -271,12 +271,12 @@
 
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span class="close-dev">&times;</span>
         <!-- text card -->
  <div class="card-container">
   <div class="card">
        <div class="text-container">
-           <h2><b>Meet the development team for this App</b></h2>
+           <h4><b>Meet the development team for this App</b></h4>
            <h4>Chingu Toucans - Voyage 26</h4>
        </div>
    </div>
@@ -383,6 +383,43 @@
   
   </div>
 
+<!-- Contact Page Modal -->
+<div id="contact-modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close-contact">&times;</span>
+    <div class="card-container">
+      <div class="card">
+       <div class="text-container">
+           <h4><b>Ready for the next step in your home buying journey?</b></h4>
+           <p>We're here to help.</p>
+       </div>
+       <div class="form-container">
+               <form name="contact" method="POST" data-netlify="true">
+                   <p>
+                       <label>First Name: <input type="text" name="first-name" /></label>   
+                   </p>
+                   <p>
+                       <label>Last Name: <input type="text" name="last-name" /></label>   
+                   </p>
+                   <p>
+                       <label>Your Email: <input type="email" name="email" /></label>
+                   </p>
+                   <p>
+                       <label>Message: <textarea name="message"></textarea></label>
+                   </p>
+                   <p>
+                       <button type="submit">Send</button>
+                   </p>
+               </form>  
+           </div>
+       </div>
+        
+    </div>
+
+  </div>  
+</div>
 
     </main>
     <footer>
