@@ -89,18 +89,39 @@ nav ul li a {
 }
 
 #simple-form .container h1 {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   color: grey;
   font-weight: unset;
+  margin-top: 2em;
 }
 
 #simple-form .container label {
-  /* TBD */
+    display: inline-block;
+    margin-bottom: 0.25em;
+    text-align: right;
+    clear: left;
+    width: 250px;
+    color: grey;
 }
 
-#simple-form .container input {
-  /* TBD */
+#simple-form .container input, select {
+    border: 1px solid #cfcfd4;
+    line-height: 1.75;
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+    font-weight: bold;
+    margin-left: 1em;
+    margin-bottom: 2em;
+      
 }
+
+#simple-form .container input::-webkit-outer-spin-button,
+#simple-form .container input::-webkit-inner-spin-button {
+  /*removes the up down cursor in the input box */
+  -webkit-appearance: none;
+} 
+
+
 
 #simple-form .container #disclaimer {
   margin-top: 3em;
@@ -109,6 +130,30 @@ nav ul li a {
 
 #simple-form .container #disclaimer span {
   font-size: 1.15em;
+}
+
+
+#down-payment-label{
+  grid-area: lbl
+}
+#down-payment-amt {
+  grid-area: downinput;
+  width: 100%;
+  float: left;
+}
+#down-payment-pct {
+  grid-area: pct;
+  width: 50%;
+  float: right;
+ 
+}
+
+.grid-1 {
+display: grid;
+grid-template-columns: repeat(3, auto);
+grid-template-rows: repeat(1, auto);
+grid-template-areas:
+  'lbl downinput pct'
 }
 
 @media screen and (min-width: 1135px) {
@@ -130,7 +175,6 @@ nav ul li a {
     grid-template-areas:
       'nav-bar nav-bar'
       'tag-line simple-form';
-    grid-template-rows: 1fr 22fr;
   }
 
   /* Add image for larger screens */
@@ -157,4 +201,5 @@ nav ul li a {
     padding: 1.5em;
     background: #cee2f3;
   }
+
 }
