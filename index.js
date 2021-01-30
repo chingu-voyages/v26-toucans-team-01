@@ -168,14 +168,47 @@ function chartResults(pni, hi, pt, hoa) {
 
 // Event Listeners for user input
 
+function formatCurrency(num) {
+    num = num.toString().replace(/\$|\,/g, '');
+    if (isNaN(num)) {
+        num = "0";
+    }
+    sign = (num == (num = Math.abs(num)));
+    num = Math.floor(num * 100 + 0.50000000001);
+    cents = num % 100;
+    num = Math.floor(num / 100).toString();
+    if (cents < 10) {
+        cents = "0" + cents;
+    }
+    for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++) {
+        num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));
+    }
+    return (((sign) ? '' : '-') + '$ ' + num + '.' + cents);
+}
+
+function formatPercentage(num) {
+    num = num.toString().replace(/\%|\,/g, '');
+    if (isNaN(num)) {
+        num = "0";
+    }
+    num = Math.floor(num * 1000 + 0.50000000001);
+    decimal = num % 1000;
+    num = Math.floor(num / 1000).toString();
+    if (decimal < 100 && decimal > 9) {
+        decimal = "0" + decimal;
+    }else if (decimal < 10) {
+        decimal = "00" + decimal;
+    }
+    return (num +"." + decimal + ' %');
+}
+
 window.onload = function() {
-  homePriceInput.value = 696000;
-  downPaymentAmountInput.value = 139200;
-  downPaymentPercentInput.value = 20;
-  interestRateInput.value = 2.830;
-  homeownerInsuranceInput.value = 66;
-  propertyTaxInput.value = 458;
-  hoaFeeInput.value = 0;
+  homePriceInput.value = parseFloat(696000.00).toFixed(2);
+  downPaymentAmountInput.value = parseFloat(139200.00).toFixed(2);
+  interestRateInput.value = parseFloat(2.830).toFixed(3);
+  homeownerInsuranceInput.value = parseFloat(66.00).toFixed(2);
+  propertyTaxInput.value = parseFloat(458.00).toFixed(2);
+  hoaFeeInput.value = parseFloat(0.00).toFixed(2);
 
   deriveLoanVariablesAfterUpdate(homePriceInput.value, downPaymentAmountInput.value, interestRateInput.value, loanLengthInput.value);
   calculateDownPayPercent(homePriceInput.value, downPaymentAmountInput.value);
@@ -184,6 +217,8 @@ window.onload = function() {
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
 
 }
+
+
 
 
 // [key: if value changes --> return updated value(s)]
@@ -289,6 +324,7 @@ hoaFeeInput.addEventListener('input',function() {
   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput.value, propertyTaxInput.value, updatedHoaFee)
   calculateMonthlyPayment(principleInterestInput.value, additionalCosts);
   chartResults(principleInterestInput.value, homeownerInsuranceInput.value, propertyTaxInput.value, hoaFeeInput.value);
+  //hoaFeeInput.value = formatCurrency(hoaFeeInput.value);
 });
 
 
