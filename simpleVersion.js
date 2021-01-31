@@ -78,33 +78,16 @@ function allowOnlyNumericInput() {
   let input = this.value;
   let checkString = "$%.,1234567890";
 
-  for(i=0; i<input.length; i++) {
-    if(!checkString.includes(input.charAt(i))) {
-      input = input.replace(input.charAt(i),'');
-      this.value = input;
+  if(input) {
+    for(i=0; i<input.length; i++) {
+      if(!checkString.includes(input.charAt(i))) {
+        input = input.replace(input.charAt(i),'');
+        this.value = input;
+      }
+
       updateInput();
     }
   }
-
-
-//   if (
-//   event.getModifierState('Meta') ||
-//   event.getModifierState('Control') ||
-//   event.getModifierState('Alt')
-// ) {
-//   return
-// }
-//
-// // Allow non-printable keys
-// if (key.length !== 1 || key === '\x00') {
-//   return
-// }
-//
-// // Prevent any non-numeric keys, but allow . for decimals
-// // and - for negative values
-// if ((key < '0' || key > '9') && key !== '.' && key !== '-') {
-//   event.preventDefault()
-// }
 }
 
 /**
@@ -326,18 +309,21 @@ function formatPercentageOut(num) {
 // }
 
 
-
+const inputElements = document.getElementsByTagName("input");
+for (i=0; i<inputElements.length; i++) {
+  inputElements[i].addEventListener('focusout', updateOutput);
+  inputElements[i].addEventListener('input', allowOnlyNumericInput);
+}
 
 // [key: if value changes --> return updated value(s)]
 // Home Price --> Down Payment Percent; Principal+Interest; Monthly Payment
 homePriceInputElem.addEventListener('input',function() {
   //checkForUndefined();
-  updateInput();
   let updatedHomePrice = parseFloat(homePriceInput).toFixed(2);
   //#homePriceSliderInput = updatedHomePrice;
   deriveLoanVariablesAfterUpdate(updatedHomePrice, downPaymentAmountInput, interestRateInput, loanLengthInput);
   calculateDownPayPercent(updatedHomePrice, downPaymentAmountInput);
-  calculateLoanAmount(updateHomePrice, downPaymentAmountInput);
+  calculateLoanAmount(updatedHomePrice, downPaymentAmountInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
   //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
@@ -358,7 +344,6 @@ homePriceInputElem.addEventListener('input',function() {
 // Down Payment Amount --> Down Payment Percent; Principal+Interest; Monthly Payment
 downPaymentAmountInputElem.addEventListener('input',function() {
   //checkForUndefined();
-  updateInput();
   let updatedDownPaymentAmount = parseFloat(downPaymentAmountInput).toFixed(2);
   deriveLoanVariablesAfterUpdate(homePriceInput, updatedDownPaymentAmount, interestRateInput, loanLengthInput);
   calculateDownPayPercent(homePriceInput, updatedDownPaymentAmount);
@@ -371,7 +356,6 @@ downPaymentAmountInputElem.addEventListener('input',function() {
 // Down Payment Percent --> Down Payment Amount; Principal+Interest; Monthly Payment
 downPaymentPercentInputElem.addEventListener('input',function() {
   //checkForUndefined();
-  updateInput();
   let updatedDownPayPercent = parseFloat(downPaymentPercentInput).toFixed(2);
   calculateDownPayAmount(homePriceInput, updatedDownPayPercent);
   calculateLoanAmount(homePriceInput, downPaymentAmountInput);
@@ -383,7 +367,6 @@ downPaymentPercentInputElem.addEventListener('input',function() {
 // Length of Loan --> Principal+Interest; Monthly Payment
 loanLengthInputElem.addEventListener('input',function() {
   //checkForUndefined();
- updateInput();
   let updatedLoanLength = parseFloat(loanLengthInput).toFixed(2);
   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, updatedLoanLength);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
@@ -394,7 +377,6 @@ loanLengthInputElem.addEventListener('input',function() {
 // Interest Rate -->  Principal+Interest; Monthly Payment
 interestRateInputElem.addEventListener('input',function() {
   //checkForUndefined();
-  updateInput();
   let updatedInterestRate = parseFloat(interestRateInput).toFixed(6);
   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, updatedInterestRate, loanLengthInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
@@ -458,13 +440,6 @@ interestRateInputElem.addEventListener('input',function() {
 //   chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
 //   //updateOutput();
 // });
-
-
-const inputElements = document.getElementsByTagName("input");
-for (i=0; i<inputElements.length; i++) {
-  inputElements[i].addEventListener('focusout', updateOutput);
-  inputElements[i].addEventListener('input', allowOnlyNumericInput);
-}
 
 //The following elements should not allow user edits:
 //monthlyPaymentStickyInput.addEventListener('input',updateMP);
