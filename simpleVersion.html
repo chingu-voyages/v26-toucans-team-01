@@ -70,8 +70,7 @@
                 <label>Loan Amount</label>
             </div>
             <div class="form-col-8">
-                <input type='number' name='loan-amount-input'>
-
+                <input type='text' name='loan-amount-input' id="loan-amount-input" readonly>
             </div>
           </div>
           <div id='loan-years' class="form-group">
@@ -88,7 +87,7 @@
                 </select>
             </div>
           </div>
-          <div id='interest-rate' class="form-group">
+          <div id='interest-rate-section' class="form-group">
             <div class="form-col-4">
                 <label for="interest-rate" >
                 Interest Rate
@@ -103,7 +102,7 @@
                 <label for="p&i-payment" >P&I Payment</label>
             </div>
             <div class="form-col-8">
-                <input type="text" name="p&i-payment-input">
+                <input type="text" name="p&i-payment-input" id="principal-and-interest" readonly>
             </div>
           </div>
           <div id="disclaimer">
@@ -280,7 +279,7 @@
     <script src="./advancedOptions.js"></script>
 
     <script src="./modal.js"></script>
-    <script src="simplerVersion.js"></script>
+    <script src="simpleVersion.js"></script>
     <script src="hamburger.js"></script>
 </body>
 

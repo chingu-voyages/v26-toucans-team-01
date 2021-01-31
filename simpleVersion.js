@@ -1,37 +1,38 @@
-console.log('Connected Buzz');
+console.log('Connected');
+//# //Represents the lines removed for the simpleVersion.html
 
 //Get input elements
 const homePriceInputElem = document.getElementById('home-price-input');
-const homePriceSliderInputElem = document.getElementById('home-price-slider');
+//#const homePriceSliderInputElem = document.getElementById('home-price-slider');
 const downPaymentAmountInputElem = document.getElementById('down-payment-amt');
 const downPaymentPercentInputElem = document.getElementById('down-payment-pct');
 //const loanAmountInputElem = document.getElementById('loan-amount-input');
 const loanLengthInputElem = document.getElementById('length-of-loan');
 const interestRateInputElem = document.getElementById('interest-rate');
-const monthlyPaymentInputElem = document.getElementById('monthly-payment-input');
-const monthlyPaymentSliderInputElem = document.getElementById('monthly-payment-slider');
-const monthlyPaymentStickyInputElem = document.getElementById('monthly-payment-sticky-input');
+//#const monthlyPaymentInputElem = document.getElementById('monthly-payment-input');
+//#const monthlyPaymentSliderInputElem = document.getElementById('monthly-payment-slider');
+//#const monthlyPaymentStickyInputElem = document.getElementById('monthly-payment-sticky-input');
 const principleInterestInputElem = document.getElementById('principal-and-interest');
-const homeownerInsuranceInputElem = document.getElementById('homeowners-insurance');
-const propertyTaxInputElem = document.getElementById('property-tax');
-const hoaFeeInputElem = document.getElementById('hoa-fees');
-const totalMonthlyPaymentElem = document.getElementById('total-monthly-payment');
-const ctx = document.getElementById('myChart').getContext('2d');
+//#const homeownerInsuranceInputElem = document.getElementById('homeowners-insurance');
+//#const propertyTaxInputElem = document.getElementById('property-tax');
+//#const hoaFeeInputElem = document.getElementById('hoa-fees');
+//#const totalMonthlyPaymentElem = document.getElementById('total-monthly-payment');
+//#const ctx = document.getElementById('myChart').getContext('2d');
 
 var homePriceInput = Number(formatCurrencyIn(homePriceInputElem.value));
-var homePriceSliderInput = Number(homePriceSliderInputElem.value);
+//#var homePriceSliderInput = Number(homePriceSliderInputElem.value);
 var downPaymentAmountInput = Number(formatCurrencyIn(downPaymentAmountInputElem.value));
 var downPaymentPercentInput = Number(formatPercentageIn(downPaymentPercentInputElem.value));
 //var loanAmountInput = Number(loanAmountInputElem.value);
 var loanLengthInput = Number(loanLengthInputElem.value);
 var interestRateInput = Number(formatPercentageIn(interestRateInputElem.value));
-var monthlyPaymentInput = Number(formatCurrencyIn(monthlyPaymentInputElem.value));
-var monthlyPaymentSliderInput = Number(monthlyPaymentSliderInputElem.value);
-var monthlyPaymentStickyInput = Number(formatCurrencyIn(monthlyPaymentStickyInputElem.value));
+//#var monthlyPaymentInput = Number(formatCurrencyIn(monthlyPaymentInputElem.value));
+//#var monthlyPaymentSliderInput = Number(monthlyPaymentSliderInputElem.value);
+//#var monthlyPaymentStickyInput = Number(formatCurrencyIn(monthlyPaymentStickyInputElem.value));
 var principleInterestInput = Number(formatCurrencyIn(principleInterestInputElem.value));
-var homeownerInsuranceInput = Number(formatCurrencyIn(homeownerInsuranceInputElem.value));
-var propertyTaxInput = Number(formatCurrencyIn(propertyTaxInputElem.value));
-var hoaFeeInput = Number(formatCurrencyIn(hoaFeeInputElem.value));
+//#var homeownerInsuranceInput = Number(formatCurrencyIn(homeownerInsuranceInputElem.value));
+//#var propertyTaxInput = Number(formatCurrencyIn(propertyTaxInputElem.value));
+//#var hoaFeeInput = Number(formatCurrencyIn(hoaFeeInputElem.value));
 
 //Initialize derived elements
 var calculatedPrinciple = 0;// = homePriceInput.value - downPaymentAmountInput.value;
@@ -41,36 +42,36 @@ var additionalCosts = 0;// = homeownerInsuranceInput.value + propertyTaxInput.va
 
 function updateInput(){
   homePriceInput = Number(formatCurrencyIn(homePriceInputElem.value));
-  homePriceSliderInput = Number(homePriceSliderInputElem.value);
+  //#homePriceSliderInput = Number(homePriceSliderInputElem.value);
   downPaymentAmountInput = Number(formatCurrencyIn(downPaymentAmountInputElem.value));
   downPaymentPercentInput = Number(formatPercentageIn(downPaymentPercentInputElem.value));
   //loanAmountInput = Number(loanAmountInputElem.value);
   loanLengthInput = Number(loanLengthInputElem.value);
   interestRateInput = Number(formatPercentageIn(interestRateInputElem.value));
-  monthlyPaymentInput = Number(formatCurrencyIn(monthlyPaymentInputElem.value));
-  monthlyPaymentSliderInput = Number(monthlyPaymentSliderInputElem.value);
-  monthlyPaymentStickyInput = Number(formatCurrencyIn(monthlyPaymentStickyInputElem.value));
+  //#monthlyPaymentInput = Number(formatCurrencyIn(monthlyPaymentInputElem.value));
+  //#monthlyPaymentSliderInput = Number(monthlyPaymentSliderInputElem.value);
+  //#monthlyPaymentStickyInput = Number(formatCurrencyIn(monthlyPaymentStickyInputElem.value));
   principleInterestInput = Number(formatCurrencyIn(principleInterestInputElem.value));
-  homeownerInsuranceInput = Number(formatCurrencyIn(homeownerInsuranceInputElem.value));
-  propertyTaxInput = Number(formatCurrencyIn(propertyTaxInputElem.value));
-  hoaFeeInput = Number(formatCurrencyIn(hoaFeeInputElem.value));
+  //#homeownerInsuranceInput = Number(formatCurrencyIn(homeownerInsuranceInputElem.value));
+  //#propertyTaxInput = Number(formatCurrencyIn(propertyTaxInputElem.value));
+  //#hoaFeeInput = Number(formatCurrencyIn(hoaFeeInputElem.value));
 }
 
 function updateOutput(){
   homePriceInputElem.value = formatCurrencyOut(homePriceInput);
-  homePriceSliderInputElem.value = homePriceInput;
+  //#homePriceSliderInputElem.value = homePriceInput;
   downPaymentAmountInputElem.value = formatCurrencyOut(downPaymentAmountInput);
   downPaymentPercentInputElem.value = formatPercentageOut(downPaymentPercentInput);
   //loanAmountInput = loanAmountInputElem.value;
   loanLengthInputElem.value = loanLengthInput;
   interestRateInputElem.value = formatPercentageOut(interestRateInput);
-  monthlyPaymentInputElem.value = formatCurrencyOut(monthlyPaymentInput);
-  monthlyPaymentSliderInputElem.value = monthlyPaymentInput;
-  monthlyPaymentStickyInputElem.value = formatCurrencyOut(monthlyPaymentInput);
+  //#monthlyPaymentInputElem.value = formatCurrencyOut(monthlyPaymentInput);
+  //#monthlyPaymentSliderInputElem.value = monthlyPaymentInput;
+  //#monthlyPaymentStickyInputElem.value = formatCurrencyOut(monthlyPaymentInput);
   principleInterestInputElem.value = formatCurrencyOut(principleInterestInput);
-  homeownerInsuranceInputElem.value = formatCurrencyOut(homeownerInsuranceInput);
-  propertyTaxInputElem.value = formatCurrencyOut(propertyTaxInput);
-  hoaFeeInputElem.value = formatCurrencyOut(hoaFeeInput);
+  //#homeownerInsuranceInputElem.value = formatCurrencyOut(homeownerInsuranceInput);
+  //#propertyTaxInputElem.value = formatCurrencyOut(propertyTaxInput);
+  //#hoaFeeInputElem.value = formatCurrencyOut(hoaFeeInput);
 }
 
 function allowOnlyNumericInput() {
@@ -151,7 +152,7 @@ function calculatePrincipleAndInterest(calcPrinciple, calcLoanLength, calcIntere
   } else {
     principleInterestInput = parseFloat(calcPrinciple).toFixed(2);
   }
-  chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
+  //#chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
   principleInterestInputElem.value = formatCurrencyOut(principleInterestInput);
   return principleInterestInput;
 }
@@ -162,14 +163,14 @@ function calculatePrincipleAndInterest(calcPrinciple, calcLoanLength, calcIntere
  * @param {number} principleAndInterest input value of principal-and-interest
  * @param {number} addCosts global variable additionalCosts
  */
-function calculateMonthlyPayment(principleAndInterest, addCosts){
-  monthlyPaymentInput = parseFloat(parseFloat(principleAndInterest) + parseFloat(addCosts)).toFixed(2);
-  monthlyPaymentInputElem.value = formatCurrencyOut(monthlyPaymentInput);
-  monthlyPaymentSliderInputElem.value = monthlyPaymentInput
-  monthlyPaymentStickyInputElem.value = formatCurrencyOut(monthlyPaymentInput);
-  totalMonthlyPaymentElem.innerHTML = formatCurrencyOut(monthlyPaymentInput);
-  return monthlyPaymentInput;
-}
+// function calculateMonthlyPayment(principleAndInterest, addCosts){
+//   monthlyPaymentInput = parseFloat(parseFloat(principleAndInterest) + parseFloat(addCosts)).toFixed(2);
+//   monthlyPaymentInputElem.value = formatCurrencyOut(monthlyPaymentInput);
+//   monthlyPaymentSliderInputElem.value = monthlyPaymentInput
+//   monthlyPaymentStickyInputElem.value = formatCurrencyOut(monthlyPaymentInput);
+//   totalMonthlyPaymentElem.innerHTML = formatCurrencyOut(monthlyPaymentInput);
+//   return monthlyPaymentInput;
+// }
 
 /**
  * Calculate and update value of home-price-input (including slider)
@@ -213,12 +214,12 @@ function deriveLoanVariablesAfterUpdate(homePrice, downPaymentAmount, interestRa
  * @param {number} propertyTax input value of property-tax
  * @param {number} hoaFee input value of hoa-fees
  */
-function deriveAdditionalCostsAfterUpdate(homeInsurance, propertyTax, hoaFee) {
-  additionalCosts = 0;
-  additionalCosts = homeInsurance ? parseFloat(homeInsurance) + parseFloat(additionalCosts) : additionalCosts;
-  additionalCosts = propertyTax ? parseFloat(propertyTax) + parseFloat(additionalCosts) : additionalCosts;
-  additionalCosts = hoaFee ? parseFloat(hoaFee) + parseFloat(additionalCosts) : additionalCosts;
-}
+// function deriveAdditionalCostsAfterUpdate(homeInsurance, propertyTax, hoaFee) {
+//   additionalCosts = 0;
+//   additionalCosts = homeInsurance ? parseFloat(homeInsurance) + parseFloat(additionalCosts) : additionalCosts;
+//   additionalCosts = propertyTax ? parseFloat(propertyTax) + parseFloat(additionalCosts) : additionalCosts;
+//   additionalCosts = hoaFee ? parseFloat(hoaFee) + parseFloat(additionalCosts) : additionalCosts;
+// }
 
 /**
  * Check for NaN values due to user removing input; apply default to avoid broken calculations
@@ -332,26 +333,26 @@ homePriceInputElem.addEventListener('input',function() {
   //checkForUndefined();
   updateInput();
   let updatedHomePrice = parseFloat(homePriceInput).toFixed(2);
-  homePriceSliderInput = updatedHomePrice;
+  //#homePriceSliderInput = updatedHomePrice;
   deriveLoanVariablesAfterUpdate(updatedHomePrice, downPaymentAmountInput, interestRateInput, loanLengthInput);
   calculateDownPayPercent(updatedHomePrice, downPaymentAmountInput);
   //calculateLoanAmount(updateHomePrice, downPaymentAmountInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
-homePriceSliderInputElem.addEventListener('input',function() {
-  updateInput();
-  let updatedHomePrice = parseFloat(homePriceSliderInput).toFixed(2);
-  homePriceInput = updatedHomePrice;
-  deriveLoanVariablesAfterUpdate(updatedHomePrice, downPaymentAmountInput, interestRateInput, loanLengthInput);
-  calculateDownPayPercent(updatedHomePrice, downPaymentAmountInput);
-  //calculateLoanAmount(updateHomePrice, downPaymentAmountInput);
-  calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
-  //updateOutput();
-});
+// homePriceSliderInputElem.addEventListener('input',function() {
+//   updateInput();
+//   let updatedHomePrice = parseFloat(homePriceSliderInput).toFixed(2);
+//   homePriceInput = updatedHomePrice;
+//   deriveLoanVariablesAfterUpdate(updatedHomePrice, downPaymentAmountInput, interestRateInput, loanLengthInput);
+//   calculateDownPayPercent(updatedHomePrice, downPaymentAmountInput);
+//   //calculateLoanAmount(updateHomePrice, downPaymentAmountInput);
+//   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
+//   calculateMonthlyPayment(principleInterestInput, additionalCosts);
+//   //updateOutput();
+// });
 
 // Down Payment Amount --> Down Payment Percent; Principal+Interest; Monthly Payment
 downPaymentAmountInputElem.addEventListener('input',function() {
@@ -362,7 +363,7 @@ downPaymentAmountInputElem.addEventListener('input',function() {
   calculateDownPayPercent(homePriceInput, updatedDownPaymentAmount);
   //calculateLoanAmount(homePriceInput, updatedDownPaymentAmount);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
@@ -373,7 +374,7 @@ downPaymentPercentInputElem.addEventListener('input',function() {
   let updatedDownPayPercent = parseFloat(downPaymentPercentInput).toFixed(2);
   calculateDownPayAmount(homePriceInput, updatedDownPayPercent);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
@@ -384,7 +385,7 @@ loanLengthInputElem.addEventListener('input',function() {
   let updatedLoanLength = parseFloat(loanLengthInput).toFixed(2);
   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, updatedLoanLength);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
@@ -395,66 +396,66 @@ interestRateInputElem.addEventListener('input',function() {
   let updatedInterestRate = parseFloat(interestRateInput).toFixed(6);
   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, updatedInterestRate, loanLengthInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
-// Monthly Payment --> Home Price; Down Payment Percent; Principal+Interest; Property Tax
-monthlyPaymentInputElem.addEventListener('input',function() {
-  //checkForUndefined();
-  updateInput();
-  let updatedMonthlyPayment = parseFloat(monthlyPaymentInput).toFixed(2);
-  monthlyPaymentSliderInput = updatedMonthlyPayment;
-  monthlyPaymentStickyInput = updatedMonthlyPayment;
-  totalMonthlyPayment.innerHTML = updatedMonthlyPayment;
-  calculateHomePrice(updatedMonthlyPayment, calculatedLoanLength, calculatedInterest, downPaymentAmountInput);
-  deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, loanLengthInput);
-  calculateDownPayPercent(homePriceInput, downPaymentAmountInput);
-  calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  //TBD: calculatePropertyTax();
-  //updateOutput();
-});
-monthlyPaymentSliderInputElem.addEventListener('input',function() {
-  updateInput();
-  let updatedMonthlyPayment = parseFloat(monthlyPaymentSliderInput).toFixed(2);
-  monthlyPaymentInput = updatedMonthlyPayment;
-  monthlyPaymentStickyInput = updatedMonthlyPayment;
-  calculateHomePrice(updatedMonthlyPayment, calculatedLoanLength, calculatedInterest, downPaymentAmountInput);
-  deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, loanLengthInput);
-  calculateDownPayPercent(homePriceInput, downPaymentAmountInput);
-  calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  //TBD: calculatePropertyTax();
-  //updateOutput();
-});
-
-// Insurance, Taxes, or HOA --> Monthly Payment
-homeownerInsuranceInputElem.addEventListener('input',function() {
-  //checkForUndefined();
-  updateInput();
-  let updatedHomeInsurance = parseFloat(homeownerInsuranceInput).toFixed(2);
-  deriveAdditionalCostsAfterUpdate(updatedHomeInsurance, propertyTaxInput, hoaFeeInput)
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
-  chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
-  //updateOutput();
-});
-propertyTaxInputElem.addEventListener('input',function() {
-  //checkForUndefined();
-  updateInput();
-  let updatedPropertyTax = parseFloat(propertyTaxInput).toFixed(2);
-  deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput, updatedPropertyTax, hoaFeeInput)
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
-  chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
-  //updateOutput();
-});
-hoaFeeInputElem.addEventListener('input',function() {
-  //checkForUndefined();
-  updateInput();
-  let updatedHoaFee = parseFloat(hoaFeeInput).toFixed(2);
-  deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput, propertyTaxInput, updatedHoaFee)
-  calculateMonthlyPayment(principleInterestInput, additionalCosts);
-  chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
-  //updateOutput();
-});
+// // Monthly Payment --> Home Price; Down Payment Percent; Principal+Interest; Property Tax
+// monthlyPaymentInputElem.addEventListener('input',function() {
+//   //checkForUndefined();
+//   updateInput();
+//   let updatedMonthlyPayment = parseFloat(monthlyPaymentInput).toFixed(2);
+//   monthlyPaymentSliderInput = updatedMonthlyPayment;
+//   monthlyPaymentStickyInput = updatedMonthlyPayment;
+//   totalMonthlyPayment.innerHTML = updatedMonthlyPayment;
+//   calculateHomePrice(updatedMonthlyPayment, calculatedLoanLength, calculatedInterest, downPaymentAmountInput);
+//   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, loanLengthInput);
+//   calculateDownPayPercent(homePriceInput, downPaymentAmountInput);
+//   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
+//   //TBD: calculatePropertyTax();
+//   //updateOutput();
+// });
+// monthlyPaymentSliderInputElem.addEventListener('input',function() {
+//   updateInput();
+//   let updatedMonthlyPayment = parseFloat(monthlyPaymentSliderInput).toFixed(2);
+//   monthlyPaymentInput = updatedMonthlyPayment;
+//   monthlyPaymentStickyInput = updatedMonthlyPayment;
+//   calculateHomePrice(updatedMonthlyPayment, calculatedLoanLength, calculatedInterest, downPaymentAmountInput);
+//   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, loanLengthInput);
+//   calculateDownPayPercent(homePriceInput, downPaymentAmountInput);
+//   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
+//   //TBD: calculatePropertyTax();
+//   //updateOutput();
+// });
+//
+// // Insurance, Taxes, or HOA --> Monthly Payment
+// homeownerInsuranceInputElem.addEventListener('input',function() {
+//   //checkForUndefined();
+//   updateInput();
+//   let updatedHomeInsurance = parseFloat(homeownerInsuranceInput).toFixed(2);
+//   deriveAdditionalCostsAfterUpdate(updatedHomeInsurance, propertyTaxInput, hoaFeeInput)
+//   calculateMonthlyPayment(principleInterestInput, additionalCosts);
+//   chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
+//   //updateOutput();
+// });
+// propertyTaxInputElem.addEventListener('input',function() {
+//   //checkForUndefined();
+//   updateInput();
+//   let updatedPropertyTax = parseFloat(propertyTaxInput).toFixed(2);
+//   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput, updatedPropertyTax, hoaFeeInput)
+//   calculateMonthlyPayment(principleInterestInput, additionalCosts);
+//   chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
+//   //updateOutput();
+// });
+// hoaFeeInputElem.addEventListener('input',function() {
+//   //checkForUndefined();
+//   updateInput();
+//   let updatedHoaFee = parseFloat(hoaFeeInput).toFixed(2);
+//   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput, propertyTaxInput, updatedHoaFee)
+//   calculateMonthlyPayment(principleInterestInput, additionalCosts);
+//   chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
+//   //updateOutput();
+// });
 
 
 const inputElements = document.getElementsByTagName("input");
