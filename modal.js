@@ -14,16 +14,8 @@ btnDevs.onclick = function() {
 }
 
 // When the user clicks on <span> (x), close the modal
-spanDev.onclick = function(event) {
-event.preventDefault();
+spanDev.onclick = function() {
   modalDevs.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modalDevs) {
-    modalDevs.style.display = "none";
-  }
 }
 
 //Contact modal
@@ -43,7 +35,6 @@ btnContact.onclick = function() {
 
 // When the user clicks on <span> (x), close the modal
 spanContact.onclick = function(event) {
-event.preventDefault();
   modalContact.style.display = "none";
 }
 
@@ -51,5 +42,9 @@ event.preventDefault();
 window.onclick = function(event) {
   if (event.target == modalContact) {
     modalContact.style.display = "none";
+  } else if (event.target == modalDevs) {
+    modalDevs.style.display = "none";
   }
 }
+
+
