@@ -6,7 +6,7 @@ const homePriceInputElem = document.getElementById('home-price-input');
 //#const homePriceSliderInputElem = document.getElementById('home-price-slider');
 const downPaymentAmountInputElem = document.getElementById('down-payment-amt');
 const downPaymentPercentInputElem = document.getElementById('down-payment-pct');
-//const loanAmountInputElem = document.getElementById('loan-amount-input');
+const loanAmountInputElem = document.getElementById('loan-amount-input');
 const loanLengthInputElem = document.getElementById('length-of-loan');
 const interestRateInputElem = document.getElementById('interest-rate');
 //#const monthlyPaymentInputElem = document.getElementById('monthly-payment-input');
@@ -23,7 +23,7 @@ var homePriceInput = Number(formatCurrencyIn(homePriceInputElem.value));
 //#var homePriceSliderInput = Number(homePriceSliderInputElem.value);
 var downPaymentAmountInput = Number(formatCurrencyIn(downPaymentAmountInputElem.value));
 var downPaymentPercentInput = Number(formatPercentageIn(downPaymentPercentInputElem.value));
-//var loanAmountInput = Number(loanAmountInputElem.value);
+var loanAmountInput = Number(formatCurrencyIn(loanAmountInputElem.value));
 var loanLengthInput = Number(loanLengthInputElem.value);
 var interestRateInput = Number(formatPercentageIn(interestRateInputElem.value));
 //#var monthlyPaymentInput = Number(formatCurrencyIn(monthlyPaymentInputElem.value));
@@ -45,7 +45,7 @@ function updateInput(){
   //#homePriceSliderInput = Number(homePriceSliderInputElem.value);
   downPaymentAmountInput = Number(formatCurrencyIn(downPaymentAmountInputElem.value));
   downPaymentPercentInput = Number(formatPercentageIn(downPaymentPercentInputElem.value));
-  //loanAmountInput = Number(loanAmountInputElem.value);
+  loanAmountInput = Number(formatCurrencyIn(loanAmountInputElem.value));
   loanLengthInput = Number(loanLengthInputElem.value);
   interestRateInput = Number(formatPercentageIn(interestRateInputElem.value));
   //#monthlyPaymentInput = Number(formatCurrencyIn(monthlyPaymentInputElem.value));
@@ -62,7 +62,7 @@ function updateOutput(){
   //#homePriceSliderInputElem.value = homePriceInput;
   downPaymentAmountInputElem.value = formatCurrencyOut(downPaymentAmountInput);
   downPaymentPercentInputElem.value = formatPercentageOut(downPaymentPercentInput);
-  //loanAmountInput = loanAmountInputElem.value;
+  loanAmountInput = formatCurrencyOut(loanAmountInputElem.value);
   loanLengthInputElem.value = loanLengthInput;
   interestRateInputElem.value = formatPercentageOut(interestRateInput);
   //#monthlyPaymentInputElem.value = formatCurrencyOut(monthlyPaymentInput);
@@ -188,10 +188,11 @@ function calculateHomePrice(monthlyPayment, calcLoanLength, calcInterest, downPa
   return homePriceInput;
 }
 
-// function calculateLoanAmount(homePrice, downPaymentAmount) {
-//   loanAmountInput.value = parseFloat(homePrice - downPaymentAmount).toFixed(2);
-//   return loanAmountInput.value;
-// }
+function calculateLoanAmount(homePrice, downPaymentAmount) {
+  loanAmountInput = parseFloat(homePrice - downPaymentAmount).toFixed(2);
+  loanAmountInputElem.value = formatCurrencyOut(loanAmountInput);
+  return loanAmountInput;
+}
 
 /**
  * Update derived global variable with relevant user updates
@@ -336,7 +337,7 @@ homePriceInputElem.addEventListener('input',function() {
   //#homePriceSliderInput = updatedHomePrice;
   deriveLoanVariablesAfterUpdate(updatedHomePrice, downPaymentAmountInput, interestRateInput, loanLengthInput);
   calculateDownPayPercent(updatedHomePrice, downPaymentAmountInput);
-  //calculateLoanAmount(updateHomePrice, downPaymentAmountInput);
+  calculateLoanAmount(updateHomePrice, downPaymentAmountInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
   //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
@@ -361,7 +362,7 @@ downPaymentAmountInputElem.addEventListener('input',function() {
   let updatedDownPaymentAmount = parseFloat(downPaymentAmountInput).toFixed(2);
   deriveLoanVariablesAfterUpdate(homePriceInput, updatedDownPaymentAmount, interestRateInput, loanLengthInput);
   calculateDownPayPercent(homePriceInput, updatedDownPaymentAmount);
-  //calculateLoanAmount(homePriceInput, updatedDownPaymentAmount);
+  calculateLoanAmount(homePriceInput, updatedDownPaymentAmount);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
   //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
@@ -373,6 +374,7 @@ downPaymentPercentInputElem.addEventListener('input',function() {
   updateInput();
   let updatedDownPayPercent = parseFloat(downPaymentPercentInput).toFixed(2);
   calculateDownPayAmount(homePriceInput, updatedDownPayPercent);
+  calculateLoanAmount(homePriceInput, downPaymentAmountInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
   //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
