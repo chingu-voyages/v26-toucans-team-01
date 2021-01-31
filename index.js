@@ -33,6 +33,12 @@ var homeownerInsuranceInput = Number(formatCurrencyIn(homeownerInsuranceInputEle
 var propertyTaxInput = Number(formatCurrencyIn(propertyTaxInputElem.value));
 var hoaFeeInput = Number(formatCurrencyIn(hoaFeeInputElem.value));
 
+//Initialize derived elements
+var calculatedPrinciple = 0;// = homePriceInput.value - downPaymentAmountInput.value;
+var calculatedInterest = 0;// = interestRateInput.value/100/12;
+var calculatedLoanLength = 0;// = loanLengthInput.value*12;
+var additionalCosts = 0;// = homeownerInsuranceInput.value + propertyTaxInput.value + hoaFeeInput.value;
+
 function updateInput(){
   homePriceInput = Number(formatCurrencyIn(homePriceInputElem.value));
   homePriceSliderInput = Number(homePriceSliderInputElem.value);
@@ -66,11 +72,39 @@ function updateOutput(){
   propertyTaxInputElem.value = formatCurrencyOut(propertyTaxInput);
   hoaFeeInputElem.value = formatCurrencyOut(hoaFeeInput);
 }
-//Initialize derived elements
-var calculatedPrinciple = 0;// = homePriceInput.value - downPaymentAmountInput.value;
-var calculatedInterest = 0;// = interestRateInput.value/100/12;
-var calculatedLoanLength = 0;// = loanLengthInput.value*12;
-var additionalCosts = 0;// = homeownerInsuranceInput.value + propertyTaxInput.value + hoaFeeInput.value;
+
+function allowOnlyNumericInput() {
+  let input = this.value;
+  let checkString = "$%.,1234567890";
+
+  for(i=0; i<input.length; i++) {
+    if(!checkString.includes(input.charAt(i))) {
+      input = input.replace(input.charAt(i),'');
+      this.value = input;
+      updateInput();
+    }
+  }
+
+
+//   if (
+//   event.getModifierState('Meta') ||
+//   event.getModifierState('Control') ||
+//   event.getModifierState('Alt')
+// ) {
+//   return
+// }
+//
+// // Allow non-printable keys
+// if (key.length !== 1 || key === '\x00') {
+//   return
+// }
+//
+// // Prevent any non-numeric keys, but allow . for decimals
+// // and - for negative values
+// if ((key < '0' || key > '9') && key !== '.' && key !== '-') {
+//   event.preventDefault()
+// }
+}
 
 /**
  * Calculate and update value of down-payment-pct
@@ -426,6 +460,7 @@ hoaFeeInputElem.addEventListener('input',function() {
 const inputElements = document.getElementsByTagName("input");
 for (i=0; i<inputElements.length; i++) {
   inputElements[i].addEventListener('focusout', updateOutput);
+  inputElements[i].addEventListener('input', allowOnlyNumericInput);
 }
 
 //The following elements should not allow user edits:
