@@ -107,25 +107,26 @@ nav ul li a {
   font-weight: unset;
   margin-top: 2em;
 }
-
+/* INPUT LAYOUT */
 #simple-form .container label {
-  display: inline-block;
-  margin-bottom: 0.25em;
-  text-align: right;
-  clear: left;
-  width: 250px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
   color: grey;
 }
 
 #simple-form .container input,
 select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
   border: 1px solid #cfcfd4;
   line-height: 1.75;
   font-size: 1rem;
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
   font-weight: bold;
-  margin-left: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
+  
 }
 
 #simple-form .container input::-webkit-outer-spin-button,
@@ -135,7 +136,7 @@ select {
 }
 
 #simple-form .container #disclaimer {
-  margin-top: 3em;
+  margin-top: 5em;
   color: grey;
 }
 
@@ -143,25 +144,51 @@ select {
   font-size: 1.15em;
 }
 
-#down-payment-label {
-  grid-area: lbl;
-}
-#down-payment-amt {
-  grid-area: downinput;
-  width: 100%;
-  float: left;
-}
-#down-payment-pct {
-  grid-area: pct;
-  width: 50%;
-  float: right;
+.form-group {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -1rem 1rem -1rem;
 }
 
-.grid-1 {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(1, auto);
-  grid-template-areas: "lbl downinput pct";
+[class*="form-col"] {
+  flex: 0 1 100%;
+  padding: 0 1rem;
+}
+
+.form-col-9 {
+  flex: 0 1 75%;
+  padding: 0 1rem;
+}
+
+.form-col-10 {
+  flex: 0 1 25%;
+  padding: 0 1rem;
+}
+
+@media (min-width: 576px) {
+  .form-col-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+
+  .form-col-8 { 
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+
+  .form-col-9 {
+    flex: 0 0 50.0000025%;
+    max-width: 50.0000025%;
+  }
+
+  .form-col-10 {
+    flex: 0 0 16.6666675%;
+    max-width: 16.6666675%;
+  }
+
+  .offset-form-col-4 {
+    margin-left: 33.33333%;
+  }
 }
 
 @media screen and (min-width: 1135px) {
