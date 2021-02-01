@@ -1,270 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <title>House Hero</title>
-  </head>
-  <body>
-    <header>
-      <!-- Logo, Navigation -->
-      <nav>
-        <div class="logo">House Hero</div>
-        <ul>
-          <li><a id="contact-modal-link">Contact</a></li>
-          <li><a id="developers-modal-link" >Developers</a></li>
-      </ul>
-      </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="https://kit.fontawesome.com/5ce1f75036.js" crossorigin="anonymous"></script>
+  <title>House Hero</title>
+</head>
+
+<body>
+    <div class="grid">
+
+      <!-- Navigation -->
+      <header class="grid-cell-one">
+        <!-- Logo, Navigation -->
+        <nav id="nav-bar">
+            <div class="logo">House Hero</div>
+            <button class="hamburger" id="hamburger">
+              <i class="fas fa-bars"></i>
+            </button>
+            <ul id=nav-ul>
+                <li><a id="developers-modal-link">About Us</a></li>
+                <li><a id="contact-modal-link">Contact Us</a></li>
+            </ul>
+        </nav>
+      </header>
 
 
-    </header>
-
-    <main>
-      <!-- Load Content -->
-    <div class="split left">
-      <div id="tag-line">
-        <img src="./img/house.jpg">
+      <!-- Tagline -->
+      <div id="tag-line" class="grid-cell-two">
+        <div class="tagline-text">
           <h1>Found your dream home?</h1>
-          <h2>Let us help you do the math</h2>
-      </div>
-    </div>
-    <div class="grid-container">
-
-    <div class="split right">
-       <div id="animated-house" class="item-1">
-          <!-- Animated House -->
-      </div>
-
-        <!-- Home Price -->
-      <div id="home-price-container" class="item-2">
-        <div id="home-price">
-          <div class="wrapper">
-            <label>Home Price</label>
-            <input
-              type="text"
-              name="home-price"
-              id="home-price-input"
-            />
-        </div>
-        <div id="slidecontainer">
-          <div class="wrapper">
-          <input
-            type="range"
-            name="home-price-slider"
-            id="home-price-slider"
-            min="50000"
-            max="1000000"
-          />
-          </div>
-        </div>
+          <p>Let us help you do the math</p>
         </div>
       </div>
-        <!-- Down Payment Form -->
-      <div id="loan-parameter-inputs" class="item-3">
-          <!-- Down Payment -->
-          <div class="wrapper grid-1">
-            <label for="down-payment-amt" id="down-payment-label">
-              Down Payment
-            </label>
-            <input
-                type="text"
-                name="down-payment-amt"
-                id="down-payment-amt"
-              />
-              <input
-                type="text"
-                name="down-payment-pct"
-                id="down-payment-pct"
 
-              />
+      <!-- Mortgage Calculator -->
+      <div id="simple-form" class="grid-cell-three">
+        <div class="container">
+
+          <h1 id="title-mortgage">Simple Mortgage Calculator</h1>
+
+          <div id="home-price" class="form-group">
+              <div class="form-col-4">
+                <label>Home Price</label>
+              </div>
+              <div class="form-col-8">
+                <input type="text" name="home-price" id="home-price-input"/>
+              </div>
+          </div>
+          <div id='down-payment' class="form-group">
+              <div class="form-col-4">
+                <label for="down-payment-amt" id="down-payment-label" >
+                Down Payment</label>
+              </div>
+              <div class="form-col-9">
+                <input type="text" name="down-payment-amt" id="down-payment-amt"/>
+              </div>
+              <div class="form-col-10">
+                <input type="text" name="down-payment-pct" id="down-payment-pct"/>
+              </div>
+
           </div>
 
-          <!-- Length of Loan -->
-          <div class="wrapper">
-            <label for="length-of-loan">
-              Length of Loan
-            </label>
-            <select name="length-of-loan" id="length-of-loan" />
-                <option value="30">30 years</option>
-                <option value="20">20 years</option>
-                <option value="15">15 years</option>
-                <option value="10">10 years</option>
-              </select>
-          </div>
-
-          <!-- Interest Rate -->
-          <div class="wrapper">
-            <label for="interest-rate">
-              Interest Rate
-            </label>
-            <input type="text" name="interest-rate" id="interest-rate"/>
-          </div>
-
-          <!-- Advanced Options ----------- (Dev: Hugo)-->
-          <div>
-            <button id="advanced-options-button"></button>
-
-
-            <!------------- Invisible -------------->
-            <!-- Zip Code -->
-            <div id="advanced-section-wrapper">
-              <div class="wrapper">
-                <label for="zip-code">
-                  Zip code
-                </label>
-                <input type="text" name="zip-code" id="zip-code">
-              </div>
-
-              <!-- Credit Score -->
-              <div class="wrapper">
-                <label for="credit-score">
-                  Credit score
-                </label>
-                <input type="text" name="credit-score" id="credit-score">
-              </div>
-
-              <!-- Property Tax -->
-              <div class="wrapper">
-
-                <label for="property-tax">
-                  Property Tax
-                </label>
-                <input type="text" name="property-tax" id="adv-property-tax" class="property-tax"/>
-              </div>
-
-              <!-- Homeowner's Insurance -->
-              <div class="wrapper">
-
-                <label for="homeowners-insurance">
-                  Homeowner's Insurance
-                </label>
-                <input type="text" name="homeowners-insurance" id="adv-homeowners-insurance"
-                    class="homeowners-insurance" />
-              </div>
-
-              <!-- HOA fees -->
-              <div class="wrapper">
-
-                <label for="hoa-fees">
-                  HOA Fees
-                </label>
-                <input type="text" name="hoa-fees" id="adv-hoa-fees" class="hoa-fees"/>
-              </div>
-
-              <button id="hide-advanced-options"></button>
-
+          <!-- This is a new field - discuss with JS team -->
+          <div id='loan-amount' class="form-group">
+            <div class ="form-col-4">
+                <label>Loan Amount</label>
             </div>
-            <!---------- End Of Invisible Section -------->
-          </div>
-          <!------ End of Advanced Options ------>
-
-      </div>
-
-        <!-- Estimated Monthly Payment (Full) -->
-      <div id="monthly-payment-container" class="item-4">
-        <div id="monthly-payment">
-          <div class="wrapper">
-            <label>Your Estimated Monthly Payment</label>
-            <input
-              type="text"
-              name="monthly-payment"
-              id="monthly-payment-input"
-              readonly
-            />
-        </div>
-        <div id="monthly-slider-container">
-          <div class="wrapper">
-            <input
-              type="range"
-              name="monthly-payment-slider"
-              id="monthly-payment-slider"
-              min="0"
-              max="10000"
-            />
-          </div>
-          </div>
-        </div>
-      </div>
-        <!-- Estimated Monthly Payment (Sticky) -->
-        <div id="monthly-payment-sticky-container" class="item-5">
-          <div id="monthly-payment-sticky">
-            <div class="wrapper">
-              <label>Your Estimated Monthly Payment:</label>
-              <input
-                type="text"
-                name="monthly-payment-sticky"
-                id="monthly-payment-sticky-input"
-                readonly
-              />
+            <div class="form-col-8">
+                <input type='text' name='loan-amount-input' id="loan-amount-input" readonly>
             </div>
           </div>
+          <div id='loan-years' class="form-group">
+            <div class="form-col-4">
+                <label for="length-of-loan" >
+                Length of Loan</label>
+            </div>
+            <div class="form-col-8">
+                <select name="length-of-loan" id="length-of-loan" />
+                    <option value="30">30 years</option>
+                    <option value="20">20 years</option>
+                    <option value="15">15 years</option>
+                    <option value="10">10 years</option>
+                </select>
+            </div>
+          </div>
+          <div id='interest-rate-section' class="form-group">
+            <div class="form-col-4">
+                <label for="interest-rate" >
+                Interest Rate
+                </label>
+            </div>
+            <div class="form-col-8">
+                <input type="text" name="interest-rate" id="interest-rate" />
+            </div>
+          </div>
+          <div id='pi-payment'class="form-group">
+            <div class="form-col-4">
+                <label for="p&i-payment" >P&I Payment</label>
+            </div>
+            <div class="form-col-8">
+                <input type="text" name="p&i-payment-input" id="principal-and-interest" readonly>
+            </div>
+          </div>
+          <div id="disclaimer">
+            <span id="disclaimer-title">Banking Disclaimer: </span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cumque necessitatibus quaerat quisquam saepe voluptatem, corrupti possimus velit accusantium reiciendis!
+          </div>
         </div>
-        <!-- Monthly Payment Graph -->
-      <div id="payment-graph" class="item-6">
-          <!-- INSERT GRAPH -->
-          <canvas id="myChart"></canvas>
       </div>
-
-        <!-- Monthly Payment Form -->
-      <div id="mthly-payment-inputs" class="item-7">
-          <div class="wrapper">
-            <h3>How is my monthly payment calculated?</h3>
-          </div>
-
-          <!-- Principal and Interest -->
-          <div class="wrapper">
-
-            <label for="principal-and-interest">
-              Principal and Interest
-            </label>
-            <input
-              type="text"
-              name="principal-and-interest"
-              id="principal-and-interest"
-              class="principal-and-interest"
-            />
-          </div>
-
-          <!-- Homeowner's Insurance -->
-          <div class="wrapper">
-
-            <label for="homeowners-insurance">
-              Homeowner's Insurance
-            </label>
-            +<input
-                type="text"
-                name="homeowners-insurance"
-                id="homeowners-insurance"
-                class="homeowners-insurance"
-            />
-          </div>
-
-          <!-- Property Tax -->
-          <div class="wrapper">
-
-            <label for="property-tax">
-              Property Tax
-            </label>
-            +<input type="text" name="property-tax" id="property-tax" class="property-tax"/>
-          </div>
-
-          <!-- HOA fees -->
-          <div class="wrapper">
-
-            <label for="hoa-fees">
-              HOA Fees
-            </label>
-            +<input type="text" name="hoa-fees" id="hoa-fees" class="hoa-fees"/>
-          </div>
-
-          <!-- Total Monthly Payment -->
-          <div class='wrapper'>Total monthly payment = <span id="total-monthly-payment">$0</span></div>
 
       </div>
 
-    </div>
   </div>
+
+  <!-- MODAL SECTION -->
 
   <!-- Developers Page Modal -->
   <div id="developers-modal" class="modal">
@@ -273,117 +124,117 @@
     <div class="modal-content">
       <span class="close-dev">&times;</span>
         <!-- text card -->
- <div class="card-container">
-  <div class="card">
-       <div class="text-container">
-           <h4><b>Meet the development team for this App</b></h4>
-           <h4>Chingu Toucans - Voyage 26</h4>
-       </div>
-   </div>
-</div>
-<!-- Portfolio cards -->
-<div class="card-container">
-   <div class="card">
-       <div class="card-developer">
-           <p>
-               Josue Cedeno
-           </p>
-           <!-- <p>
-               <b>Portfolio:</b> <a href="https://www.patthulen.com" target="_blank">patThulen.com</a>
-           </p> -->
-           <div class="personal-links">
-               <a href="https://github.com/mister-josuecedeno" target="_blank">
-                   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
-               </a>
-               <a href="https://www.linkedin.com/in/josuecedeno/" target="_blank">
-                   <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
-               </a>
-           </div>
+      <div class="card-container">
+          <div class="card">
+            <div class="text-container">
+                <h4><b>Meet the development team for this App</b></h4>
+                <h4>Chingu Toucans - Voyage 26</h4>
+            </div>
+        </div>
+        </div>
+        <!-- Portfolio cards -->
+        <div class="card-container">
+          <div class="card">
+              <div class="card-developer">
+                  <p>
+                      Josue Cedeno
+                  </p>
+                  <!-- <p>
+                      <b>Portfolio:</b> <a href="https://www.patthulen.com" target="_blank">patThulen.com</a>
+                  </p> -->
+                  <div class="personal-links">
+                      <a href="https://github.com/mister-josuecedeno" target="_blank">
+                          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+                      </a>
+                      <a href="https://www.linkedin.com/in/josuecedeno/" target="_blank">
+                          <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
+                      </a>
+                  </div>
 
-       </div>
-   </div>
-   <div class="card">
-       <div class="card-developer">
-           <p>
-               Ashley Christie
-           </p>
-           <!-- <p>
-               <b>Portfolio:</b> <a href="" target="_blank"></a>
-           </p> -->
-           <div class="personal-links">
-               <a href="https://github.com/ach0319 " target="_blank">
-                   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
-               </a>
-               <a href="https://www.linkedin.com/in/ashley-christie-b227891ba/" target="_blank">
-                   <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
-               </a>
-           </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-developer">
+                  <p>
+                      Ashley Christie
+                  </p>
+                  <!-- <p>
+                      <b>Portfolio:</b> <a href="" target="_blank"></a>
+                  </p> -->
+                  <div class="personal-links">
+                      <a href="https://github.com/ach0319 " target="_blank">
+                          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+                      </a>
+                      <a href="https://www.linkedin.com/in/ashley-christie-b227891ba/" target="_blank">
+                          <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
+                      </a>
+                  </div>
 
-       </div>
-   </div>
-   <div class="card">
-       <div class="card-developer">
-           <p>
-               Kyanne
-           </p>
-           <!-- <p>
-               <b>Portfolio:</b> <a href="" target="_blank"></a>
-           </p> -->
-           <div class="personal-links">
-               <a href="" target="_blank">
-                   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
-               </a>
-               <a href="" target="_blank">
-                   <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
-               </a>
-           </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-developer">
+                  <p>
+                      Kyanne
+                  </p>
+                  <!-- <p>
+                      <b>Portfolio:</b> <a href="" target="_blank"></a>
+                  </p> -->
+                  <div class="personal-links">
+                      <a href="" target="_blank">
+                          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+                      </a>
+                      <a href="" target="_blank">
+                          <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
+                      </a>
+                  </div>
 
-       </div>
-   </div>
-   <div class="card">
-       <div class="card-developer">
-           <p>
-               Pat Thulen
-           </p>
-           <p>
-               <b>Portfolio:</b> <a href="https://www.patthulen.com" target="_blank">patThulen.com</a>
-           </p>
-           <div class="personal-links">
-               <a href="https://github.com/pthulen/" target="_blank">
-                   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
-               </a>
-               <a href="https://www.linkedin.com/in/patrick-thulen-a22b991aa/" target="_blank">
-                   <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
-               </a>
-           </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-developer">
+                  <p>
+                      Pat Thulen
+                  </p>
+                  <p>
+                      <b>Portfolio:</b> <a href="https://www.patthulen.com" target="_blank">patThulen.com</a>
+                  </p>
+                  <div class="personal-links">
+                      <a href="https://github.com/pthulen/" target="_blank">
+                          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+                      </a>
+                      <a href="https://www.linkedin.com/in/patrick-thulen-a22b991aa/" target="_blank">
+                          <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
+                      </a>
+                  </div>
 
-       </div>
-   </div>
-   <div class="card">
-       <div class="card-developer">
-           <p>
-               Hugo
-           </p>
-           <!-- <p>
-               <b>Portfolio:</b> <a href="" target="_blank"></a>
-           </p> -->
-           <div class="personal-links">
-               <a href="" target="_blank">
-                   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
-               </a>
-               <a href="" target="_blank">
-                   <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
-               </a>
-           </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-developer">
+                  <p>
+                      Hugo
+                  </p>
+                  <!-- <p>
+                      <b>Portfolio:</b> <a href="" target="_blank"></a>
+                  </p> -->
+                  <div class="personal-links">
+                      <a href="" target="_blank">
+                          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+                      </a>
+                      <a href="" target="_blank">
+                          <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRMCA3j2A8hfLl9p5UAU5nd9lvqLlNZvqoU4xOsZ192uH4IYS6X"/>
+                      </a>
+                  </div>
 
-       </div>
-   </div>
-</div>
+              </div>
+          </div>
+        </div>
     </div>
 
-  </div>
+</div>
 
-<!-- Contact Page Modal -->
+  <!-- Contact Page Modal -->
 <div id="contact-modal" class="modal">
 
   <!-- Modal content -->
@@ -396,7 +247,7 @@
            <p>We're here to help.</p>
        </div>
        <div class="form-container">
-               <form name="contact" method="POST" data-netlify="true">
+               <form id="contact-form" name="contact" method="POST" data-netlify="true">
                    <p>
                        <label>First Name: <input type="text" name="first-name" /></label>
                    </p>
@@ -421,18 +272,16 @@
   </div>
 </div>
 
-    </main>
-    <footer>
-      <!-- Links, Social Media -->
-    </footer>
 
     <!-- Chart JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <script src="./chart.js"></script>
-    <script src="./advancedOptions.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/advancedOptions.js"></script>
 
-    <script src="./modal.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/hamburger.js"></script>
+</body>
 
-    <script src="index.js"></script>
-  </body>
+
 </html>
