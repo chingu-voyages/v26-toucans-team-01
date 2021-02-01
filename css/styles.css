@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   background-color: #fff;
 }
@@ -126,7 +126,6 @@ select {
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
   font-weight: bold;
   margin-bottom: 1.5em;
-  
 }
 
 #simple-form .container input::-webkit-outer-spin-button,
@@ -150,7 +149,7 @@ select {
   margin: 0 -1rem 1rem -1rem;
 }
 
-[class*="form-col"] {
+[class*='form-col'] {
   flex: 0 1 100%;
   padding: 0 1rem;
 }
@@ -171,7 +170,7 @@ select {
     max-width: 33.3333%;
   }
 
-  .form-col-8 { 
+  .form-col-8 {
     flex: 0 0 66.66667%;
     max-width: 66.66667%;
   }
@@ -208,13 +207,13 @@ select {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-      "nav-bar nav-bar"
-      "tag-line simple-form";
+      'nav-bar nav-bar'
+      'tag-line simple-form';
   }
 
   /* Add image for larger screens */
   #tag-line {
-    background-image: url("./img/house.jpg");
+    background-image: url('../img/house.jpg');
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -253,7 +252,6 @@ select {
     display: block;
   }
 }
-
 
 /* contact page css */
 
