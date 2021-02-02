@@ -98,7 +98,7 @@ nav ul li a {
 #simple-form .container {
   background: white;
   padding: 1em;
-  height: 100%;
+  height: 100vh;
 }
 
 #simple-form .container h1 {
@@ -106,6 +106,7 @@ nav ul li a {
   color: grey;
   font-weight: unset;
   margin-top: 2em;
+  font-size: 2rem;
 }
 /* INPUT LAYOUT */
 #simple-form .container label {
@@ -113,6 +114,8 @@ nav ul li a {
   width: 100%;
   max-width: 100%;
   color: grey;
+  font-size: 1.5rem;
+
 }
 
 #simple-form .container input,
@@ -142,7 +145,7 @@ select {
 #simple-form .container #disclaimer span {
   font-size: 1.15em;
 }
-
+/* input grid layout */
 .form-group {
   display: flex;
   flex-flow: row wrap;
@@ -209,6 +212,7 @@ select {
     grid-template-areas:
       'nav-bar nav-bar'
       'tag-line simple-form';
+    grid-template-rows: auto;
   }
 
   /* Add image for larger screens */
@@ -217,7 +221,7 @@ select {
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-
+  
     padding-top: 25%;
     align-items: unset;
   }
@@ -252,7 +256,33 @@ select {
     display: block;
   }
 }
+/* advanced options page */
+@media screen and (min-width: 1135px) {
+.adv-grid-one {
+  grid-area: adnav;
+}
 
+.adv-grid-two {
+  grid-area: adcalc;
+}
+
+.adv-grid-three {
+  grid-area: adopt;
+}
+
+.adv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+      'adnav adnav'
+      'adcalc adopt';
+    grid-template-rows: auto;
+}
+}
+
+#adv-layout {
+  display: none;
+}
 /* contact page css */
 
 .card {
