@@ -276,19 +276,16 @@ select {
     width: 100%;
   }
 
-  nav span {
-    display: none;
-  }
-
-  .nav-close {
-    display: block;
+  #hamburger {
     position: relative;
-    right: 45px;
-    font-size: 60px;
+    display: block;
   }
 
-  .hamburger {
-    display: block;
+  nav span#closebtn {
+    opacity: 0;
+    margin-left: 49rem;
+    font-size: 30px;
+    z-index: 1;
   }
 
   .show-overlay {
@@ -304,12 +301,11 @@ select {
     transition: 1.6s;
   }
 
-  .nav-ul-updated {
-    display: block;
+  /* .nav-ul-updated {
     position: relative;
     width: 100%;
     text-align: center;
-  }
+  } */
 
   .nav-ul-links {
     padding: 8px;
@@ -318,25 +314,14 @@ select {
     color: white;
     display: block;
     transition: 2s;
+    text-align: center;
   }
 
-  .hamburger-updated {
-    /* display: none; */
+  /* .hamburger-updated {
     height: 6rem;
     margin-right: 1.4em;
     font-size: 30px;
-  }
+  } */
 
-  nav button .fa-times {
-    display: none;
-  }
-
-  .hide-hamburger {
-    /* display: none; */
-    background-color: red;
-  }
-
-  .show-close-button {
-    display: block;
-  }
+  /* End of Hamburguer Button Media Query */
 }
