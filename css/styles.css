@@ -99,6 +99,7 @@ nav ul li a {
   background: white;
   padding: 1em;
   height: 100vh;
+  flex: 1 1 25%;
 }
 
 #simple-form .container h1 {
@@ -131,12 +132,6 @@ select {
   margin-bottom: 1.5em;
 }
 
-#simple-form .container input::-webkit-outer-spin-button,
-#simple-form .container input::-webkit-inner-spin-button {
-  /*removes the up down cursor in the input box */
-  -webkit-appearance: none;
-}
-
 #simple-form .container #disclaimer {
   margin-top: 5em;
   color: grey;
@@ -167,6 +162,12 @@ select {
   padding: 0 1rem;
 }
 
+.adv-form {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -1rem 1rem -1rem;
+}
+
 @media (min-width: 576px) {
   .form-col-4 {
     flex: 0 0 33.3333%;
@@ -191,37 +192,41 @@ select {
   .offset-form-col-4 {
     margin-left: 33.33333%;
   }
+
+  .form-col-1 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+
+  .form-col-2 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  
 }
 
 @media screen and (min-width: 1135px) {
-  .grid-cell-one {
-    grid-area: nav-bar;
-  }
-
-  .grid-cell-two {
-    grid-area: tag-line;
-  }
-
-  .grid-cell-three {
-    grid-area: simple-form;
-  }
-
+ 
   .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      'nav-bar nav-bar'
-      'tag-line simple-form';
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+    
   }
 
+  .main-layout {
+    display: flex;
+    flex-direction: row;
+    
+  }
+}
   /* Add image for larger screens */
   #tag-line {
     background-image: url('../img/house.jpg');
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-  
+    flex: 1 1 75%;
+    /*display: */
     padding-top: 25%;
     align-items: unset;
   }
@@ -239,7 +244,7 @@ select {
     padding: 1.5em;
     background: #cee2f3;
   }
-}
+
 
 @media all and (max-width: 768px) {
   nav ul {
@@ -257,32 +262,51 @@ select {
   }
 }
 /* advanced options page */
-@media screen and (min-width: 1135px) {
-.adv-grid-one {
-  grid-area: adnav;
+
+
+#adv-options {
+  display:none;
+  flex: 1 1 75%;
+  padding: 1.5em;
+  background: #cee2f3;
 }
 
-.adv-grid-two {
-  grid-area: adcalc;
+#adv-options h1 {
+  margin-bottom: 2em;
+  color: grey;
+  font-weight: unset;
+  margin-top: 2em;
+  font-size: 2rem;
 }
 
-.adv-grid-three {
-  grid-area: adopt;
+#adv-options .container-one {
+  background: white;
+  padding: 1em;
+  height: 100vh;
 }
 
-.adv-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-      'adnav adnav'
-      'adcalc adopt';
-    grid-template-rows: auto;
-}
+#adv-options label {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  color: grey;
+  font-size: 1.5rem;
 }
 
-#adv-layout {
-  display: none;
+#adv-options input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #cfcfd4;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
+  margin-bottom: 1.25em;
+
 }
+
+
 /* contact page css */
 
 .card {

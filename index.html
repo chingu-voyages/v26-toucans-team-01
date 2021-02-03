@@ -29,6 +29,8 @@
 
 
       <!-- Tagline -->
+
+    <div class="main-layout">
       <section id="tag-line" class="grid-cell-two">
         <div class="tagline-text">
           <h1>Found your dream home?</h1>
@@ -109,117 +111,54 @@
             <span id="disclaimer-title">Banking Disclaimer: </span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cumque necessitatibus quaerat quisquam saepe voluptatem, corrupti possimus velit accusantium reiciendis!
           </div>
         </div>
-      </div>
-
-      </div>
-
-  </div>
-
-  <!--ADVANCED OPTIONS SECTION-->
-  <div id="adv-layout" class="adv-grid">
-      <section id="adv-nav" class="adv-grid-one">
-        <nav id="adv-nav-bar">
-            <div class="adv-logo">House Hero</div>
-            <ul id=adv-nav-ul>
-                <li><a id="developers-modal-link">About Us</a></li>
-                <li><a id="contact-modal-link">Contact Us</a></li>
-            </ul>
-        </nav>
       </section>
-      <section id="adv-simple-calculator" class="adv-grid-two">
-        <div class="adv-container">
-
-            <h1 id="adv-title-mortgage">Simple Mortgage Calculator</h1>
-  
-            <div id="adv-home-price" class="adv-form-group">
-                <div class="adv-form-col-4">
-                  <label>Home Price</label>
-                </div>
-                <div class="adv-form-col-8">
-                  <input type="text" name="home-price" id="adv-home-price-input"/>
-                </div>
-            </div>
-            <div id='adv-down-payment' class="adv-form-group">
-                <div class="adv-form-col-4">
-                  <label for="down-payment-amt" id="adv-down-payment-label" >
-                  Down Payment</label>
-                </div>
-                <div class="adv-form-col-9">
-                  <input type="text" name="down-payment-amt" id="adv-down-payment-amt"/>
-                </div>
-                <div class="adv-form-col-10">
-                  <input type="text" name="down-payment-pct" id="adv-down-payment-pct"/>
-                </div>
-  
-            </div>
-            <div id='adv-loan-amount' class="adv-form-group">
-              <div class ="adv-form-col-4">
-                  <label>Loan Amount</label>
-              </div>
-              <div class="adv-form-col-8">
-                  <input type='text' name='loan-amount-input' id="adv-loan-amount-input" readonly>
-              </div>
-            </div>
-            <div id='adv-loan-years' class="adv-form-group">
-              <div class="adv-form-col-4">
-                  <label for="length-of-loan" >
-                  Length of Loan</label>
-              </div>
-              <div class="adv-form-col-8">
-                  <select name="length-of-loan" id="adv-length-of-loan" />
-                      <option value="30">30 years</option>
-                      <option value="20">20 years</option>
-                      <option value="15">15 years</option>
-                      <option value="10">10 years</option>
-                  </select>
-              </div>
-            </div>
-            <div id='adv-interest-rate-section' class="adv-form-group">
-              <div class="adv-form-col-4">
-                  <label for="interest-rate" >
-                  Interest Rate
-                  </label>
-              </div>
-              <div class="adv-form-col-8">
-                  <input type="text" name="interest-rate" id="adv-interest-rate" />
-              </div>
-            </div>
-            <div id='adv-pi-payment'class="adv-form-group">
-              <div class="adv-form-col-4">
-                  <label for="p&i-payment" >P&I Payment</label>
-              </div>
-              <div class="adv-form-col-8">
-                  <input type="text" name="p&i-payment-input" id="adv-principal-and-interest" readonly>
-              </div>
-            </div>
-            <div id="adv-disclaimer">
-              <span id="adv-disclaimer-title">Banking Disclaimer: </span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cumque necessitatibus quaerat quisquam saepe voluptatem, corrupti possimus velit accusantium reiciendis!
-            </div>
-          </div>
-      </section>
-      <section id="adv-options" class="adv-grid-three">
+      <!--ADVANCED OPTIONS-->
+      <section id="adv-options" class="grid-cell-four">
+        <div class="container-one">
             <h1 id="adv-options-title">Advanced Options</h1>
             <div id="principal-section" class="adv-form">
-                <label>Principal and Interest Payment</label>
-                <input type="text" name="principal" id="principal-interest" readonly>
+                <div class="form-col-1">
+                    <label >Principal and Interest Payment</label>
+                </div>
+                <div class="form-col-2">
+                    <input type="text" name="principal" id="principal-interest" readonly>
+                </div>
             </div>
             <div id="homeowners-section" class="adv-form">
-                <label>Homeowner's Insurance</label>
-                <input type="text" name="homeowner" id="homeowners-insurance">
+                <div class="form-col-1">
+                    <label >Homeowner's Insurance</label>
+                </div>
+                <div class="form-col-2">
+                    <input type="text" name="homeowner" id="homeowners-insurance">
+                </div>
             </div>
             <div id="property-section" class="adv-form">
-                <label>Property Tax</label>
-                <input type="text" name="property" id="property-tax">
+                <div class="form-col-1">
+                    <label >Property Tax</label>
+                </div>
+                <div class="form-col-2">
+                    <input type="text" name="property" id="property-tax">
+                </div>
             </div>
             <div id="HOA-section" class="adv-form">
-                <label>HOA Fees</label>
-                <input type="text" name="HOA" id="HOA">
+                <div class="form-col-1">
+                    <label>HOA Fees</label>
+                </div>
+                <div class="form-col-2">
+                    <input type="text" name="HOA" id="HOA">
+                </div>
             </div>
             <div id="adv-payment-graph">
                 <canvas id="adv-myChart"></canvas>
             </div>
+        </div>
       </section>
+    </div>
   </div>
+
+    </div>
+
+  
   <!-- MODAL SECTION -->
 
   <!-- Developers Page Modal -->
