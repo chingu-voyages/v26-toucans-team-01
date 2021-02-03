@@ -1,0 +1,42 @@
+/* advanced options page */
+
+#adv-options {
+  display: none;
+  flex: 1 1 75%;
+  padding: 1.5em;
+  background: #cee2f3;
+}
+
+#adv-options h1 {
+  margin-bottom: 2em;
+  color: grey;
+  font-weight: unset;
+  margin-top: 2em;
+  font-size: 2rem;
+}
+
+#adv-options .container-one {
+  background: white;
+  padding: 1em;
+  height: 100vh;
+}
+
+#adv-options label {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  color: grey;
+  font-size: 1.5rem;
+}
+
+#adv-options input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #cfcfd4;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
+  margin-bottom: 1.25em;
+}
