@@ -450,3 +450,20 @@ hoaFeeInputElem.addEventListener('input',function() {
 function eventHandler(event) {
       console.log(event.target.value);
 }
+
+// Advanced Options Button 
+
+function myFunction() {
+    if (document.getElementById('tag-line')) {
+
+      if (document.getElementById('tag-line').style.display == 'none') {
+        document.getElementById('tag-line').style.display = 'block';
+        document.getElementById('adv-options').style.display = 'none';
+      }
+      else {
+        document.getElementById('tag-line').style.display ='none';
+        document.getElementById('adv-options').style.display = 'block';
+      }
+      }
+    }
+  

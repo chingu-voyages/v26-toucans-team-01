@@ -75,7 +75,6 @@ nav ul li a {
 #tag-line {
   /* background: #126bda; */
   padding: 3em 1.5em;
-
   /* display: flex;
   justify-content: center; */
   color: white;
@@ -116,7 +115,7 @@ nav ul li a {
 #simple-form .container {
   background: white;
   padding: 1em;
-  height: 100vh;
+  height: 90vh;
   flex: 1 1 25%;
 }
 
@@ -126,6 +125,7 @@ nav ul li a {
   font-weight: unset;
   margin-top: 2em;
   font-size: 2rem;
+  display: inline-block;
 }
 
 /* INPUT LAYOUT */
@@ -249,7 +249,6 @@ select {
   background-size: cover;
   background-repeat: no-repeat;
   flex: 1 1 75%;
-  /*display: */
   padding-top: 25%;
   align-items: unset;
 }

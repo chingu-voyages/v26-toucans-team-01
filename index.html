@@ -44,9 +44,10 @@
       <!-- Mortgage Calculator -->
       <section id="simple-form" class="grid-cell-three">
         <div class="container">
-
-          <h1 id="title-mortgage">Simple Mortgage Calculator</h1>
-
+          <div id="button">
+            <h1 id="title-mortgage">Simple Mortgage Calculator</h1>
+            <button  id="adv-options-button" onclick="myFunction()">Advanced Options</button>
+          </div>
           <div id="home-price" class="form-group">
               <div class="form-col-4">
                 <label>Home Price</label>
@@ -151,8 +152,8 @@
                     <input type="text" name="HOA" id="hoa-fees">
                 </div>
             </div>
-            <div id="adv-payment-graph">
-                <canvas id="adv-myChart"></canvas>
+            <div id="payment-graph">
+                <canvas id="myChart"></canvas>
             </div>
         </div>
       </section>

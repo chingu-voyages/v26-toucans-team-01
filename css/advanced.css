@@ -1,5 +1,11 @@
 /* advanced options page */
-
+#adv-options-button {
+  display: inline-block;
+  border: none;
+  color: blue;
+  font-size: 1rem;
+  background: white;
+}
 #adv-options {
   display: none;
   flex: 1 1 75%;
@@ -18,7 +24,7 @@
 #adv-options .container-one {
   background: white;
   padding: 1em;
-  height: 100vh;
+  height: 90vh;
 }
 
 #adv-options label {
