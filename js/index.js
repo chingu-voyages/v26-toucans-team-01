@@ -17,7 +17,7 @@ const homeownerInsuranceInputElem = document.getElementById('homeowners-insuranc
 const propertyTaxInputElem = document.getElementById('property-tax');
 const hoaFeeInputElem = document.getElementById('hoa-fees');
 //const totalMonthlyPaymentElem = document.getElementById('total-monthly-payment');
-const ctx = document.getElementById('adv-myChart').getContext('2d');
+const ctx = document.getElementById('myChart').getContext('2d');
 
 var homePriceInput = Number(formatCurrencyIn(homePriceInputElem.value));
 //#var homePriceSliderInput = Number(homePriceSliderInputElem.value);
@@ -451,7 +451,7 @@ function eventHandler(event) {
       console.log(event.target.value);
 }
 
-// Advanced Options Button 
+// Advanced Options Button
 
 function myFunction() {
     if (document.getElementById('tag-line')) {
@@ -466,4 +466,3 @@ function myFunction() {
       }
       }
     }
-  
