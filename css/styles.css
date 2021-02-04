@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   background-color: #fff;
 }
@@ -166,7 +166,7 @@ select {
   margin: 0 -1rem 1rem -1rem;
 }
 
-[class*="form-col"] {
+[class*='form-col'] {
   flex: 0 1 100%;
   padding: 0 1rem;
 }
@@ -231,42 +231,6 @@ select {
   }
 }
 
-@media (min-width: 1135px) {
-  .grid {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .main-layout {
-    display: flex;
-    flex-direction: row;
-  }
-}
-/* Add image for larger screens */
-#tag-line {
-  background-image: url("../img/house.jpg");
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  flex: 1 1 75%;
-  padding-top: 25%;
-  align-items: unset;
-}
-
-#tag-line h1 {
-  font-size: 3em;
-}
-
-#tag-line p {
-  font-size: 1.75em;
-}
-
-/* MORTGAGE CALCULATOR */
-#simple-form {
-  padding: 1.5em;
-  background: #cee2f3;
-}
-
 /* Hamburguer Menu Media Query */
 @media all and (max-width: 1024px) {
   nav ul {
@@ -323,4 +287,37 @@ select {
   } */
 
   /* End of Hamburguer Button Media Query */
+}
+
+@media (min-width: 1135px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-layout {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Add image for larger screens */
+  #tag-line {
+    background-image: url('../img/house.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 1 1 75%;
+
+    /* dispolay */
+    padding-top: 15%;
+    align-items: unset;
+  }
+
+  /* #tag-line h1 {
+    font-size: 3em;
+  } */
+
+  /* #tag-line p {
+    font-size: 1.75em;
+  } */
 }
