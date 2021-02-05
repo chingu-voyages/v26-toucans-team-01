@@ -12,11 +12,13 @@ const interestRateInputElem = document.getElementById('interest-rate');
 //#const monthlyPaymentInputElem = document.getElementById('monthly-payment-input');
 //#const monthlyPaymentSliderInputElem = document.getElementById('monthly-payment-slider');
 //#const monthlyPaymentStickyInputElem = document.getElementById('monthly-payment-sticky-input');
+const totalMonthlyPaymentElem = document.getElementById('total-monthly-payment');
 const principleInterestInputElem = document.getElementById('principal-and-interest');
+const principleInterestStaticElem = document.getElementById('principal-interest');
 const homeownerInsuranceInputElem = document.getElementById('homeowners-insurance');
 const propertyTaxInputElem = document.getElementById('property-tax');
 const hoaFeeInputElem = document.getElementById('hoa-fees');
-//const totalMonthlyPaymentElem = document.getElementById('total-monthly-payment');
+
 const ctx = document.getElementById('myChart').getContext('2d');
 
 var homePriceInput = Number(formatCurrencyIn(homePriceInputElem.value));
@@ -26,7 +28,7 @@ var downPaymentPercentInput = Number(formatPercentageIn(downPaymentPercentInputE
 var loanAmountInput = Number(formatCurrencyIn(loanAmountInputElem.value));
 var loanLengthInput = Number(loanLengthInputElem.value);
 var interestRateInput = Number(formatPercentageIn(interestRateInputElem.value));
-//#var monthlyPaymentInput = Number(formatCurrencyIn(monthlyPaymentInputElem.value));
+var monthlyPaymentInput ;//Number(formatCurrencyIn(monthlyPaymentInputElem.value));
 //#var monthlyPaymentSliderInput = Number(monthlyPaymentSliderInputElem.value);
 //#var monthlyPaymentStickyInput = Number(formatCurrencyIn(monthlyPaymentStickyInputElem.value));
 var principleInterestInput = Number(formatCurrencyIn(principleInterestInputElem.value));
@@ -39,6 +41,22 @@ var calculatedPrinciple = 0;// = homePriceInput.value - downPaymentAmountInput.v
 var calculatedInterest = 0;// = interestRateInput.value/100/12;
 var calculatedLoanLength = 0;// = loanLengthInput.value*12;
 var additionalCosts = 0;// = homeownerInsuranceInput.value + propertyTaxInput.value + hoaFeeInput.value;
+
+
+//window.onload = function() {
+  homePriceInputElem.value = parseFloat(240000.00).toFixed(2);
+  downPaymentPercentInputElem.value = parseFloat(20.00).toFixed(2);
+  interestRateInputElem.value = parseFloat(2.950).toFixed(3);
+  updateInput();
+  calculateDownPayAmount(homePriceInput, downPaymentPercentInput);
+  deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, loanLengthInput);
+  calculateLoanAmount(homePriceInput, downPaymentAmountInput);
+  calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
+  deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput, propertyTaxInput, hoaFeeInput)
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  updateOutput();
+
+// }
 
 function updateInput(){
   homePriceInput = Number(formatCurrencyIn(homePriceInputElem.value));
@@ -68,7 +86,9 @@ function updateOutput(){
   //#monthlyPaymentInputElem.value = formatCurrencyOut(monthlyPaymentInput);
   //#monthlyPaymentSliderInputElem.value = monthlyPaymentInput;
   //#monthlyPaymentStickyInputElem.value = formatCurrencyOut(monthlyPaymentInput);
+  totalMonthlyPaymentElem.value = formatCurrencyOut(monthlyPaymentInput);
   principleInterestInputElem.value = formatCurrencyOut(principleInterestInput);
+  principleInterestStaticElem.value = formatCurrencyOut(principleInterestInput);
   homeownerInsuranceInputElem.value = formatCurrencyOut(homeownerInsuranceInput);
   propertyTaxInputElem.value = formatCurrencyOut(propertyTaxInput);
   hoaFeeInputElem.value = formatCurrencyOut(hoaFeeInput);
@@ -136,6 +156,7 @@ function calculatePrincipleAndInterest(calcPrinciple, calcLoanLength, calcIntere
   }
   chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
   principleInterestInputElem.value = formatCurrencyOut(principleInterestInput);
+  principleInterestStaticElem.value = formatCurrencyOut(principleInterestInput);
   return principleInterestInput;
 }
 
@@ -145,14 +166,14 @@ function calculatePrincipleAndInterest(calcPrinciple, calcLoanLength, calcIntere
  * @param {number} principleAndInterest input value of principal-and-interest
  * @param {number} addCosts global variable additionalCosts
  */
-// function calculateMonthlyPayment(principleAndInterest, addCosts){
-//   monthlyPaymentInput = parseFloat(parseFloat(principleAndInterest) + parseFloat(addCosts)).toFixed(2);
+ function calculateMonthlyPayment(principleAndInterest, addCosts){
+   monthlyPaymentInput = parseFloat(parseFloat(principleAndInterest) + parseFloat(addCosts)).toFixed(2);
 //   monthlyPaymentInputElem.value = formatCurrencyOut(monthlyPaymentInput);
 //   monthlyPaymentSliderInputElem.value = monthlyPaymentInput
 //   monthlyPaymentStickyInputElem.value = formatCurrencyOut(monthlyPaymentInput);
-//   totalMonthlyPaymentElem.innerHTML = formatCurrencyOut(monthlyPaymentInput);
-//   return monthlyPaymentInput;
-// }
+   totalMonthlyPaymentElem.value = formatCurrencyOut(monthlyPaymentInput);
+   return monthlyPaymentInput;
+ }
 
 /**
  * Calculate and update value of home-price-input (including slider)
@@ -290,27 +311,16 @@ function formatPercentageOut(num) {
     return (num +"." + decimal + ' %');
 }
 
-// window.onload = function() {
-//   homePriceInput = parseFloat(696000.00).toFixed(2);
-//   downPaymentAmountInput = parseFloat(139200.00).toFixed(2);
-//   interestRateInput = parseFloat(2.830).toFixed(3);
-//   homeownerInsuranceInput = parseFloat(66.00).toFixed(2);
-//   propertyTaxInput = parseFloat(458.00).toFixed(2);
-//   hoaFeeInput = parseFloat(0.00).toFixed(2);
-//
-//   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, loanLengthInput);
-//   calculateDownPayPercent(homePriceInput, downPaymentAmountInput);
-//   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-//   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput, propertyTaxInput, hoaFeeInput)
-//   calculateMonthlyPayment(principleInterestInput, additionalCosts);
-//
-// }
-
-
 const inputElements = document.getElementsByTagName("input");
 for (i=0; i<inputElements.length; i++) {
   inputElements[i].addEventListener('focusout', updateOutput);
   inputElements[i].addEventListener('input', allowOnlyNumericInput);
+}
+
+const selectElements = document.getElementsByTagName("select");
+for (i=0; i<selectElements.length; i++) {
+  selectElements[i].addEventListener('focusout', updateOutput);
+  selectElements[i].addEventListener('change', allowOnlyNumericInput);
 }
 
 // [key: if value changes --> return updated value(s)]
@@ -323,7 +333,7 @@ homePriceInputElem.addEventListener('input',function() {
   calculateDownPayPercent(updatedHomePrice, downPaymentAmountInput);
   calculateLoanAmount(updatedHomePrice, downPaymentAmountInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
@@ -347,7 +357,7 @@ downPaymentAmountInputElem.addEventListener('input',function() {
   calculateDownPayPercent(homePriceInput, updatedDownPaymentAmount);
   calculateLoanAmount(homePriceInput, updatedDownPaymentAmount);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
@@ -358,17 +368,20 @@ downPaymentPercentInputElem.addEventListener('input',function() {
   calculateDownPayAmount(homePriceInput, updatedDownPayPercent);
   calculateLoanAmount(homePriceInput, downPaymentAmountInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
 // Length of Loan --> Principal+Interest; Monthly Payment
-loanLengthInputElem.addEventListener('input',function() {
+loanLengthInputElem.addEventListener('change',function() {
   //checkForUndefined();
-  let updatedLoanLength = parseFloat(loanLengthInput).toFixed(2);
+  console.log("input on change = "+loanLengthInput);
+  let updatedLoanLength = parseInt(loanLengthInput);
+  console.log("after parse =     "+updatedLoanLength);
   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, interestRateInput, updatedLoanLength);
+  console.log("after calculate = "+calculatedLoanLength);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
@@ -378,7 +391,7 @@ interestRateInputElem.addEventListener('input',function() {
   let updatedInterestRate = parseFloat(interestRateInput).toFixed(6);
   deriveLoanVariablesAfterUpdate(homePriceInput, downPaymentAmountInput, updatedInterestRate, loanLengthInput);
   calculatePrincipleAndInterest(calculatedPrinciple, calculatedLoanLength, calculatedInterest);
-  //#calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
   //updateOutput();
 });
 
@@ -415,7 +428,7 @@ homeownerInsuranceInputElem.addEventListener('input',function() {
   //checkForUndefined();
   let updatedHomeInsurance = parseFloat(homeownerInsuranceInput).toFixed(2);
   deriveAdditionalCostsAfterUpdate(updatedHomeInsurance, propertyTaxInput, hoaFeeInput)
-  //calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
   chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
 
   //homeownerInsuranceInputElem.value = formatCurrencyOut(homeInsurance);
@@ -425,7 +438,7 @@ propertyTaxInputElem.addEventListener('input',function() {
   //checkForUndefined();
   let updatedPropertyTax = parseFloat(propertyTaxInput).toFixed(2);
   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput, updatedPropertyTax, hoaFeeInput)
-  //calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
   chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
 
   //propertyTaxInputElem.value = formatCurrencyOut(propertyTax);
@@ -435,21 +448,21 @@ hoaFeeInputElem.addEventListener('input',function() {
   //checkForUndefined();
   let updatedHoaFee = parseFloat(hoaFeeInput).toFixed(2);
   deriveAdditionalCostsAfterUpdate(homeownerInsuranceInput, propertyTaxInput, updatedHoaFee)
-  //calculateMonthlyPayment(principleInterestInput, additionalCosts);
+  calculateMonthlyPayment(principleInterestInput, additionalCosts);
   chartResults(principleInterestInput, homeownerInsuranceInput, propertyTaxInput, hoaFeeInput);
 
   //hoaFeeInputElem.value = formatCurrencyOut(hoaFee);
   //updateOutput();
 });
 
-//The following elements should not allow user edits:
+//Note: The following elements should not allow user edits:
 //monthlyPaymentStickyInput.addEventListener('input',updateMP);
 //principleInterestInput.addEventListener('input',updateInputs);
 
 // event handler to test input return value
-function eventHandler(event) {
-      console.log(event.target.value);
-}
+// function eventHandler(event) {
+//       console.log(event.target.value);
+// }
 
 // Advanced Options Button
 
@@ -459,12 +472,12 @@ function myFunction() {
       if (document.getElementById('tag-line').style.display == 'none') {
         document.getElementById('tag-line').style.display = 'block';
         document.getElementById('adv-options').style.display = 'none';
-        
+
       }
       else {
         document.getElementById('tag-line').style.display ='none';
         document.getElementById('adv-options').style.display = 'block';
-        
+
       }
       }
     }
