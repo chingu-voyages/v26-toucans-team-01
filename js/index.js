@@ -459,10 +459,12 @@ function myFunction() {
       if (document.getElementById('tag-line').style.display == 'none') {
         document.getElementById('tag-line').style.display = 'block';
         document.getElementById('adv-options').style.display = 'none';
+        
       }
       else {
         document.getElementById('tag-line').style.display ='none';
         document.getElementById('adv-options').style.display = 'block';
+        
       }
       }
     }

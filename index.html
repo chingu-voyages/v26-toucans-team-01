@@ -46,7 +46,7 @@
         <div class="container">
           <div id="button">
             <h1 id="title-mortgage">Simple Mortgage Calculator</h1>
-            <button  id="adv-options-button" onclick="myFunction()">Advanced Options</button>
+            <button  id="adv-options-button" onclick="myFunction(); change()">Advanced</button>
           </div>
           <div id="home-price" class="form-group">
               <div class="form-col-4">
@@ -120,37 +120,45 @@
       <section id="adv-options" class="grid-cell-four">
         <div class="container-one">
             <h1 id="adv-options-title">Advanced Options</h1>
-            <div id="principal-section" class="adv-form">
-                <div class="form-col-1">
+            <div id="principal-section" >
+                <div>
                     <label >Principal and Interest Payment</label>
                 </div>
-                <div class="form-col-2">
-                    <input type="text" name="principal" id="principal-interest" readonly>
+                <div >
+                    <input type="text" name="principal" id="principal-interest" class="principal" readonly>
                 </div>
             </div>
-            <div id="homeowners-section" class="adv-form">
-                <div class="form-col-1">
+            <div id="homeowners-section" >
+                <div>
                     <label >Homeowner's Insurance</label>
                 </div>
-                <div class="form-col-2">
+                <div class=>
                     <input type="text" name="homeowner" id="homeowners-insurance">
                 </div>
             </div>
-            <div id="property-section" class="adv-form">
-                <div class="form-col-1">
+            <div id="property-section" >
+                <div class=>
                     <label >Property Tax</label>
                 </div>
-                <div class="form-col-2">
+                <div >
                     <input type="text" name="property" id="property-tax">
                 </div>
             </div>
-            <div id="HOA-section" class="adv-form">
-                <div class="form-col-1">
+            <div id="HOA-section" >
+                <div>
                     <label>HOA Fees</label>
                 </div>
-                <div class="form-col-2">
+                <div >
                     <input type="text" name="HOA" id="hoa-fees">
                 </div>
+            </div>
+            <div id="total-monthly">
+              <div>
+                <label>Total Monthly Payment: </label>
+              </div>
+              <div>
+                <input type="text" name="Total Payment" id="total-monthly-payment">
+              </div>
             </div>
             <div id="payment-graph">
                 <canvas id="myChart"></canvas>
