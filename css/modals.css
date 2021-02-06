@@ -24,22 +24,6 @@
   margin: 0.5em;
 }
 
-button {
-  padding: 5px;
-  margin-bottom: 5px;
-  color: white;
-  background-color: #4285f4;
-  border:0.1em solid #FFFFFF;
-  text-align: center;
-  transition: all 0.2s;
-  border-radius:0.12em;
-  text-decoration: none;
-}
-
-button:hover {
-  background-color: grey;
-}
-
 .card-container {
   display: flex;
   justify-content: center;
@@ -137,4 +121,59 @@ button:hover {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* contact form styling */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 80%;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+.contact-form textarea{
+	resize:none;
+	overflow: hidden;
+}
+
+.btn-contact {
+  -moz-box-shadow: inset 0px 1px 0px 0px #176df7;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #176df7;
+	box-shadow: inset 0px 1px 0px 0px#176df7;
+  background-color: #4285f4;
+  border: 1px solid #4285f4;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.btn-contact:hover {
+	background: #003c9c;
 }

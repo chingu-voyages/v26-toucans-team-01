@@ -290,21 +290,21 @@
            <p>We're here to help.</p>
        </div>
        <div class="form-container">
-               <form id="contact-form" name="contact" method="POST" data-netlify="true">
+               <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true">
                    <p>
-                       <label>First Name: <input type="text" name="first-name" /></label>
+                      <input placeholder="First Name" type="text" name="first-name" />
                    </p>
                    <p>
-                       <label>Last Name: <input type="text" name="last-name" /></label>
+                      <input placeholder="Last Name" type="text" name="last-name" />
                    </p>
                    <p>
-                       <label>Your Email: <input type="email" name="email" /></label>
+                      <input placeholder="Email" type="email" name="email" />
                    </p>
                    <p>
-                       <label>Message: <textarea name="message"></textarea></label>
+                      <textarea placeholder="Tell us about your dream home." name="message"></textarea>
                    </p>
                    <p>
-                       <button type="submit">Send</button>
+                       <button class="btn-contact" type="submit">Send</button>
                    </p>
                </form>
            </div>
@@ -328,3 +328,22 @@
 
 
 </html>
+
+<!-- 
+<form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true">
+  <p>
+     <input placeholder="First Name" type="text" name="first-name" />
+  </p>
+  <p>
+     <input placeholder="Last Name" type="text" name="last-name" />
+  </p>
+  <p>
+     <input placeholder="Email" type="email" name="email" />
+  </p>
+  <p>
+     <textarea placeholder="Tell us about your dream home." type="text" name="message"></textarea>
+  </p>
+  <p>
+      <button id="btn-contact" type="submit">Send</button>
+  </p>
+</form> -->
