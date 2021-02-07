@@ -150,6 +150,7 @@ select {
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
   font-weight: bold;
   margin-bottom: 1.5em;
+ 
 }
 
 #simple-form .container #disclaimer {
@@ -174,12 +175,12 @@ select {
 }
 
 .form-col-9 {
-  flex: 0 1 75%;
+  flex: 0 1 55%;
   padding: 0 1rem;
 }
 
 .form-col-10 {
-  flex: 0 1 25%;
+  flex: 0 1 45%;
   padding: 0 1rem;
 }
 
@@ -216,13 +217,12 @@ select {
   .form-col-10 {
     flex: 0 0 16.6666675%;
     max-width: 16.6666675%;
+    margin-left: 0px;
   }
 
   .offset-form-col-4 {
     margin-left: 33.33333%;
   }
-
- 
 }
 
 /* Hamburguer Menu Media Query */

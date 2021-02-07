@@ -467,6 +467,11 @@ hoaFeeInputElem.addEventListener('input',function() {
 // Advanced Options Button
 
 function myFunction() {
+    myFunction_1();
+    myFunction_2();
+}
+
+function myFunction_1() {
     if (document.getElementById('tag-line')) {
 
       if (document.getElementById('tag-line').style.display == 'none') {
@@ -481,3 +486,12 @@ function myFunction() {
       }
       }
     }
+
+function myFunction_2() {
+  var x = document.getElementById("adv-options-button");
+  if (x.innerHTML === "Advanced Options") {
+    x.innerHTML = "Simple Calculator"
+  } else {
+    x.innerHTML = "Advanced Options";
+  }
+}
