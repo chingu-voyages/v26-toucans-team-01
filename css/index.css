@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -12,6 +14,7 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .grid-container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -19,48 +22,70 @@ body {
     "an an mnly mnly mnly mnly sty sty"
     "hm hm . . . . . ."
     "ln ln gph gph gph inp inp inp"
+=======
+/* CSS Variables for colors */
+:root {
+  --test-border-color: white;
+>>>>>>> f89a03c7194a8f9af67165dd9a449ccb6c6c0975
 }
 
-.item-1 {
-  grid-area: an;
+/* ---------- Navigation [Dev: Josue]------- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  height: 2.25em;
+  background-color: rgb(62, 124, 199);
+  color: white;
+
+  box-shadow: 0px 1px 1px grey;
 }
 
-.item-2 {
-  grid-area: hm;
+.logo {
+  font-size: 1.25em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.item-3 {
-  grid-area: ln;
+nav ul {
+  list-style-type: none;
+  display: flex;
 }
 
-.item-4 {
-  grid-area: mnly;
+nav ul li {
+  margin-left: 10px;
 }
 
-.item-5 {
-  grid-area: sty;
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
-.item-6 {
-  grid-area: gph;
-}
+/* ---------- End of Navigation [Dev: Josue]--------- */
 
-.item-7 {
-  grid-area: inp;
-}
 /* ---------- Start of Animated House [Dev: Ashley]------- */
+<<<<<<< HEAD
 =======
 /* ----------Animated House -------------- */
 >>>>>>> 148f5fef53fa558f2e18195e2703c0f17d803121
+=======
+>>>>>>> f89a03c7194a8f9af67165dd9a449ccb6c6c0975
 
 #animated-house {
-  border: 1px solid red;
+  border: 1px solid var(--test-border-color);
   width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f89a03c7194a8f9af67165dd9a449ccb6c6c0975
   padding: 1.25em;
 }
 
 /* ---------- End of Animated House [Dev: Ashley]--------- */
+<<<<<<< HEAD
 =======
   margin: 2em 0;
   padding: 1.25em; 
@@ -69,6 +94,8 @@ body {
 /* ----------End of Animated House --------------- */
 
 >>>>>>> 148f5fef53fa558f2e18195e2703c0f17d803121
+=======
+>>>>>>> f89a03c7194a8f9af67165dd9a449ccb6c6c0975
 /* ---------- Start of HOME PRICE [Dev: Ashley] ---------- */
 
 /* home input box style */
@@ -81,7 +108,8 @@ body {
   width: 210px;
   font-size: 1rem;
   line-height: 1.75;
-  border: 1px solid #cfcfd4
+  border: 1px solid #cfcfd4;
+  font-weight: bold;
 }
 
 #home-price-input::-webkit-outer-spin-button,
@@ -91,13 +119,13 @@ body {
 }
 
 #home-price label {
-  display: block; 
+  display: block;
 }
 
 /* home price slider */
 
 #home-price-container {
-  border: 1px solid red;
+  border: 1px solid var(--test-border-color);
   width: 100%;
   padding: 1.25em;
 }
@@ -149,13 +177,27 @@ body {
 /* ---------- Start of Down Payment, Length of Loan, Interest Rate [Dev: Josue] ---------- */
 
 #loan-parameter-inputs {
-  border: 1px solid red;
+  border: 1px solid var(--test-border-color);
   width: 100%;
   padding: 1.25em;
 }
 
 #loan-parameter-inputs .wrapper {
   padding: 0.5em;
+}
+
+#loan-parameter-inputs label {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+#loan-parameter-inputs input,
+select {
+  border: 1px solid #cfcfd4;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
 }
 
 .grid-1 {
@@ -176,29 +218,20 @@ body {
   width: 100%;
 }
 
+#loan-parameter-inputs input #down-payment-amt {
+  padding-left: 10px;
+}
+
 #down-payment-pct {
   grid-area: pct;
   width: 50%;
-}
-
-#loan-parameter-inputs label {
-  display: block;
-  margin-bottom: 0.25em;
-}
-
-#loan-parameter-inputs input,
-select {
-  border: 1px solid #cfcfd4;
-  line-height: 1.75;
-  font-size: 1rem;
-  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
 }
 
 /* ---------- End of Down Payment, Length of Loan, Interest Rate ---------- */
 
 /* ---------- Start of Estimated Payment (Full) [Dev: Ashley] ------------------- */
 #monthly-payment {
-  border: 1px solid red;
+  border: 1px solid var(--test-border-color);
   width: 100%;
   padding: 1.25em;
 }
@@ -213,7 +246,8 @@ select {
   width: 210px;
   font-size: 1rem;
   line-height: 1.75;
-  border: 1px solid #cfcfd4
+  border: 1px solid #cfcfd4;
+  font-weight: bold;
 }
 
 #monthly-payment-input::-webkit-outer-spin-button,
@@ -272,7 +306,7 @@ select {
 
 /* --------------Start of Estimated Payment (Sticky) [Dev: Ashley] ------------------------*/
 #monthly-payment-sticky-container {
-  border: 1px solid red;
+  border: 1px solid var(--test-border-color);
   width: 100%;
   padding: 1.25em;
 }
@@ -287,7 +321,8 @@ select {
   width: 210px;
   font-size: 1rem;
   line-height: 1.75;
-  border: 1px solid #cfcfd4
+  border: none;
+  font-weight: bold;
 }
 
 #monthly-payment-sticky-input::-webkit-outer-spin-button,
@@ -301,6 +336,7 @@ select {
 }
 /* ---------------End of Estimated Monthly Payment (Sticky)-------------------- */
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* -------------- Start of Payment Graph----------------------------------- */
 =======
 /* ---------------START of Payment Graph---------------------- */
@@ -312,9 +348,12 @@ select {
   padding: 1.25em;
 }
 >>>>>>> 148f5fef53fa558f2e18195e2703c0f17d803121
+=======
+/* -------------- Start of Payment Graph----------------------------------- */
+>>>>>>> f89a03c7194a8f9af67165dd9a449ccb6c6c0975
 
 #payment-graph {
-  border: 1px solid red;
+  border: 1px solid var(--test-border-color);
   width: 100%;
   padding: 1.25em;
 }
@@ -322,7 +361,7 @@ select {
 /* ---------- START of Estimated Monthly Payment (Full) [Dev: Josue] ------------------- */
 
 #mthly-payment-inputs {
-  border: 1px solid red;
+  border: 1px solid var(--test-border-color);
   width: 100%;
   padding: 1.25em;
 }
@@ -342,6 +381,7 @@ select {
   line-height: 1.75;
   font-size: 1rem;
   padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
 }
 
 #mthly-payment-inputs .legend {
@@ -349,7 +389,151 @@ select {
 }
 
 #mthly-payment-inputs .legend:nth-child(2) {
-  color: red;
+  color: var(--test-border-color);
+}
+
+/* ----- START of Showing Advanced Options w/ Button [Dev: Hugo] ---------- */
+#advanced-options-button::before {
+  content: 'Show advanced options';
+}
+
+#advanced-options-button {
+  margin: 16px 0px 0px 2px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3139f2;
+}
+
+#advanced-options-button:hover {
+  text-decoration: underline;
+}
+
+#advanced-section-wrapper {
+  display: none;
+}
+
+#hide-advanced-options::before {
+  content: 'Hide advanced options';
+}
+
+#hide-advanced-options {
+  margin: 16px 0px 0px 2px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3139f2;
+}
+
+#hide-options-button:hover {
+  text-decoration: underline;
 }
 
 /* ---------- END of Estimated Monthly Payment (Full) ------------------- */
+@media screen and (min-width: 1135px) {
+  .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+}
+/* contact page css */
+
+.card {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  max-width: 80%;
+  margin: 1.8em;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.text-container {
+  padding: 1.25em;
+}
+
+button {
+  margin-bottom: 5px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.personal-links img {
+  margin: 1.25em;
+  width: 2.8em;
+  height: 2.8em;
+}
+
+.card-developer {
+  padding: 1.5em 3.3em 1.5em 3.3em;
+}
+
+/* Developer Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close-dev {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close-dev:hover,
+.close-dev:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-contact {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close-contact:hover,
+.close-contact:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
