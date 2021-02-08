@@ -1,0 +1,179 @@
+/* contact page css */
+
+.card {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+  max-width: 80%;
+  margin: 1.8em;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.contact-text-container {
+  padding: 1.5em;
+  color: white;
+  background-color: #4285f4;
+  border-radius: 10px 10px 0 0;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.contact-text-container h4 {
+  margin: 0.5em;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.card-top img {
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+}
+
+.card-top {
+  padding: 0.5em;
+  width: 100%;
+  background-color: #4285f4;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  /* text-transform: uppercase; */
+  letter-spacing: 1.25px;
+}
+
+
+#contact-form p {
+  padding: 1em;
+  color: grey;
+}
+
+/* Developer Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.text-container {
+  padding: 1.5em;
+  color: white;
+  background-color: #4285f4;
+  border-radius: 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.text-container h4 {
+  text-transform: uppercase;
+  margin: 0.5em;
+}
+
+.personal-links img {
+  margin: 1.25em;
+  width: 2.8em;
+  height: 2.8em;
+  border-radius: 20%;
+}
+
+/* The Close Button */
+.close-dev {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close-dev:hover,
+.close-dev:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-contact {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close-contact:hover,
+.close-contact:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* contact form styling */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 80%;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+.contact-form textarea{
+	resize:none;
+	overflow: hidden;
+}
+
+.btn-contact {
+  -moz-box-shadow: inset 0px 1px 0px 0px #176df7;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #176df7;
+	box-shadow: inset 0px 1px 0px 0px#176df7;
+  background-color: #4285f4;
+  border: 1px solid #4285f4;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.btn-contact:hover {
+	background: #003c9c;
+}

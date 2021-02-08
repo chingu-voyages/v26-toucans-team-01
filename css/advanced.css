@@ -1,0 +1,74 @@
+/* advanced options page */
+#adv-options-button {
+  display: inline-block;
+  border: none;
+  color: blue;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  margin-left: 1rem;
+  
+}
+#adv-options {
+  display: none;
+  flex: 1 1 50%;
+  padding: 1.5em;
+  background: #cee2f3;
+}
+
+#adv-options h1 {
+  margin-bottom: 2em;
+  color: grey;
+  font-weight: unset;
+  margin-top: 2em;
+  font-size: 1.5rem;
+}
+
+#adv-options .container-one {
+  background: white;
+  padding: 1em 1em 1em 3em;
+  height: 100%;
+  min-height: 55em;
+}
+
+#adv-options label {
+  
+  width: 100%;
+  max-width: 100%;
+  color: grey;
+  font-size: 1rem;
+}
+
+#adv-options #homeowners-insurance, #property-tax, #hoa-fees {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #cfcfd4;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
+  margin-bottom: 1.25em;
+}
+
+#principal-interest {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
+  margin-bottom: 1.25em;
+}
+
+#total-monthly-payment {
+  width: 50%;
+  max-width: 100%;
+  border: none;
+  line-height: 1.75;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.5rem;
+  font-weight: bold;
+  margin-bottom: 1.25em;
+  float: right;
+}
