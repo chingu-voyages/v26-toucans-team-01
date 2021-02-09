@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   background-color: #cee2f3;
 }
@@ -54,20 +54,6 @@ nav ul li a {
   cursor: pointer;
   font-size: 1.15em;
   font-weight: 300;
-}
-
-/* Hamburger Menu */
-
-.hamburger {
-  background-color: transparent;
-  border: 0;
-  color: #fff;
-  font-size: 20px;
-  display: none;
-}
-
-.hamburger:focus {
-  outline: none;
 }
 
 /* TAGLINE */
@@ -170,7 +156,7 @@ select {
   margin: 0 -1rem 1rem -1rem;
 }
 
-[class*='form-col'] {
+[class*="form-col"] {
   flex: 0 1 100%;
   padding: 0 1rem;
 }
@@ -219,65 +205,6 @@ select {
     flex: 0 0 16.6666675%;
     max-width: 16.6666675%;
   }
-
-}
-
-/* Hamburguer Menu Media Query */
-@media all and (max-width: 1024px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  #hamburger {
-    position: relative;
-    display: block;
-  }
-
-  nav span#closebtn {
-    opacity: 0;
-    margin-left: 49rem;
-    font-size: 30px;
-    z-index: 1;
-  }
-
-  .show-overlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #13294b;
-    opacity: 0.9;
-    overflow-x: hidden;
-    transition: 1.6s;
-  }
-
-  /* .nav-ul-updated {
-    position: relative;
-    width: 100%;
-    text-align: center;
-  } */
-
-  .nav-ul-links {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: white;
-    display: block;
-    transition: 2s;
-    text-align: center;
-  }
-
-  /* .hamburger-updated {
-    height: 6rem;
-    margin-right: 1.4em;
-    font-size: 30px;
-  } */
-
-  /* End of Hamburguer Button Media Query */
 }
 
 @media (min-width: 1135px) {
@@ -293,7 +220,7 @@ select {
 
   /* Add image for larger screens */
   #tag-line {
-    background-image: url('../img/house.jpg');
+    background-image: url("../img/house.jpg");
     background-position: left;
     /* background-size: cover; */
     background-size: 100%;
