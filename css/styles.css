@@ -121,12 +121,15 @@ nav ul li a {
 }
 
 #simple-form .container h1 {
-  margin-bottom: 2em;
   color: grey;
   font-weight: unset;
   margin-top: 2em;
   font-size: 1.5rem;
   display: inline-block;
+}
+
+#home-price {
+  margin-top: 4em;
 }
 
 /* INPUT LAYOUT */
@@ -215,12 +218,8 @@ select {
   .form-col-10 {
     flex: 0 0 16.6666675%;
     max-width: 16.6666675%;
-    margin-left: 0px;
   }
 
-  .offset-form-col-4 {
-    margin-left: 33.33333%;
-  }
 }
 
 /* Hamburguer Menu Media Query */
