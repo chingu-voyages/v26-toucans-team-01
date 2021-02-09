@@ -311,7 +311,8 @@ function formatPercentageOut(num) {
     return (num +"." + decimal + ' %');
 }
 
-const inputElements = document.getElementsByTagName("input");
+const inputElements = document.getElementsByClassName("input");
+// const inputElements = document.getElementsByTagName("input");
 for (i=0; i<inputElements.length; i++) {
   inputElements[i].addEventListener('focusout', updateOutput);
   inputElements[i].addEventListener('input', allowOnlyNumericInput);
