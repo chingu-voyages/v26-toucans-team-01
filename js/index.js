@@ -482,7 +482,7 @@ function myFunction_1() {
       }
       else {
         document.getElementById('tag-line').style.display ='none';
-        document.getElementById('adv-options').style.display = 'block';
+        document.getElementById('adv-options').style.display = 'flex';
 
       }
       }

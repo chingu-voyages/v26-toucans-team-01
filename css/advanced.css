@@ -26,8 +26,12 @@
 #adv-options .container-one {
   background: white;
   padding: 1em 1em 1em 3em;
+  width: 100%;
+  max-width: 40em;
   height: 100%;
   min-height: 55em;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #adv-options label {
