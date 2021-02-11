@@ -287,7 +287,10 @@
            <p>We're here to help.</p>
        </div>
        <div class="form-container">
-               <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true">
+               <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                   <p class="hidden">
+                      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                   </p>
                    <p>
                       <input placeholder="First Name" type="text" name="first-name" />
                    </p>
@@ -312,6 +315,27 @@
   </div>
 </div>
 
+<!-- Hidden form version to assist Netlify's backend bots find the form data in modal -->
+<form id="contact-form" class="contact-form hidden" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <p class="hidden">
+     <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
+  <p>
+     <input placeholder="First Name" type="text" name="first-name" />
+  </p>
+  <p>
+     <input placeholder="Last Name" type="text" name="last-name" />
+  </p>
+  <p>
+     <input placeholder="Email" type="email" name="email" />
+  </p>
+  <p>
+     <textarea placeholder="Tell us about your dream home." name="message"></textarea>
+  </p>
+  <p>
+      <button class="btn-contact" type="submit">Send</button>
+  </p>
+</form>
 
     <!-- Chart JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
