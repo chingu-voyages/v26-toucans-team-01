@@ -47,7 +47,7 @@ window.onclick = function(event) {
   }
 }
 
-// For screens that are iPad or smaller, shows icons on navbar instead of words ..420px and less
+// Icons Appear on screens with a resolution of <= 420px
 let mobileScreen = window.matchMedia("(max-width: 420px)");
 if (mobileScreen.matches) {
   btnDevs.innerHTML = '<i class="fas fa-user"></i>';
