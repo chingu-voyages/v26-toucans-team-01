@@ -76,21 +76,36 @@ Sprint 2 goals were achieved and the project is currently able to accept user in
 
 ### Sprint 4 -
 
-Sprint 4 summary
+In Sprint 4, we fine-tuned the scope of the project's MVP to provide focus and set a clear vision of success; with these goals in mind, the week proved to be a productive mix of results and communication.
 
 #### Sprint 4 goals
 
-- Task
-- Task
+- Refine page responsiveness
+- Format values as currency or percentage
+- Add navigation bar
+- Set up modal views for additional information
 
 ### Sprint 5 -
 
-Sprint 5 summary
+Building on the great progress from Sprint 4, we identified more ways to improve the user experience with modifications to the layout, styles, and inputs.  We also began work on an additional feature to display the 'Advanced Options' section.
 
 #### Sprint 5 goals
 
-- Task
-- Task
+- Improve input/label responsiveness per screen size
+- Format input to avoid non-numeric errors
+- Continue work on navigation and modals
+
+### Sprint 6 - Wrapping Up
+
+Sprint 6 was the final week of our project.  We used it for minor enhancements, testing, and deployment.  We also made time to celebrate our efforts--reflecting on how our team came together in such a short timeframe, built a functional website, and learned a lot along the way.
+
+#### Sprint 6 goals
+
+- Refine responsive menu options
+- Set default values on page load
+- Add toggle behavior between "Simple Calculator" and "Advanced Options"
+- Deploy final project (via netlify)
+
 
 ## Authors
 
