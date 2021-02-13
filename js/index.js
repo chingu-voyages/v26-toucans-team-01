@@ -42,7 +42,7 @@ var calculatedInterest = 0;// = interestRateInput.value/100/12;
 var calculatedLoanLength = 0;// = loanLengthInput.value*12;
 var additionalCosts = 0;// = homeownerInsuranceInput.value + propertyTaxInput.value + hoaFeeInput.value;
 
-
+//Set defaults on page load
 //window.onload = function() {
   homePriceInputElem.value = parseFloat(240000.00).toFixed(2);
   downPaymentPercentInputElem.value = parseFloat(20.00).toFixed(2);
@@ -58,6 +58,9 @@ var additionalCosts = 0;// = homeownerInsuranceInput.value + propertyTaxInput.va
 
 // }
 
+/**
+ * Format input values to numeric (no special characters) to enable calculations
+ */
 function updateInput(){
   homePriceInput = Number(formatCurrencyIn(homePriceInputElem.value));
   //#homePriceSliderInput = Number(homePriceSliderInputElem.value);
@@ -75,6 +78,9 @@ function updateInput(){
   hoaFeeInput = Number(formatCurrencyIn(hoaFeeInputElem.value));
 }
 
+/**
+ * Format output values to display currency or percentage
+ */
 function updateOutput(){
   homePriceInputElem.value = formatCurrencyOut(homePriceInput);
   //#homePriceSliderInputElem.value = homePriceInput;
@@ -94,6 +100,9 @@ function updateOutput(){
   hoaFeeInputElem.value = formatCurrencyOut(hoaFeeInput);
 }
 
+/**
+ * Prevent user from entering a non-numeric value as input
+ */
 function allowOnlyNumericInput() {
   let input = this.value;
   let checkString = "$%.,1234567890";
@@ -265,8 +274,6 @@ function chartResults(pni, hi, pt, hoa) {
   });
 }
 
-// Event Listeners for user input
-
 function formatCurrencyIn(num) {
   num = num.toString().replace(/\$|\,/g, '');
   return num;
@@ -311,6 +318,8 @@ function formatPercentageOut(num) {
     return (num +"." + decimal + ' %');
 }
 
+
+// Event Listeners for user input
 const inputElements = document.getElementsByClassName("input");
 // const inputElements = document.getElementsByTagName("input");
 for (i=0; i<inputElements.length; i++) {
@@ -465,8 +474,8 @@ hoaFeeInputElem.addEventListener('input',function() {
 //       console.log(event.target.value);
 // }
 
-// Advanced Options Button
 
+// Functionality for toggle of Advanced Options botton
 function myFunction() {
     myFunction_1();
     myFunction_2();
